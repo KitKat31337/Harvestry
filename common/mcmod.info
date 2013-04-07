@@ -1,0 +1,17 @@
+[
+{
+  "modid": "betterfood",
+  "name": "Better Food Mod",
+  "description": "The Food System Re Invented :D",
+  "credits": "By claycorp.",
+  "logoFile": "/mods/betterfood/textures/logo/logo.png",
+  "version": "1.5",
+  "url": "",
+  "updateUrl": "",
+  "authors": [ "claycorp" ],
+  "screenshots": [ "" ],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]
