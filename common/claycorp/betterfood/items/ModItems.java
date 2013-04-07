@@ -8,7 +8,7 @@ public class ModItems {
     
     public static void init() {
         
-        flour = new ItemFlour(500)
+        flour = new Flour(500)
             .setUnlocalizedName(Registry.flour);
                 
     }

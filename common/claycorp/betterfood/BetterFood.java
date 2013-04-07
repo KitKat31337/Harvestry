@@ -1,5 +1,6 @@
 package claycorp.betterfood;
 
+import claycorp.betterfood.utils.RecipeHandler;
 import claycorp.betterfood.utils.Registry;
 import claycorp.betterfood.items.ModItems;
 import cpw.mods.fml.common.Mod;
@@ -20,11 +21,12 @@ public class BetterFood {
     @PreInit
     public void preInit(FMLPreInitializationEvent evt) {
         ModItems.init();
+        
     }
 
     @Init
     public void init(FMLInitializationEvent event) {
-
+        RecipeHandler.add();
     }
 
 }

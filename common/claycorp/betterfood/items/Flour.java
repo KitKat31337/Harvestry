@@ -8,10 +8,10 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 
-public class ItemFlour extends Item {
+public class Flour extends Item {
 
-    public ItemFlour(int par1) {
-        super(par1);
+    public Flour(int id) {
+        super(id);
         maxStackSize = 64;
         setNoRepair();
         setCreativeTab(CreativeTabs.tabFood);
