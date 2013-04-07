@@ -1,12 +1,14 @@
-package claycorp.betterfood.utils;
+package claycorp.betterfood.utils.exeptions;
+
+import claycorp.betterfood.utils.Registry;
 
 public class Exeptions extends RuntimeException {
-
+    
     /**
      * This Exception is not MY Fault
      */
-    private static final long serialVersionUID = 263250481020341795L;
-
+    private static final long serialVersionUID = -6762134744912730876L;
+    
     private String mError;
 
     public Exeptions(String var1) {
