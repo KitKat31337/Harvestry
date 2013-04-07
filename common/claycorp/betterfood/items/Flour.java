@@ -15,23 +15,17 @@ public class Flour extends Item {
         maxStackSize = 64;
         setNoRepair();
         setCreativeTab(CreativeTabs.tabFood);
-        }
+    }
 
-    public boolean doseContainerItemLeaveCrafingGrid(
-            ItemStack par1ItemStack) {
+    public boolean doseContainerItemLeaveCrafingGrid(ItemStack par1ItemStack) {
         return true;
     }
+
     @Override
     @SideOnly(Side.CLIENT)
     public void updateIcons(IconRegister iconRegister) {
 
-        iconIndex = iconRegister
-                .registerIcon(Registry.texture
-                        + this.getUnlocalizedName()
-                                .substring(
-                                        this.getUnlocalizedName()
-                                                .indexOf(
-                                                        ".") + 1));
+        iconIndex = iconRegister.registerIcon(Registry.texture
+                + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 }
-

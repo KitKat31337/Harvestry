@@ -1,8 +1,11 @@
 package claycorp.betterfood;
 
-import claycorp.betterfood.utils.RecipeHandler;
-import claycorp.betterfood.utils.Registry;
 import claycorp.betterfood.items.ModItems;
+import claycorp.betterfood.utils.Config;
+import claycorp.betterfood.utils.Registry;
+import claycorp.betterfood.utils.handlers.Handler;
+import claycorp.betterfood.utils.handlers.LanguageHandler;
+import claycorp.betterfood.utils.handlers.RecipeHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -20,13 +23,31 @@ public class BetterFood {
 
     @PreInit
     public void preInit(FMLPreInitializationEvent evt) {
-        ModItems.init();
-        
+
+        boolean modLoaded = Handler.isModLoaded();
+
+        if (!modLoaded){
+
+            Handler.logName("Loading configuration");
+            
+            //Loads the Configuration
+            Config.init(evt);
+
+            // Initialize Items
+            ModItems.init();
+
+            // Load Languages
+            LanguageHandler.loadLanguages();
+            
+            Handler.LoadMod();
+        }
     }
 
     @Init
     public void init(FMLInitializationEvent event) {
+        
+        RecipeHandler.delete();
+        
         RecipeHandler.add();
     }
-
 }
