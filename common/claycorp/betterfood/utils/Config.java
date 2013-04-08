@@ -64,6 +64,7 @@ public class Config {
         itemDoughID = config.getItem(Archive.itemDough, iID++).getInt();
         itemPiePanID = config.getItem(Archive.itemPiePan, iID++).getInt();
         itemPumpkinMashID = config.getItem(Archive.itemPumpkinMash, iID++).getInt();
+        foodPeanutsID = config.getItem(Archive.foodPeanuts, iID++).getInt();
     }
 
     private static void configBlocks(Configuration config) {}
