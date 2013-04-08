@@ -15,41 +15,41 @@ public class Registry {
     }
 
     private static void registerBlocks() {
-
-    //    GameRegistry.registerBlock(ModBlocks.portalObsidian, "Obsidiatal");
+        
+        //GameRegistry.registerBlock(ModBlocks.portalObsidian, "Obsidiatal");
     }
 
     private static void registerItems() {
 
-        GameRegistry.registerItem(ModItems.itemBreadPan, "Boom Stick");
+        GameRegistry.registerItem(ModItems.itemBreadPan, Archive.itemBreadPan);
 
-        GameRegistry.registerItem(ModItems.itemBreadpanwithDough, "Phantom Sword");
+        GameRegistry.registerItem(ModItems.itemBreadpanwithDough, Archive.itemBreadpanwithDough);
 
-        GameRegistry.registerItem(ModItems.itemCakeBatter, "Lucidity");
+        GameRegistry.registerItem(ModItems.itemCakeBatter, Archive.itemCakeBatter);
 
-        GameRegistry.registerItem(ModItems.itemCakePan, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemCakePan, Archive.itemCakePan);
         
-        GameRegistry.registerItem(ModItems.itemCakePanFull, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemCakePanFull, Archive.itemCakePanFull);
         
-        GameRegistry.registerItem(ModItems.itemChocolateChips, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemChocolateChips, Archive.itemChocolateChips);
         
-        GameRegistry.registerItem(ModItems.itemCookieSheet, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemCookieSheet, Archive.itemCookieSheet);
         
-        GameRegistry.registerItem(ModItems.itemDough, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemDough, Archive.itemDough);
         
-        GameRegistry.registerItem(ModItems.itemModBucket, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemModBucket, Archive.itemModBucket);
         
-        GameRegistry.registerItem(ModItems.foodPeanuts, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.foodPeanuts, Archive.foodPeanuts);
         
-        GameRegistry.registerItem(ModItems.itemPiePan, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemPiePan, Archive.itemPiePan);
         
-        GameRegistry.registerItem(ModItems.itemPumpkinMash, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemPumpkinMash, Archive.itemPumpkinMash);
         
-        GameRegistry.registerItem(ModItems.itemPoisonousPeanut, "Sparking Sapling");
+        GameRegistry.registerItem(ModItems.itemPoisonousPeanut, Archive.foodPeanuts + "Poison");
         
-     //   GameRegistry.registerItem(ModItems.PoisoousPeanut, "Sparking Sapling");
+        //GameRegistry.registerItem(ModItems.PoisoousPeanut, "Sparking Sapling");
         
-      //  GameRegistry.registerItem(ModItems.PosonousPeanut, "Sparking Sapling");
+        //GameRegistry.registerItem(ModItems.PosonousPeanut, "Sparking Sapling");
     }
 
 }

@@ -15,4 +15,5 @@
 	<entry key="item.CakeBatter.name">Bucket o' Batter</entry>
 	<entry key="item.CakePan.name">Cake Pan</entry>
 	<entry key="item.CakePanFull.name">Cake Pan Full</entry>
+	<entry key="itemGroup.tabBetterFood">Better Food</entry>
 </properties>
