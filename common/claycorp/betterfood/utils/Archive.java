@@ -9,7 +9,7 @@ public class Archive{
 
     // ********************************Locations********************************
     public static final String texture = id + ":";
-    public static final String lang = "/mods/" + "claycorp/" + id + "/lang/";
+    public static final String lang = "/mods/" + id + "/lang/";
     
     // ************************************Items**********************************
     public static final String itemflour = "itemFlour";
