@@ -16,8 +16,24 @@ public class RecipeHandler {
     public static void add() {
         Handler.logName("Adding Recipies");
 
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Dough), new Object[] {
+                 Item.bucketWater, ModItems.flour, ModItems.flour, ModItems.flour });
+        
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.Dough), new Object[] { "   ", "%%%", "###",
+            '#', Item.bucketWater, '%', ModItems.flour });
+        
         GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-                '#', Item.bucketWater, '%', ModItems.flour });
+            '#', Item.bucketWater, '%', ModItems.flour });
+        
+        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
+            '#', Item.bucketWater, '%', ModItems.flour });
+        
+        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
+            '#', Item.bucketWater, '%', ModItems.flour });
+        
+        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
+            '#', Item.bucketWater, '%', ModItems.flour });
+        
     }
 
     public static void delete() {

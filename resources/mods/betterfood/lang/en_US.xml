@@ -3,4 +3,10 @@
 <properties version="1.0">
 	<comment>English (US) Language File</comment>
 	<entry key="item.Flour.name">Flour</entry>
+	<entry key="item.BreadPan.name">Bread Pan</entry>
+	<entry key="item.ChocolateChips.name">Chocolate Chips</entry>
+	<entry key="item.CookieSheet.name">Cookie Sheet</entry>
+	<entry key="item.Dough.name">Dough</entry>
+	<entry key="item.PiePan.name">Pie Pan</entry>
+	<entry key="item.PumpkinMash.name">Pumpkin Mash</entry>
 </properties>
