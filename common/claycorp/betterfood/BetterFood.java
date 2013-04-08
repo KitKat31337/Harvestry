@@ -2,13 +2,11 @@ package claycorp.betterfood;
 
 import net.minecraft.block.Block;
 import claycorp.betterfood.items.ModItems;
-import claycorp.betterfood.ores.Aluminum;
 import claycorp.betterfood.utils.Config;
 import claycorp.betterfood.utils.Registry;
 import claycorp.betterfood.utils.handlers.Handler;
 import claycorp.betterfood.utils.handlers.LanguageHandler;
 import claycorp.betterfood.utils.handlers.RecipeHandler;
-import claycorp.betterfood.utils.handlers.WorldGenHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -16,7 +14,6 @@ import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Registry.id, name = Registry.name, version = Registry.ver)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)

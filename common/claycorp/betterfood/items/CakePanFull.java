@@ -1,16 +1,16 @@
 package claycorp.betterfood.items;
 
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import claycorp.betterfood.utils.Registry;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class BreadPan  extends Item {
+public class CakePanFull extends Item {
 
-    public BreadPan(int id) {
+    public CakePanFull(int id) {
         super(id);
         maxStackSize = 16;
         setNoRepair();

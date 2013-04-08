@@ -16,6 +16,12 @@ public class Registry {
     public static final String Dough = "Dough";
     public static final String PiePan = "PiePan";
     public static final String Aluminum = "Aluminum";
+    public static final String Peanuts = "Peanuts";
+    public static final String BreadpanwithDough = "BreadpanwithDough";
+    public static final String CakeBatter = "CakeBatter";
+    public static final String CakePan = "CakePan";
+    public static final String ModBucket = "ModBucket";
+    public static final String CakePanFull = "CakePanFull";
     
     // ********************************Locations********************************
     public static final String texture = id + ":";

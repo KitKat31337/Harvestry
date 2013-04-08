@@ -12,7 +12,7 @@ public class PiePan  extends Item {
 
     public PiePan(int id) {
         super(id);
-        maxStackSize = 64;
+        maxStackSize = 16;
         setNoRepair();
         setCreativeTab(CreativeTabs.tabFood);
     }

@@ -10,6 +10,12 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class Config {
 
     
+    public static int CakePanFullID;
+    public static int CakePanID;
+    public static int ModBucketID;
+    public static int CakeBatterID;
+    public static int BreadpanwithDoughID;
+    public static int PeanutsID;
     public static int flourID;
     public static int BreadPanID;
     public static int ChocolateChipsID;
@@ -45,7 +51,18 @@ public class Config {
                     Registry.PumpkinMash + " Item Id:").getInt();
             AluminumID = configuration.getItem(Registry.Aluminum + " Item", 200,
                     Registry.Aluminum + " Item Id:").getInt();
-
+            PeanutsID = configuration.getItem(Registry.Peanuts + " Item", 9007,
+                    Registry.Peanuts + " Item Id:").getInt();
+            BreadpanwithDoughID = configuration.getItem(Registry.BreadpanwithDough + " Item", 9008,
+                    Registry.BreadpanwithDough + " Item Id:").getInt();
+            CakeBatterID = configuration.getItem(Registry.CakeBatter + " Item", 9009,
+                    Registry.CakeBatter + " Item Id:").getInt();
+            ModBucketID = configuration.getItem(Registry.ModBucket + " Item", 9010,
+                    Registry.ModBucket + " Item Id:").getInt();
+            CakePanID = configuration.getItem(Registry.CakePan + " Item", 9011,
+                    Registry.CakePan + " Item Id:").getInt();
+            CakePanFullID = configuration.getItem(Registry.CakePanFull + " Item", 9012,
+                    Registry.CakePanFull + " Item Id:").getInt();
 
         }catch(Exception e){
             FMLLog.log(Level.SEVERE, e, Registry.name

@@ -9,4 +9,10 @@
 	<entry key="item.Dough.name">Dough</entry>
 	<entry key="item.PiePan.name">Pie Pan</entry>
 	<entry key="item.PumpkinMash.name">Pumpkin Mash</entry>
+	<entry key="item.Peanuts.name">Peanuts</entry>
+	<entry key="item.ModBucket.name">Empty Bucket o' Batter</entry>
+	<entry key="item.BreadpanwithDough.name">Pan of Bread Dough</entry>
+	<entry key="item.CakeBatter.name">Bucket o' Batter</entry>
+	<entry key="item.CakePan.name">Cake Pan</entry>
+	<entry key="item.CakePanFull.name">Cake Pan Full</entry>
 </properties>

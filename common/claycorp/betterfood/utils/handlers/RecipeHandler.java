@@ -19,14 +19,14 @@ public class RecipeHandler {
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Dough), new Object[] {
                  Item.bucketWater, ModItems.flour, ModItems.flour, ModItems.flour });
         
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.Dough), new Object[] { "   ", "%%%", "###",
-            '#', Item.bucketWater, '%', ModItems.flour });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.BreadpanwithDough), new Object[] {
+             ModItems.BreadPan, ModItems.Dough });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-            '#', Item.bucketWater, '%', ModItems.flour });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.CakeBatter), new Object[] { (
+             ModItems.ModBucket), ModItems.flour, ModItems.flour, ModItems.flour, Item.sugar, Item.egg});
         
-        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-            '#', Item.bucketWater, '%', ModItems.flour });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.CakePanFull), new Object[] { 
+            ModItems.CakeBatter, ModItems.CakePan});
         
         GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
             '#', Item.bucketWater, '%', ModItems.flour });

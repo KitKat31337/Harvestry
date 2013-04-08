@@ -2,14 +2,9 @@ package claycorp.betterfood.utils.handlers;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenMinable;
-
 import cpw.mods.fml.common.IWorldGenerator;
-
-import claycorp.betterfood.ores.Aluminum;
 
 
 /**

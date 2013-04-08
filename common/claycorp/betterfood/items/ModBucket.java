@@ -1,16 +1,15 @@
 package claycorp.betterfood.items;
 
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import claycorp.betterfood.utils.Registry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import cpw.mods.fml.relauncher.Side;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
-public class BreadPan  extends Item {
-
-    public BreadPan(int id) {
+public class ModBucket extends Item {
+    public ModBucket(int id) {
         super(id);
         maxStackSize = 16;
         setNoRepair();
@@ -18,7 +17,7 @@ public class BreadPan  extends Item {
     }
 
     public boolean doseContainerItemLeaveCrafingGrid(ItemStack par1ItemStack) {
-        return true;
+        return false;
     }
 
     @Override
