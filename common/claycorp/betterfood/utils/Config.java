@@ -9,7 +9,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class Config {
 
-   //Items
+    // Items
     public static int itemCakePanFullID;
     public static int itemCakePanID;
     public static int itemModBucketID;
@@ -23,9 +23,9 @@ public class Config {
     public static int itemPiePanID;
     public static int itemPumpkinMashID;
     public static int foodPeanutsID;
-   //Blocks
+    // Blocks
     public static int AluminumID;
-    
+
     public static void init(FMLPreInitializationEvent event) {
 
         File configFile = new File(event.getModConfigurationDirectory(), Archive.modName + ".cfg");
@@ -35,13 +35,11 @@ public class Config {
         try{
             config.load();
 
-          //  configItems(config);
+            configItems(config);
 
-         //   configBlocks(config);
+            configBlocks(config);
 
-        //    setDefaults();
-
-     //       configGeneral(config);
+            configGeneral(config);
 
         }catch(Exception e){
             FMLLog.log(Level.SEVERE, e, Archive.modName
@@ -50,21 +48,26 @@ public class Config {
             if (config.hasChanged())
                 config.save();
         }
-    } 
-    private satiatic void configItems(Configuration config) {
-        itemCakePanFullID = config.getItem("CakePanFull", 9001).getInt(9001);
-        itemCakePanID = config.getItem("CakePan", 9002).getInt(9002);
-        itemModBucketID = config.getItem("ModBucket", 9003).getInt(9003);
-        itemCakeBatterID = config.getItem("CakeBatter", 9004).getInt(9004);
-        itemBreadpanwithDoughID = config.getItem("BreadpanwithDough", 9005).getInt(9005);
-        itemflourID = config.getItem("flour", 9006).getInt(9006);
-        itemBreadPanID = config.getItem("BreadPan", 9007).getInt(9007);
-        itemChocolateChipsID = config.getItem("ChocolateChips", 9008).getInt(9008);
-        itemCookieSheetID = config.getItem("CookieSheet", 9009).getInt(9009);
-        itemDoughID = config.getItem("Dough", 9010).getInt(9010);
-        itemPiePanID = config.getItem("PiePan", 9011).getInt(9011);
-        itemPumpkinMashID = config.getItem("PumpkinMash", 9012).getInt(9012);
-
-
-        }
     }
+
+    private static void configItems(Configuration config) {
+        int iID = 9000;
+        itemCakePanFullID = config.getItem(Archive.itemCakePanFull, iID++).getInt();
+        itemCakePanID = config.getItem(Archive.itemCakePan, iID++).getInt();
+        itemModBucketID = config.getItem(Archive.itemModBucket, iID++).getInt();
+        itemCakeBatterID = config.getItem(Archive.itemCakeBatter, iID++).getInt();
+        itemBreadpanwithDoughID = config.getItem(Archive.itemBreadpanwithDough, iID++).getInt();
+        itemflourID = config.getItem(Archive.itemflour, iID++).getInt();
+        itemBreadPanID = config.getItem(Archive.itemBreadPan, iID++).getInt();
+        itemChocolateChipsID = config.getItem(Archive.itemChocolateChips, iID++).getInt();
+        itemCookieSheetID = config.getItem(Archive.itemCookieSheet, iID++).getInt();
+        itemDoughID = config.getItem(Archive.itemDough, iID++).getInt();
+        itemPiePanID = config.getItem(Archive.itemPiePan, iID++).getInt();
+        itemPumpkinMashID = config.getItem(Archive.itemPumpkinMash, iID++).getInt();
+    }
+
+    private static void configBlocks(Configuration config) {}
+
+    private static void configGeneral(Configuration config) {}
+
+}

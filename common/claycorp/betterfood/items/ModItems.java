@@ -1,9 +1,8 @@
 package claycorp.betterfood.items;
 
-import claycorp.betterfood.utils.Config;
-import claycorp.betterfood.utils.Archive;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import claycorp.betterfood.utils.Archive;
+import claycorp.betterfood.utils.Config;
 
 public class ModItems {
     public static Item itemCakePanFull;
@@ -20,50 +19,48 @@ public class ModItems {
     public static Item itemPumpkinMash;
     public static Item itemBreadPan;
     public static Item itemPoisonousPeanut;
-    
-    
+
     public static void init() {
-        
-        itemflour = new Flour(Config.itemflourID - 256)
-        .setUnlocalizedName(Archive.itemflour);
-        
-        itemBreadPan = new BreadPan(Config.itemBreadPanID - 256)
-        .setUnlocalizedName(Archive.itemBreadPan);
-        
-        itemChocolateChips = new ChocolateChips(Config.itemChocolateChipsID - 256)
-        .setUnlocalizedName(Archive.itemChocolateChips);
-        
-        itemCookieSheet = new CookieSheet(Config.itemCookieSheetID - 256)
-        .setUnlocalizedName(Archive.itemCookieSheet);
-        
-        itemDough = new Dough(Config.itemDoughID - 256)
-        .setUnlocalizedName(Archive.itemDough);
-        
-        itemPiePan = new PiePan(Config.itemPiePanID - 256)
-        .setUnlocalizedName(Archive.itemPiePan);
-        
-        itemPumpkinMash = new PumpkinMash(Config.itemPumpkinMashID - 256)
-        .setUnlocalizedName(Archive.itemPumpkinMash);
-        
+
+        itemflour = new ItemMod(Config.itemflourID - 256).setUnlocalizedName(Archive.itemflour)
+                .setMaxStackSize(64).setNoRepair();
+
+        itemBreadPan = new ItemMod(Config.itemBreadPanID - 256)
+                .setUnlocalizedName(Archive.itemBreadPan).setMaxStackSize(16).setNoRepair();
+
+        itemChocolateChips = new ItemMod(Config.itemChocolateChipsID - 256)
+                .setUnlocalizedName(Archive.itemChocolateChips).setMaxStackSize(64).setNoRepair();
+
+        itemCookieSheet = new ItemMod(Config.itemCookieSheetID - 256)
+                .setUnlocalizedName(Archive.itemCookieSheet).setMaxStackSize(64).setNoRepair();
+
+        itemDough = new ItemMod(Config.itemDoughID - 256).setUnlocalizedName(Archive.itemDough)
+                .setMaxStackSize(64).setNoRepair();
+
+        itemPiePan = new ItemMod(Config.itemPiePanID - 256).setUnlocalizedName(Archive.itemPiePan)
+                .setMaxStackSize(16).setNoRepair();
+
+        itemPumpkinMash = new ItemMod(Config.itemPumpkinMashID - 256)
+                .setUnlocalizedName(Archive.itemPumpkinMash).setMaxStackSize(64).setNoRepair();
+
         foodPeanuts = new Peanuts(Config.foodPeanutsID - 256, 1, 1)
-        .setUnlocalizedName(Archive.foodPeanuts);
-                
-        itemBreadpanwithDough = new BreadpanwithDough(Config.itemBreadpanwithDoughID - 256)
-        .setUnlocalizedName(Archive.itemBreadpanwithDough);   
-        
-        itemCakeBatter = new CakeBatter(Config.itemCakeBatterID - 256)
-        .setUnlocalizedName(Archive.itemCakeBatter);
-        
-        itemModBucket = new ModBucket(Config.itemModBucketID - 256)
-        .setUnlocalizedName(Archive.itemModBucket);
-        
-        itemCakePan = new CakePan(Config.itemCakePanID - 256)
-        .setUnlocalizedName(Archive.itemCakePan);
-        
-        itemCakePanFull = new CakePanFull(Config.itemCakePanFullID - 256)
-        .setUnlocalizedName(Archive.itemCakePanFull);
-        
-        
-        
+                .setUnlocalizedName(Archive.foodPeanuts);
+
+        itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID - 256)
+                .setUnlocalizedName(Archive.itemBreadpanwithDough).setMaxStackSize(16)
+                .setNoRepair();
+
+        itemCakeBatter = new ItemMod(Config.itemCakeBatterID - 256)
+                .setUnlocalizedName(Archive.itemCakeBatter).setMaxStackSize(64).setNoRepair();
+
+        itemModBucket = new ItemMod(Config.itemModBucketID - 256)
+                .setUnlocalizedName(Archive.itemModBucket).setMaxStackSize(16).setNoRepair();
+
+        itemCakePan = new ItemMod(Config.itemCakePanID - 256)
+                .setUnlocalizedName(Archive.itemCakePan).setMaxStackSize(16).setNoRepair();
+
+        itemCakePanFull = new ItemMod(Config.itemCakePanFullID - 256)
+                .setUnlocalizedName(Archive.itemCakePanFull).setMaxStackSize(16).setNoRepair();
+
     }
 }
