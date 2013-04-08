@@ -16,23 +16,23 @@ public class RecipeHandler {
     public static void add() {
         Handler.logName("Adding Recipies");
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Dough), new Object[] {
-                 Item.bucketWater, ModItems.flour, ModItems.flour, ModItems.flour });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemDough), new Object[] {
+                 Item.bucketWater, ModItems.itemflour, ModItems.itemflour, ModItems.itemflour });
         
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.BreadpanwithDough), new Object[] {
-             ModItems.BreadPan, ModItems.Dough });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemBreadpanwithDough), new Object[] {
+             ModItems.itemBreadPan, ModItems.itemDough });
         
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.CakeBatter), new Object[] { (
-             ModItems.ModBucket), ModItems.flour, ModItems.flour, ModItems.flour, Item.sugar, Item.egg});
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakeBatter), new Object[] { (
+             ModItems.itemModBucket), ModItems.itemflour, ModItems.itemflour, ModItems.itemflour, Item.sugar, Item.egg});
         
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.CakePanFull), new Object[] { 
-            ModItems.CakeBatter, ModItems.CakePan});
-        
-        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-            '#', Item.bucketWater, '%', ModItems.flour });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakePanFull), new Object[] { 
+            ModItems.itemCakeBatter, ModItems.itemCakePan});
         
         GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-            '#', Item.bucketWater, '%', ModItems.flour });
+            '#', Item.bucketWater, '%', ModItems.itemflour });
+        
+        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
+            '#', Item.bucketWater, '%', ModItems.itemflour });
         
     }
 

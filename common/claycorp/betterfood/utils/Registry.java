@@ -1,36 +1,55 @@
 package claycorp.betterfood.utils;
 
+import claycorp.betterfood.items.ModItems;
+import claycorp.betterfood.utils.handlers.RecipeHandler;
+import cpw.mods.fml.common.registry.GameRegistry;
+
 public class Registry {
+    public static void register() {
 
-    // ************************************Mod**********************************
-    public static final String id = "betterfood";
-    public static final String name = "Better Food Mod";
-    public static final String ver = "0.1.0";
+        registerBlocks();
 
-    // ************************************Items**********************************
-    public static final String flour = "Flour";
-    public static final String PumpkinMash = "PumpkinMash";
-    public static final String BreadPan = "BreadPan";
-    public static final String ChocolateChips = "ChocolateChips";
-    public static final String CookieSheet = "CookieSheet";
-    public static final String Dough = "Dough";
-    public static final String PiePan = "PiePan";
-    public static final String Aluminum = "Aluminum";
-    public static final String Peanuts = "Peanuts";
-    public static final String BreadpanwithDough = "BreadpanwithDough";
-    public static final String CakeBatter = "CakeBatter";
-    public static final String CakePan = "CakePan";
-    public static final String ModBucket = "ModBucket";
-    public static final String CakePanFull = "CakePanFull";
-    
-    // ********************************Locations********************************
-    public static final String texture = id + ":";
-    public static final String lang = "/mods/" + id + "/lang/";
+        registerItems();
 
-    // *********************************Languages***********************************
-    public static String[] langFiles = {
-            // US Local
-            lang + "en_US.xml",
-            // ES Local
-            lang + "es_ES.xml" };
+        RecipeHandler.add();
+    }
+
+    private static void registerBlocks() {
+
+    //    GameRegistry.registerBlock(ModBlocks.portalObsidian, "Obsidiatal");
+    }
+
+    private static void registerItems() {
+
+        GameRegistry.registerItem(ModItems.itemBreadPan, "Boom Stick");
+
+        GameRegistry.registerItem(ModItems.itemBreadpanwithDough, "Phantom Sword");
+
+        GameRegistry.registerItem(ModItems.itemCakeBatter, "Lucidity");
+
+        GameRegistry.registerItem(ModItems.itemCakePan, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.itemCakePanFull, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.itemChocolateChips, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.itemCookieSheet, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.itemDough, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.itemModBucket, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.foodPeanuts, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.itemPiePan, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.itemPumpkinMash, "Sparking Sapling");
+        
+        GameRegistry.registerItem(ModItems.itemPoisonousPeanut, "Sparking Sapling");
+        
+     //   GameRegistry.registerItem(ModItems.PoisoousPeanut, "Sparking Sapling");
+        
+      //  GameRegistry.registerItem(ModItems.PosonousPeanut, "Sparking Sapling");
+    }
+
 }

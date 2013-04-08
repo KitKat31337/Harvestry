@@ -1,6 +1,6 @@
 package claycorp.betterfood.utils.exeptions;
 
-import claycorp.betterfood.utils.Registry;
+import claycorp.betterfood.utils.Archive;
 
 public class Exeptions extends RuntimeException {
     
@@ -17,7 +17,7 @@ public class Exeptions extends RuntimeException {
 
     public String toString() {
         return "The "
-                + Registry.name
+                + Archive.modName
                 + " has a Problem.\nIT'S NOT MY FAULT! Below is how to fix it.\n"
                 + this.mError
                 + "\nDO NOT COME TO ME WITH THIS. YOU CAUSED IT YOURSELF, AND I TOLD YOU HOW TO FIX IT!";

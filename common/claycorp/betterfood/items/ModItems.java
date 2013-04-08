@@ -1,67 +1,67 @@
 package claycorp.betterfood.items;
 
 import claycorp.betterfood.utils.Config;
-import claycorp.betterfood.utils.Registry;
+import claycorp.betterfood.utils.Archive;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 public class ModItems {
-    public static Item CakePanFull;
-    public static Item CakePan;
-    public static Item ModBucket;
-    public static Item CakeBatter;
-    public static Item BreadpanwithDough;
-    public static Item Peanuts;
-    public static Item flour;
-    public static Item ChocolateChips;
-    public static Item CookieSheet;
-    public static Item Dough;
-    public static Item PiePan;
-    public static Item PumpkinMash;
-    public static Item BreadPan;
-    public static Item PoisonousPeanut;
+    public static Item itemCakePanFull;
+    public static Item itemCakePan;
+    public static Item itemModBucket;
+    public static Item itemCakeBatter;
+    public static Item itemBreadpanwithDough;
+    public static Item foodPeanuts;
+    public static Item itemflour;
+    public static Item itemChocolateChips;
+    public static Item itemCookieSheet;
+    public static Item itemDough;
+    public static Item itemPiePan;
+    public static Item itemPumpkinMash;
+    public static Item itemBreadPan;
+    public static Item itemPoisonousPeanut;
     
     
     public static void init() {
         
-        flour = new Flour(Config.flourID - 256)
-        .setUnlocalizedName(Registry.flour);
+        itemflour = new Flour(Config.itemflourID - 256)
+        .setUnlocalizedName(Archive.itemflour);
         
-        BreadPan = new BreadPan(Config.BreadPanID - 256)
-        .setUnlocalizedName(Registry.BreadPan);
+        itemBreadPan = new BreadPan(Config.itemBreadPanID - 256)
+        .setUnlocalizedName(Archive.itemBreadPan);
         
-        ChocolateChips = new ChocolateChips(Config.ChocolateChipsID - 256)
-        .setUnlocalizedName(Registry.ChocolateChips);
+        itemChocolateChips = new ChocolateChips(Config.itemChocolateChipsID - 256)
+        .setUnlocalizedName(Archive.itemChocolateChips);
         
-        CookieSheet = new CookieSheet(Config.CookieSheetID - 256)
-        .setUnlocalizedName(Registry.CookieSheet);
+        itemCookieSheet = new CookieSheet(Config.itemCookieSheetID - 256)
+        .setUnlocalizedName(Archive.itemCookieSheet);
         
-        Dough = new Dough(Config.DoughID - 256)
-        .setUnlocalizedName(Registry.Dough);
+        itemDough = new Dough(Config.itemDoughID - 256)
+        .setUnlocalizedName(Archive.itemDough);
         
-        PiePan = new PiePan(Config.PiePanID - 256)
-        .setUnlocalizedName(Registry.PiePan);
+        itemPiePan = new PiePan(Config.itemPiePanID - 256)
+        .setUnlocalizedName(Archive.itemPiePan);
         
-        PumpkinMash = new PumpkinMash(Config.PumpkinMashID - 256)
-        .setUnlocalizedName(Registry.PumpkinMash);
+        itemPumpkinMash = new PumpkinMash(Config.itemPumpkinMashID - 256)
+        .setUnlocalizedName(Archive.itemPumpkinMash);
         
-        Peanuts = new Peanuts(Config.PeanutsID - 256, 1, 1)
-        .setUnlocalizedName(Registry.Peanuts);
+        foodPeanuts = new Peanuts(Config.foodPeanutsID - 256, 1, 1)
+        .setUnlocalizedName(Archive.foodPeanuts);
                 
-        BreadpanwithDough = new BreadpanwithDough(Config.BreadpanwithDoughID - 256)
-        .setUnlocalizedName(Registry.BreadpanwithDough);   
+        itemBreadpanwithDough = new BreadpanwithDough(Config.itemBreadpanwithDoughID - 256)
+        .setUnlocalizedName(Archive.itemBreadpanwithDough);   
         
-        CakeBatter = new CakeBatter(Config.CakeBatterID - 256)
-        .setUnlocalizedName(Registry.CakeBatter);
+        itemCakeBatter = new CakeBatter(Config.itemCakeBatterID - 256)
+        .setUnlocalizedName(Archive.itemCakeBatter);
         
-        ModBucket = new ModBucket(Config.ModBucketID - 256)
-        .setUnlocalizedName(Registry.ModBucket);
+        itemModBucket = new ModBucket(Config.itemModBucketID - 256)
+        .setUnlocalizedName(Archive.itemModBucket);
         
-        CakePan = new CakePan(Config.CakePanID - 256)
-        .setUnlocalizedName(Registry.CakePan);
+        itemCakePan = new CakePan(Config.itemCakePanID - 256)
+        .setUnlocalizedName(Archive.itemCakePan);
         
-        CakePanFull = new CakePanFull(Config.CakePanFullID - 256)
-        .setUnlocalizedName(Registry.CakePanFull);
+        itemCakePanFull = new CakePanFull(Config.itemCakePanFullID - 256)
+        .setUnlocalizedName(Archive.itemCakePanFull);
         
         
         

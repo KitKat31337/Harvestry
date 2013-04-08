@@ -1,6 +1,6 @@
 package claycorp.betterfood.items;
 
-import claycorp.betterfood.utils.Registry;
+import claycorp.betterfood.utils.Archive;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -24,7 +24,7 @@ public class ModBucket extends Item {
     @SideOnly(Side.CLIENT)
     public void updateIcons(IconRegister iconRegister) {
 
-        iconIndex = iconRegister.registerIcon(Registry.texture
+        iconIndex = iconRegister.registerIcon(Archive.texture
                 + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 }

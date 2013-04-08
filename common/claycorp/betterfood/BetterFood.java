@@ -3,7 +3,7 @@ package claycorp.betterfood;
 import net.minecraft.block.Block;
 import claycorp.betterfood.items.ModItems;
 import claycorp.betterfood.utils.Config;
-import claycorp.betterfood.utils.Registry;
+import claycorp.betterfood.utils.Archive;
 import claycorp.betterfood.utils.handlers.Handler;
 import claycorp.betterfood.utils.handlers.LanguageHandler;
 import claycorp.betterfood.utils.handlers.RecipeHandler;
@@ -15,13 +15,13 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid = Registry.id, name = Registry.name, version = Registry.ver)
+@Mod(modid = Archive.id, name = Archive.modName, version = Archive.ver)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class BetterFood {
 
     public static Block oreAluminum;
     
-    @Instance(Registry.id)
+    @Instance(Archive.id)
     public static BetterFood instance;
 
     @PreInit
