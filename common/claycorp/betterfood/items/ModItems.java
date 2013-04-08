@@ -22,45 +22,49 @@ public class ModItems {
 
     public static void init() {
 
-        itemflour = new ItemMod(Config.itemflourID - 256).setUnlocalizedName(Archive.itemflour)
-                .setMaxStackSize(64).setNoRepair();
+        itemflour = new ItemMod(Config.itemflourID - 256)
+            .setUnlocalizedName(Archive.itemflour);
 
         itemBreadPan = new ItemMod(Config.itemBreadPanID - 256)
-                .setUnlocalizedName(Archive.itemBreadPan).setMaxStackSize(16).setNoRepair();
+            .setUnlocalizedName(Archive.itemBreadPan);
 
         itemChocolateChips = new ItemMod(Config.itemChocolateChipsID - 256)
-                .setUnlocalizedName(Archive.itemChocolateChips).setMaxStackSize(64).setNoRepair();
+            .setUnlocalizedName(Archive.itemChocolateChips);
 
         itemCookieSheet = new ItemMod(Config.itemCookieSheetID - 256)
-                .setUnlocalizedName(Archive.itemCookieSheet).setMaxStackSize(64).setNoRepair();
+                .setUnlocalizedName(Archive.itemCookieSheet);
 
-        itemDough = new ItemMod(Config.itemDoughID - 256).setUnlocalizedName(Archive.itemDough)
-                .setMaxStackSize(64).setNoRepair();
+        itemDough = new ItemMod(Config.itemDoughID - 256)
+            .setUnlocalizedName(Archive.itemDough);
 
-        itemPiePan = new ItemMod(Config.itemPiePanID - 256).setUnlocalizedName(Archive.itemPiePan)
-                .setMaxStackSize(16).setNoRepair();
+        itemPiePan = new ItemMod(Config.itemPiePanID - 256)
+            .setUnlocalizedName(Archive.itemPiePan)
+            .setMaxStackSize(16);
 
         itemPumpkinMash = new ItemMod(Config.itemPumpkinMashID - 256)
-                .setUnlocalizedName(Archive.itemPumpkinMash).setMaxStackSize(64).setNoRepair();
+            .setUnlocalizedName(Archive.itemPumpkinMash);
 
         foodPeanuts = new Peanuts(Config.foodPeanutsID - 256, 1, 1)
-                .setUnlocalizedName(Archive.foodPeanuts);
+            .setUnlocalizedName(Archive.foodPeanuts);
 
         itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID - 256)
-                .setUnlocalizedName(Archive.itemBreadpanwithDough).setMaxStackSize(16)
-                .setNoRepair();
+            .setUnlocalizedName(Archive.itemBreadpanwithDough)
+            .setMaxStackSize(16);
 
         itemCakeBatter = new ItemMod(Config.itemCakeBatterID - 256)
-                .setUnlocalizedName(Archive.itemCakeBatter).setMaxStackSize(64).setNoRepair();
+            .setUnlocalizedName(Archive.itemCakeBatter);
 
         itemModBucket = new ItemMod(Config.itemModBucketID - 256)
-                .setUnlocalizedName(Archive.itemModBucket).setMaxStackSize(16).setNoRepair();
+            .setUnlocalizedName(Archive.itemModBucket)
+            .setMaxStackSize(16);
 
         itemCakePan = new ItemMod(Config.itemCakePanID - 256)
-                .setUnlocalizedName(Archive.itemCakePan).setMaxStackSize(16).setNoRepair();
+            .setUnlocalizedName(Archive.itemCakePan)
+            .setMaxStackSize(16);
 
         itemCakePanFull = new ItemMod(Config.itemCakePanFullID - 256)
-                .setUnlocalizedName(Archive.itemCakePanFull).setMaxStackSize(16).setNoRepair();
+            .setUnlocalizedName(Archive.itemCakePanFull)
+            .setMaxStackSize(16);
 
     }
 }
