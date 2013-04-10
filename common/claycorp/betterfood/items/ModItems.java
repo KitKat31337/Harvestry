@@ -43,10 +43,10 @@ public class ModItems {
                 .setUnlocalizedName(Archive.itemPumpkinMash);
 
         foodPeanuts = new Peanuts(Config.foodPeanutsID - 256, 1, 1)
-            .setUnlocalizedName(Archive.foodPeanuts);
-        
+                .setUnlocalizedName(Archive.foodPeanuts);
+
         foodScrambledEggs = new Peanuts(Config.foodScrambledEggsID - 256, 1, 1)
-        .setUnlocalizedName(Archive.foodScrambledEggs);
+                .setUnlocalizedName(Archive.foodScrambledEggs);
 
         itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID - 256)
                 .setUnlocalizedName(Archive.itemBreadpanwithDough).setMaxStackSize(16);

@@ -100,7 +100,8 @@ public class Config {
     private static void configGeneral(Configuration config) {
         oreDepthModifier = config.get(gen, "Depth Modifier", 32).getInt();
         oreDensityModifier = config.get(gen, "DensityModifier", 64).getInt();
-        enableWorldGenAluminum = config.get(gen, "Enable WorldGen of Aluminum", true).getBoolean(true);
+        enableWorldGenAluminum = config.get(gen, "Enable WorldGen of Aluminum", true).getBoolean(
+                true);
     }
 
 }
