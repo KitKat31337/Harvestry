@@ -81,7 +81,7 @@ public class ModItems {
         itemGrindStone = new ItemMod(Config.itemGrindStoneID - 256)
                 .setUnlocalizedName(Archive.itemGrindStone);
 
-        itemGrindStones = new ItemMod(Config.itemGrindStonesID - 256, itemGrindStones, false, 8)
+        itemGrindStones = new ItemMod(Config.itemGrindStonesID - 256, false, 8)
                 .setUnlocalizedName(Archive.itemGrindStones).setNoRepair();
     }
 }

@@ -10,8 +10,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemMod extends Item {
 
-    private boolean hasContainer = false;
-    private boolean leaveCrafting = true;
+    private static boolean hasContainer = false;
+    private static boolean leaveCrafting = true;
 
     /**
      * Creates an Item Instance
@@ -29,17 +29,15 @@ public class ItemMod extends Item {
      * 
      * @param id
      *            The Item ID
-     * @param containerItem
-     *            The Container Item (The Item to return after crafting)
      * @param leave
      *            Weather the Item leaves the Crafting Grid.
      * @param maxDamage
      *            The Maximum amount of uses
      */
-    public ItemMod(int id, Item containerItem, boolean leave, int maxDamage) {
+    public ItemMod(int id, boolean leave, int maxDamage) {
         super(id);
         this.setCreativeTab(BetterFood.tabBetterFood);
-        this.setContainerItem(containerItem);
+        this.setContainerItem(this);
         hasContainer = true;
         leave = leaveCrafting;
         setMaxDamage(maxDamage);
