@@ -30,6 +30,7 @@ public class Config {
     public static int itemAluminumSheetID;
     public static int itemRawAluminumID;
     public static int itemGrindStoneID;
+    public static int itemGrindStonesID;
 
 
     // Food

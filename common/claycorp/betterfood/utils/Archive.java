@@ -30,6 +30,7 @@ public class Archive {
     public static final String itemAluminumSheet = "itemAluminumSheet";
     public static final String itemRawAluminum = "itemRawAluminum";
     public static final String itemGrindStone = "itemGrindStone";
+    public static final String itemGrindStones = "itemGrindStones";
 
 
     // **********************************Blocks*************************************

@@ -24,6 +24,7 @@ public class ModItems {
     public static Item itemAluminumSheet;
     public static Item itemRawAluminum;
     public static Item itemGrindStone;
+    public static Item itemGrindStones;
 
     public static void init() {
 
@@ -86,6 +87,9 @@ public class ModItems {
         //Not fully implemented
         itemGrindStone = new ItemMod(Config.itemGrindStoneID - 256)
                 .setUnlocalizedName(Archive.itemGrindStone);
+        
+        itemGrindStones = new ItemMod(Config.itemGrindStonesID - 256)
+        .setUnlocalizedName(Archive.itemGrindStones);
 
                 
 

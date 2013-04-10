@@ -46,6 +46,9 @@ public class RecipeHandler {
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemGrindStone), new Object[] {"SSS", "SLS", "SSS",
             'S', Block.stone, 'L', Block.wood });
         
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemGrindStones), new Object[] {
+            ModItems.itemGrindStone, ModItems.itemGrindStone });
+        
 
     }
 
@@ -56,7 +59,7 @@ public class RecipeHandler {
         List<String> noCraft = new ArrayList<String>();
 
         // Any IDs to delete do next to the 297
-        noCraft = Arrays.asList(new String[] { "297" });
+        noCraft = Arrays.asList(new String[] { "297", "354", "357", "400" });
 
         int id;
         int meta;
