@@ -1,10 +1,10 @@
 package claycorp.betterfood.utils.handlers;
 
-import claycorp.betterfood.utils.exeptions.Exeptions;
 import claycorp.betterfood.utils.Archive;
+import claycorp.betterfood.utils.exeptions.Exeptions;
 
 public class Handler {
-    
+
     private static boolean IsLoaded = false;
 
     // *******************************Mod State Check*************************
@@ -29,7 +29,7 @@ public class Handler {
     public static void UnLoadMod() {
         IsLoaded = false;
     }
-    
+
     public static void log(Object s) {
         System.out.println(s);
     }

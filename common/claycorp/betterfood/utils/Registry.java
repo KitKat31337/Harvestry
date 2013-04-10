@@ -9,7 +9,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Registry {
 
     private static WorldGenHandler worldGen = new WorldGenHandler();
-    
+
     public static void register() {
 
         registerBlocks();
