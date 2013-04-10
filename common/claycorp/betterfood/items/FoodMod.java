@@ -10,7 +10,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class FoodMod extends ItemFood {
 
     public FoodMod(int id, int healAmount, float saturationModifier) {
-        super(id, healAmount, saturationModifier, true);
+        super(id - 256, healAmount, saturationModifier, true);
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
 

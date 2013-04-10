@@ -20,12 +20,12 @@ public class ItemMod extends Item {
      *            The Item ID
      */
     public ItemMod(int id) {
-        super(id);
+        super(id - 256);
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
-
+    
     /**
-     * Creates an Item Instance
+     * Creates an Item Instance and Sets the container Item to Itself.
      * 
      * @param id
      *            The Item ID
@@ -35,12 +35,13 @@ public class ItemMod extends Item {
      *            The Maximum amount of uses
      */
     public ItemMod(int id, boolean leave, int maxDamage) {
-        super(id);
+        super(id - 256);
+        this.setMaxStackSize(1);
         this.setCreativeTab(BetterFood.tabBetterFood);
         this.setContainerItem(this);
         hasContainer = true;
-        leave = leaveCrafting;
-        setMaxDamage(maxDamage);
+        leaveCrafting = leave;
+        setMaxDamage(maxDamage - 1);
     }
 
     @Override
