@@ -10,11 +10,25 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockMod extends Block {
 
+    /**
+     * Creates a new Block Instance.
+     * 
+     * @param ID
+     *            The Block ID
+     */
     public BlockMod(int ID) {
         super(ID, Material.ground); // Parameters: Block ID
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
 
+    /**
+     * Creates a new Block Instance.
+     * 
+     * @param ID
+     *            The Block ID
+     * @param material
+     *            The Material
+     */
     public BlockMod(int ID, Material material) {
         super(ID, material); // Parameters: Block ID, Block material
         this.setCreativeTab(BetterFood.tabBetterFood);

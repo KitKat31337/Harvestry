@@ -14,7 +14,7 @@ public class ItemMod extends Item {
     private static boolean leaveCrafting = true;
 
     /**
-     * Creates an Item Instance
+     * Creates an Item Instance.
      * 
      * @param id
      *            The Item ID
@@ -23,7 +23,7 @@ public class ItemMod extends Item {
         super(id - 256);
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
-    
+
     /**
      * Creates an Item Instance and Sets the container Item to Itself.
      * 

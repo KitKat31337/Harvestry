@@ -30,8 +30,7 @@ public class ModItems {
 
         itemflour = new ItemMod(Config.itemflourID).setUnlocalizedName(Archive.itemflour);
 
-        itemBreadPan = new ItemMod(Config.itemBreadPanID)
-                .setUnlocalizedName(Archive.itemBreadPan);
+        itemBreadPan = new ItemMod(Config.itemBreadPanID).setUnlocalizedName(Archive.itemBreadPan);
 
         itemChocolateChips = new ItemMod(Config.itemChocolateChipsID)
                 .setUnlocalizedName(Archive.itemChocolateChips);
@@ -53,8 +52,8 @@ public class ModItems {
         foodScrambledEggs = new FoodMod(Config.foodScrambledEggsID, 1, 1)
                 .setUnlocalizedName(Archive.foodScrambledEggs);
 
-        itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID)
-                .setUnlocalizedName(Archive.itemBreadpanwithDough).setMaxStackSize(16);
+        itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID).setUnlocalizedName(
+                Archive.itemBreadpanwithDough).setMaxStackSize(16);
 
         itemCakeBatter = new ItemMod(Config.itemCakeBatterID)
                 .setUnlocalizedName(Archive.itemCakeBatter);
@@ -62,8 +61,8 @@ public class ModItems {
         itemModBucket = new ItemMod(Config.itemModBucketID).setUnlocalizedName(
                 Archive.itemModBucket).setMaxStackSize(16);
 
-        itemCakePan = new ItemMod(Config.itemCakePanID).setUnlocalizedName(
-                Archive.itemCakePan).setMaxStackSize(16);
+        itemCakePan = new ItemMod(Config.itemCakePanID).setUnlocalizedName(Archive.itemCakePan)
+                .setMaxStackSize(16);
 
         itemCakePanFull = new ItemMod(Config.itemCakePanFullID).setUnlocalizedName(
                 Archive.itemCakePanFull).setMaxStackSize(16);
@@ -81,7 +80,7 @@ public class ModItems {
         itemGrindStone = new ItemMod(Config.itemGrindStoneID)
                 .setUnlocalizedName(Archive.itemGrindStone);
 
-        itemGrindStones = new ItemMod(Config.itemGrindStonesID, false, 8)
-                .setUnlocalizedName(Archive.itemGrindStones).setNoRepair();
+        itemGrindStones = new ItemMod(Config.itemGrindStonesID, false, 8).setUnlocalizedName(
+                Archive.itemGrindStones).setNoRepair();
     }
 }
