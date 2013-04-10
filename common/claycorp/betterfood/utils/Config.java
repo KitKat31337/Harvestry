@@ -8,9 +8,7 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class Config {
-
     
-
     private static String gen = "General";
 
     // Items

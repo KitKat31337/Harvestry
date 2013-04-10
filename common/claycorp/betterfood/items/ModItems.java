@@ -50,10 +50,10 @@ public class ModItems {
         itemPumpkinMash = new ItemMod(Config.itemPumpkinMashID - 256)
                 .setUnlocalizedName(Archive.itemPumpkinMash);
 
-        foodPeanuts = new Peanuts(Config.foodPeanutsID - 256, 1, 1)
+        foodPeanuts = new FoodMod(Config.foodPeanutsID - 256, 1, 1)
                 .setUnlocalizedName(Archive.foodPeanuts);
 
-        foodScrambledEggs = new Peanuts(Config.foodScrambledEggsID - 256, 1, 1)
+        foodScrambledEggs = new FoodMod(Config.foodScrambledEggsID - 256, 1, 1)
                 .setUnlocalizedName(Archive.foodScrambledEggs);
 
         itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID - 256)
@@ -88,7 +88,7 @@ public class ModItems {
         itemGrindStone = new ItemMod(Config.itemGrindStoneID - 256)
                 .setUnlocalizedName(Archive.itemGrindStone);
         
-        itemGrindStones = new ItemMod(Config.itemGrindStonesID - 256)
+        itemGrindStones = new ItemMod(Config.itemGrindStonesID - 256, itemGrindStones, true)
         .setUnlocalizedName(Archive.itemGrindStones);
 
                 

@@ -7,9 +7,9 @@ import claycorp.betterfood.utils.Archive;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Peanuts extends ItemFood {
+public class FoodMod extends ItemFood {
 
-    public Peanuts(int id, int healAmount, float saturationModifier) {
+    public FoodMod(int id, int healAmount, float saturationModifier) {
         super(id, healAmount, saturationModifier, true);
         this.setCreativeTab(BetterFood.tabBetterFood);
     }

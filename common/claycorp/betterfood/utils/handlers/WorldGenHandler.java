@@ -16,7 +16,7 @@ public class WorldGenHandler implements IWorldGenerator {
     public void generate(Random random, int chunkX, int chunkZ, World world,
             IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 
-        int sealevel = world.provider.getAverageGroundLevel() + 1 + Config.oreDepthModifier;
+        /*int sealevel = world.provider.getAverageGroundLevel() + 1 + Config.oreDepthModifier;
         if ((Config.enableWorldGenAluminum) && (ModBlocks.oreAluminum != null)){
             double oreDepthMultiplier = (15 * sealevel) / 64;
             int scale = (int) Math.round((random.nextGaussian() * Math.sqrt(oreDepthMultiplier))
@@ -30,6 +30,6 @@ public class WorldGenHandler implements IWorldGenerator {
                 new WorldGenMinable(ModBlocks.oreAluminum.blockID, 4 + Config.oreDensityModifier,
                         Block.stone.blockID).generate(world, random, a, b, c);
             }
-        }
+        }*/
     }
 }
