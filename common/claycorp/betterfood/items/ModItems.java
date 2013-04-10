@@ -32,7 +32,7 @@ public class ModItems {
             .setUnlocalizedName(Archive.itemChocolateChips);
 
         itemCookieSheet = new ItemMod(Config.itemCookieSheetID - 256)
-                .setUnlocalizedName(Archive.itemCookieSheet);
+            .setUnlocalizedName(Archive.itemCookieSheet);
 
         itemDough = new ItemMod(Config.itemDoughID - 256)
             .setUnlocalizedName(Archive.itemDough);
@@ -65,6 +65,5 @@ public class ModItems {
         itemCakePanFull = new ItemMod(Config.itemCakePanFullID - 256)
             .setUnlocalizedName(Archive.itemCakePanFull)
             .setMaxStackSize(16);
-
     }
 }

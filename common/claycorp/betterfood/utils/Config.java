@@ -24,7 +24,8 @@ public class Config {
     public static int itemPumpkinMashID;
     public static int foodPeanutsID;
     // Blocks
-    public static int AluminumID;
+    public static int blockAluminumID;
+    public static int oreAluminumID;
 
     public static void init(FMLPreInitializationEvent event) {
 
@@ -67,7 +68,10 @@ public class Config {
         foodPeanutsID = config.getItem(Archive.foodPeanuts, iID++).getInt();
     }
 
-    private static void configBlocks(Configuration config) {}
+    private static void configBlocks(Configuration config) {
+        int iID = 2000;
+        oreAluminumID = config.getBlock(Archive.oreAluminum, iID++).getInt();
+    }
 
     private static void configGeneral(Configuration config) {}
 
