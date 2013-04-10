@@ -82,6 +82,7 @@ public class ModItems {
         
         itemRawAluminum = new ItemMod(Config.itemRawAluminumID - 256)
                 .setUnlocalizedName(Archive.itemRawAluminum);
+
         //Not fully implemented
         itemGrindStone = new ItemMod(Config.itemGrindStoneID - 256)
                 .setUnlocalizedName(Archive.itemGrindStone);

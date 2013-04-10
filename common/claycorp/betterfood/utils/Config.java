@@ -45,7 +45,6 @@ public class Config {
     public static boolean enableWorldGenAluminum;
 
 
-
     public static void init(FMLPreInitializationEvent event) {
 
         File configFile = new File(event.getModConfigurationDirectory(), Archive.modName + ".cfg");
