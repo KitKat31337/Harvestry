@@ -10,28 +10,55 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemMod extends Item {
 
-    private boolean container;
+    private boolean hasContainer = false;
+    private boolean leaveCrafting = true;
 
+    /**
+     * Creates an Item Instance
+     * 
+     * @param id
+     *            The Item ID
+     */
     public ItemMod(int id) {
         super(id);
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
 
-    public ItemMod(int id, Item container, boolean getContainer) {
+    /**
+     * Creates an Item Instance
+     * 
+     * @param id
+     *            The Item ID
+     * @param containerItem
+     *            The Container Item (The Item to return after crafting)
+     * @param leave
+     *            Weather the Item leaves the Crafting Grid.
+     * @param maxDamage
+     *            The Maximum amount of uses
+     */
+    public ItemMod(int id, Item containerItem, boolean leave, int maxDamage) {
         super(id);
         this.setCreativeTab(BetterFood.tabBetterFood);
-        this.setContainerItem(container);
+        this.setContainerItem(containerItem);
+        hasContainer = true;
+        leave = leaveCrafting;
+        setMaxDamage(maxDamage);
     }
 
     @Override
     public ItemStack getContainerItemStack(ItemStack itemStack) {
-        if (container){
-            
+        if (hasContainer){
+
             itemStack.setItemDamage(itemStack.getItemDamage() + 1);
 
             return itemStack;
         }
         return null;
+    }
+
+    @Override
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack par1ItemStack) {
+        return leaveCrafting;
     }
 
     @Override
