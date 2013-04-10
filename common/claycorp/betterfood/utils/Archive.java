@@ -1,6 +1,6 @@
 package claycorp.betterfood.utils;
 
-public class Archive{
+public class Archive {
 
     // ************************************Mod*************************************
     public static final String id = "betterfood";
@@ -10,7 +10,7 @@ public class Archive{
     // ********************************Locations***********************************
     public static final String texture = id + ":";
     public static final String lang = "/mods/" + id + "/lang/";
-    
+
     // ************************************Items***********************************
     public static final String itemflour = "itemFlour";
     public static final String itemPumpkinMash = "itemPumpkinMash";
@@ -26,7 +26,7 @@ public class Archive{
     public static final String itemCakePan = "itemCakePan";
     public static final String itemModBucket = "itemModBucket";
     public static final String itemCakePanFull = "itemCakePanFull";
-    
+
     // **********************************Blocks*************************************
     public static final String oreAluminum = "oreAluminum";
 

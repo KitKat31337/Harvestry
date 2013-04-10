@@ -61,7 +61,7 @@ public class RecipeHandler {
         for (String s : noCraft){
             id = meta = 0;
             String[] tmp = s.split(":");
-            if (tmp != null && tmp.length > 0){
+            if ((tmp != null) && (tmp.length > 0)){
                 try{
                     id = Integer.parseInt(tmp[0]);
                     if (tmp.length > 1){
@@ -94,9 +94,9 @@ public class RecipeHandler {
                 for (ItemStack bannedItem : items){
                     // Remove the item if the ID & meta match, OR if the IDs
                     // match, and banned meta is -1.
-                    if (result.itemID == bannedItem.itemID
-                            && (bannedItem.getItemDamage() == -1 || result.getItemDamage() == bannedItem
-                                    .getItemDamage())){
+                    if ((result.itemID == bannedItem.itemID)
+                            && ((bannedItem.getItemDamage() == -1) || (result.getItemDamage() == bannedItem
+                                    .getItemDamage()))){
                         minecraftRecipes.remove(i);
                         Handler.logName("Recipes removed for item " + bannedItem.itemID);
                         --i;

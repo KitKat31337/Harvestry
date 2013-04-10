@@ -9,6 +9,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class Config {
 
+    private static String gen = "General";
+
     // Items
     public static int itemCakePanFullID;
     public static int itemCakePanID;
@@ -22,11 +24,18 @@ public class Config {
     public static int itemDoughID;
     public static int itemPiePanID;
     public static int itemPumpkinMashID;
+
     // Food
     public static int foodPeanutsID;
     public static int foodScrambledEggsID;
+
     // Ores
     public static int oreAluminumID;
+
+    // World Generation Stuff
+    public static int oreDepthModifier;
+    public static int oreDensityModifier;
+    public static boolean enableWorldGenAluminum;
 
     public static void init(FMLPreInitializationEvent event) {
 
@@ -37,22 +46,22 @@ public class Config {
         try{
             config.load();
 
+            // Creates the configurations for Items
             configItems(config);
 
-            configFood(config);
-
+            // Creates the configurations for Ores
             configOres(config);
 
-            configBlocks(config);
-
+            // Creates the configurations for other Stuff
             configGeneral(config);
 
         }catch(Exception e){
             FMLLog.log(Level.SEVERE, e, Archive.modName
                     + " has had a problem loading its configuration");
         }finally{
-            if (config.hasChanged())
+            if (config.hasChanged()){
                 config.save();
+            }
         }
     }
 
@@ -70,21 +79,28 @@ public class Config {
         itemDoughID = config.getItem(Archive.itemDough, iID++).getInt();
         itemPiePanID = config.getItem(Archive.itemPiePan, iID++).getInt();
         itemPumpkinMashID = config.getItem(Archive.itemPumpkinMash, iID++).getInt();
+        // Creates the configurations for Food
+        configFood(config, iID++);
     }
 
-    private static void configFood(Configuration config) {
-        int fID = 8100;
+    private static void configFood(Configuration config, int fID) {
         foodPeanutsID = config.getItem(Archive.foodPeanuts, fID++).getInt();
         foodScrambledEggsID = config.getItem(Archive.foodScrambledEggs, fID++).getInt();
     }
 
     private static void configOres(Configuration config) {
-        int oID = 900;
+        int oID = 300;
         oreAluminumID = config.getBlock(Archive.oreAluminum, oID++).getInt();
+        // Creates the configurations for Blocks
+        configBlocks(config, oID++);
     }
 
-    private static void configBlocks(Configuration config) {}
+    private static void configBlocks(Configuration config, int bID) {}
 
-    private static void configGeneral(Configuration config) {}
+    private static void configGeneral(Configuration config) {
+        oreDepthModifier = config.get(gen, "Depth Modifier", 32).getInt();
+        oreDensityModifier = config.get(gen, "DensityModifier", 64).getInt();
+        enableWorldGenAluminum = config.get(gen, "Enable WorldGen of Aluminum", true).getBoolean(true);
+    }
 
 }

@@ -1,7 +1,7 @@
 package claycorp.betterfood.utils.handlers;
 
-import claycorp.betterfood.utils.LanguageHelper;
 import claycorp.betterfood.utils.Archive;
+import claycorp.betterfood.utils.LanguageHelper;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LanguageHandler {
