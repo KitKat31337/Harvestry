@@ -8,7 +8,7 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class Config {
-    
+
     private static String gen = "General";
 
     // Items
@@ -30,7 +30,6 @@ public class Config {
     public static int itemGrindStoneID;
     public static int itemGrindStonesID;
 
-
     // Food
     public static int foodPeanutsID;
     public static int foodScrambledEggsID;
@@ -42,7 +41,6 @@ public class Config {
     public static int oreDepthModifier;
     public static int oreDensityModifier;
     public static boolean enableWorldGenAluminum;
-
 
     public static void init(FMLPreInitializationEvent event) {
 

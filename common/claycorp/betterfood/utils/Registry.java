@@ -53,13 +53,13 @@ public class Registry {
         GameRegistry.registerItem(ModItems.itemPiePan, Archive.itemPiePan);
 
         GameRegistry.registerItem(ModItems.itemAluminumSheet, Archive.itemAluminumSheet);
-        
+
         GameRegistry.registerItem(ModItems.itemAluminumFoil, Archive.itemAluminumFoil);
-        
+
         GameRegistry.registerItem(ModItems.itemRawAluminum, Archive.itemRawAluminum);
-        
+
         GameRegistry.registerItem(ModItems.itemGrindStone, Archive.itemGrindStone);
-        
+
         GameRegistry.registerItem(ModItems.itemGrindStones, Archive.itemGrindStones);
 
         // GameRegistry.registerItem(ModItems.itemPoisonousPeanut,

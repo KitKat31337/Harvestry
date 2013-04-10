@@ -37,18 +37,17 @@ public class RecipeHandler {
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakePanFull), new Object[] {
                 ModItems.itemCakeBatter, ModItems.itemCakePan });
 
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemBreadPan), new Object[] { "T   T", "T T", "TTT",
-                 'T', ModItems.itemAluminumSheet });
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemBreadPan), new Object[] { "T   T",
+                "T T", "TTT", 'T', ModItems.itemAluminumSheet });
 
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCakePan), new Object[] { "   ", "T T", "TTT",
-                'T', ModItems.itemAluminumSheet });
-        
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemGrindStone), new Object[] {"SSS", "SLS", "SSS",
-            'S', Block.stone, 'L', Block.wood });
-        
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCakePan), new Object[] { "   ",
+                "T T", "TTT", 'T', ModItems.itemAluminumSheet });
+
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemGrindStone), new Object[] { "SSS",
+                "SLS", "SSS", 'S', Block.stone, 'L', Block.wood });
+
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemGrindStones), new Object[] {
-            ModItems.itemGrindStone, ModItems.itemGrindStone });
-        
+                ModItems.itemGrindStone, ModItems.itemGrindStone });
 
     }
 

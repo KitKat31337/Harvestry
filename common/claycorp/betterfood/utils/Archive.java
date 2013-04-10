@@ -32,7 +32,6 @@ public class Archive {
     public static final String itemGrindStone = "itemGrindStone";
     public static final String itemGrindStones = "itemGrindStones";
 
-
     // **********************************Blocks*************************************
     public static final String oreAluminum = "oreAluminum";
 

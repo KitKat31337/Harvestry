@@ -3,9 +3,9 @@ package claycorp.betterfood.blocks;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.item.Item;
 
-public class BlockPeanuts extends BlockCrops {
+public class ModCrops extends BlockCrops {
 
-    protected BlockPeanuts(int par1) {
+    protected ModCrops(int par1) {
         super(par1);
         // TODO Auto-generated constructor stub
     }
