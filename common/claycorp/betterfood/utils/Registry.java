@@ -1,22 +1,24 @@
 package claycorp.betterfood.utils;
 
+import claycorp.betterfood.blocks.ModBlocks;
 import claycorp.betterfood.items.ModItems;
 import claycorp.betterfood.utils.handlers.RecipeHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Registry {
+    
     public static void register() {
 
         registerBlocks();
 
         registerItems();
 
-        RecipeHandler.add();
+        RecipeHandler.init();
     }
 
     private static void registerBlocks() {
         
-        //GameRegistry.registerBlock(ModBlocks.portalObsidian, "Obsidiatal");
+        GameRegistry.registerBlock(ModBlocks.oreAluminum, Archive.oreAluminum);
     }
 
     private static void registerItems() {
@@ -45,11 +47,7 @@ public class Registry {
         
         GameRegistry.registerItem(ModItems.itemPumpkinMash, Archive.itemPumpkinMash);
         
-        GameRegistry.registerItem(ModItems.itemPoisonousPeanut, Archive.foodPeanuts + "Poison");
-        
-        //GameRegistry.registerItem(ModItems.PoisoousPeanut, "Sparking Sapling");
-        
-        //GameRegistry.registerItem(ModItems.PosonousPeanut, "Sparking Sapling");
+        //GameRegistry.registerItem(ModItems.itemPoisonousPeanut, Archive.foodPeanuts + "Poison");
     }
 
 }

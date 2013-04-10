@@ -13,30 +13,38 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeHandler {
 
-    public static void add() {
+    public static void init() {
+        // Adds Recipes
+        add();
+        // Deletes Recipes
+        delete();
+    }
+
+    private static void add() {
         Handler.logName("Adding Recipies");
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemDough), new Object[] {
-                 Item.bucketWater, ModItems.itemflour, ModItems.itemflour, ModItems.itemflour });
-        
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemBreadpanwithDough), new Object[] {
-             ModItems.itemBreadPan, ModItems.itemDough });
-        
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakeBatter), new Object[] { (
-             ModItems.itemModBucket), ModItems.itemflour, ModItems.itemflour, ModItems.itemflour, Item.sugar, Item.egg});
-        
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakePanFull), new Object[] { 
-            ModItems.itemCakeBatter, ModItems.itemCakePan});
-        
+                Item.bucketWater, ModItems.itemflour, ModItems.itemflour, ModItems.itemflour });
+
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemBreadpanwithDough),
+                new Object[] { ModItems.itemBreadPan, ModItems.itemDough });
+
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakeBatter), new Object[] {
+                (ModItems.itemModBucket), ModItems.itemflour, ModItems.itemflour,
+                ModItems.itemflour, Item.sugar, Item.egg });
+
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakePanFull), new Object[] {
+                ModItems.itemCakeBatter, ModItems.itemCakePan });
+
         GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-            '#', Item.bucketWater, '%', ModItems.itemflour });
-        
+                '#', Item.bucketWater, '%', ModItems.itemflour });
+
         GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-            '#', Item.bucketWater, '%', ModItems.itemflour });
-        
+                '#', Item.bucketWater, '%', ModItems.itemflour });
+
     }
 
-    public static void delete() {
+    private static void delete() {
 
         Handler.logName("Overwriting Food Stuffs!");
 

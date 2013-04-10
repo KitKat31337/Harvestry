@@ -22,9 +22,9 @@ public class Config {
     public static int itemDoughID;
     public static int itemPiePanID;
     public static int itemPumpkinMashID;
+    // Food
     public static int foodPeanutsID;
-    // Blocks
-    public static int blockAluminumID;
+    // Ores
     public static int oreAluminumID;
 
     public static void init(FMLPreInitializationEvent event) {
@@ -37,6 +37,10 @@ public class Config {
             config.load();
 
             configItems(config);
+
+            configFood(config);
+
+            configOres(config);
 
             configBlocks(config);
 
@@ -52,7 +56,7 @@ public class Config {
     }
 
     private static void configItems(Configuration config) {
-        int iID = 9000;
+        int iID = 8000;
         itemCakePanFullID = config.getItem(Archive.itemCakePanFull, iID++).getInt();
         itemCakePanID = config.getItem(Archive.itemCakePan, iID++).getInt();
         itemModBucketID = config.getItem(Archive.itemModBucket, iID++).getInt();
@@ -65,13 +69,19 @@ public class Config {
         itemDoughID = config.getItem(Archive.itemDough, iID++).getInt();
         itemPiePanID = config.getItem(Archive.itemPiePan, iID++).getInt();
         itemPumpkinMashID = config.getItem(Archive.itemPumpkinMash, iID++).getInt();
-        foodPeanutsID = config.getItem(Archive.foodPeanuts, iID++).getInt();
     }
 
-    private static void configBlocks(Configuration config) {
-        int iID = 2000;
-        oreAluminumID = config.getBlock(Archive.oreAluminum, iID++).getInt();
+    private static void configFood(Configuration config) {
+        int fID = 8100;
+        foodPeanutsID = config.getItem(Archive.foodPeanuts, fID++).getInt();
     }
+
+    private static void configOres(Configuration config) {
+        int oID = 900;
+        oreAluminumID = config.getBlock(Archive.oreAluminum, oID++).getInt();
+    }
+
+    private static void configBlocks(Configuration config) {}
 
     private static void configGeneral(Configuration config) {}
 

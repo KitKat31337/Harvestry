@@ -2,13 +2,13 @@
 {
   "modid": "betterfood",
   "name": "Better Food Mod",
-  "description": "The Food System Re Invented :D",
-  "credits": "By claycorp.",
+  "description": "The Food System Re-Invented :D",
+  "credits": "By claycorp, captain_shadows, and Runeslielo.",
   "logoFile": "/mods/betterfood/textures/logo/logo.png",
-  "version": "1.5",
-  "url": "",
+  "version": "0.1.5",
+  "url": "https://github.com/Claycorp/Better-Food-Mod",
   "updateUrl": "",
-  "authors": [ "claycorp" ],
+  "authors": [ "claycorp", "captain_shadows", "Runeslielo" ],
   "screenshots": [ "" ],
   "dependencies": [
      "mod_MinecraftForge"

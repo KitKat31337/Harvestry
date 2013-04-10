@@ -1,12 +1,13 @@
 package claycorp.betterfood;
 
 import net.minecraft.creativetab.CreativeTabs;
+import claycorp.betterfood.blocks.ModBlocks;
 import claycorp.betterfood.items.ModItems;
 import claycorp.betterfood.utils.Archive;
 import claycorp.betterfood.utils.Config;
+import claycorp.betterfood.utils.Registry;
 import claycorp.betterfood.utils.handlers.Handler;
 import claycorp.betterfood.utils.handlers.LanguageHandler;
-import claycorp.betterfood.utils.handlers.RecipeHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -21,7 +22,7 @@ public class BetterFood {
 
     @Instance(Archive.id)
     public static BetterFood instance;
-    
+
     // Declares a new Creative Tab
     public static CreativeTabs tabBetterFood = new BetterFoodTabs(CreativeTabs.getNextID(),
             Archive.tabBetterFood);
@@ -41,19 +42,20 @@ public class BetterFood {
             // Initialize Items
             ModItems.init();
 
+            // Initialize Blocks
+            ModBlocks.init();
+
             // Load Languages
             LanguageHandler.loadLanguages();
 
+            // Loads the Mod
             Handler.LoadMod();
         }
     }
 
     @Init
     public void init(FMLInitializationEvent event) {
-
-        RecipeHandler.delete();
-
-        RecipeHandler.add();
-
+        // Loads Registry stuff
+        Registry.register();
     }
 }

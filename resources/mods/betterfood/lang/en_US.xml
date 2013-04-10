@@ -16,4 +16,5 @@
 	<entry key="item.itemCakeBatter.name">Bucket o' Batter</entry>
 	<entry key="item.itemCakePan.name">Cake Pan</entry>
 	<entry key="item.itemCakePanFull.name">Cake Pan Full</entry>
+	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
 </properties>

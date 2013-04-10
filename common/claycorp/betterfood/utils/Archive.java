@@ -5,7 +5,7 @@ public class Archive{
     // ************************************Mod*************************************
     public static final String id = "betterfood";
     public static final String modName = "Better Food Mod";
-    public static final String ver = "0.1.0";
+    public static final String ver = "0.1.5";
 
     // ********************************Locations***********************************
     public static final String texture = id + ":";
