@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.oredict.OreDictionary;
 import claycorp.betterfood.items.ModItems;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -20,6 +21,9 @@ public class RecipeHandler {
         // Deletes Recipes
         delete();
     }
+
+    private static ItemStack grindStones = new ItemStack(ModItems.itemGrindStones, 1,
+            OreDictionary.WILDCARD_VALUE);
 
     private static void add() {
         Handler.logName("Adding Recipies");
@@ -48,6 +52,9 @@ public class RecipeHandler {
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemGrindStones), new Object[] {
                 ModItems.itemGrindStone, ModItems.itemGrindStone });
+
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemflour), new Object[] {
+                Item.wheat, grindStones });
 
     }
 
@@ -98,14 +105,14 @@ public class RecipeHandler {
             result = tmp.getRecipeOutput();
 
             if (result != null){
-                for (ItemStack bannedItem : items){
+                for (ItemStack removedItem : items){
                     // Remove the item if the ID & meta match, OR if the IDs
                     // match, and banned meta is -1.
-                    if ((result.itemID == bannedItem.itemID)
-                            && ((bannedItem.getItemDamage() == -1) || (result.getItemDamage() == bannedItem
+                    if ((result.itemID == removedItem.itemID)
+                            && ((removedItem.getItemDamage() == -1) || (result.getItemDamage() == removedItem
                                     .getItemDamage()))){
                         minecraftRecipes.remove(i);
-                        Handler.logName("Recipes removed for item " + bannedItem.itemID);
+                        Handler.logName("Recipes removed for item " + removedItem.itemID);
                         --i;
                     }
                 }
