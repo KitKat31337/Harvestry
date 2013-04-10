@@ -20,10 +20,15 @@ public class ModItems {
     public static Item itemPumpkinMash;
     public static Item itemBreadPan;
     public static Item itemPoisonousPeanut;
+    public static Item itemAluminumFoil;
+    public static Item itemAluminumSheet;
+    public static Item itemRawAluminum;
+    public static Item itemGrindStone;
 
     public static void init() {
 
-        itemflour = new ItemMod(Config.itemflourID - 256).setUnlocalizedName(Archive.itemflour);
+        itemflour = new ItemMod(Config.itemflourID - 256)
+                .setUnlocalizedName(Archive.itemflour);
 
         itemBreadPan = new ItemMod(Config.itemBreadPanID - 256)
                 .setUnlocalizedName(Archive.itemBreadPan);
@@ -34,9 +39,11 @@ public class ModItems {
         itemCookieSheet = new ItemMod(Config.itemCookieSheetID - 256)
                 .setUnlocalizedName(Archive.itemCookieSheet);
 
-        itemDough = new ItemMod(Config.itemDoughID - 256).setUnlocalizedName(Archive.itemDough);
+        itemDough = new ItemMod(Config.itemDoughID - 256)
+                .setUnlocalizedName(Archive.itemDough);
 
-        itemPiePan = new ItemMod(Config.itemPiePanID - 256).setUnlocalizedName(Archive.itemPiePan)
+        itemPiePan = new ItemMod(Config.itemPiePanID - 256)
+                .setUnlocalizedName(Archive.itemPiePan)
                 .setMaxStackSize(16);
 
         itemPumpkinMash = new ItemMod(Config.itemPumpkinMashID - 256)
@@ -49,18 +56,37 @@ public class ModItems {
                 .setUnlocalizedName(Archive.foodScrambledEggs);
 
         itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID - 256)
-                .setUnlocalizedName(Archive.itemBreadpanwithDough).setMaxStackSize(16);
+                .setUnlocalizedName(Archive.itemBreadpanwithDough)
+                .setMaxStackSize(16);
 
         itemCakeBatter = new ItemMod(Config.itemCakeBatterID - 256)
                 .setUnlocalizedName(Archive.itemCakeBatter);
 
-        itemModBucket = new ItemMod(Config.itemModBucketID - 256).setUnlocalizedName(
-                Archive.itemModBucket).setMaxStackSize(16);
+        itemModBucket = new ItemMod(Config.itemModBucketID - 256)
+                .setUnlocalizedName(Archive.itemModBucket)
+                .setMaxStackSize(16);
 
-        itemCakePan = new ItemMod(Config.itemCakePanID - 256).setUnlocalizedName(
-                Archive.itemCakePan).setMaxStackSize(16);
+        itemCakePan = new ItemMod(Config.itemCakePanID - 256)
+                .setUnlocalizedName(Archive.itemCakePan)
+                .setMaxStackSize(16);
 
-        itemCakePanFull = new ItemMod(Config.itemCakePanFullID - 256).setUnlocalizedName(
-                Archive.itemCakePanFull).setMaxStackSize(16);
+        itemCakePanFull = new ItemMod(Config.itemCakePanFullID - 256)
+                .setUnlocalizedName(Archive.itemCakePanFull)
+                .setMaxStackSize(16);
+        
+        itemAluminumFoil = new ItemMod(Config.itemAluminumFoilID - 256)
+                .setUnlocalizedName(Archive.itemAluminumFoil);
+        
+        itemAluminumSheet = new ItemMod(Config.itemAluminumSheetID - 256)
+                .setUnlocalizedName(Archive.itemAluminumSheet);
+        
+        itemRawAluminum = new ItemMod(Config.itemRawAluminumID - 256)
+                .setUnlocalizedName(Archive.itemRawAluminum);
+        //Not fully implemented
+        itemGrindStone = new ItemMod(Config.itemGrindStoneID - 256)
+                .setUnlocalizedName(Archive.itemGrindStone);
+
+                
+
     }
 }

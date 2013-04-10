@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -36,11 +37,15 @@ public class RecipeHandler {
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakePanFull), new Object[] {
                 ModItems.itemCakeBatter, ModItems.itemCakePan });
 
-        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-                '#', Item.bucketWater, '%', ModItems.itemflour });
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemBreadPan), new Object[] { "T   T", "T T", "TTT",
+                 'T', ModItems.itemAluminumSheet });
 
-        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[] { "   ", "%%%", "###",
-                '#', Item.bucketWater, '%', ModItems.itemflour });
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCakePan), new Object[] { "   ", "T T", "TTT",
+                'T', ModItems.itemAluminumSheet });
+        
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemGrindStone), new Object[] {"SSS", "SLS", "SSS",
+            'S', Block.stone, 'L', Block.wood });
+        
 
     }
 

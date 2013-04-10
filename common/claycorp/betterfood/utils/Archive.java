@@ -26,6 +26,11 @@ public class Archive {
     public static final String itemCakePan = "itemCakePan";
     public static final String itemModBucket = "itemModBucket";
     public static final String itemCakePanFull = "itemCakePanFull";
+    public static final String itemAluminumFoil = "itemAluminumFoil";
+    public static final String itemAluminumSheet = "itemAluminumSheet";
+    public static final String itemRawAluminum = "itemRawAluminum";
+    public static final String itemGrindStone = "itemGrindStone";
+
 
     // **********************************Blocks*************************************
     public static final String oreAluminum = "oreAluminum";
