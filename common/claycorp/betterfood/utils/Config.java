@@ -86,6 +86,11 @@ public class Config {
         itemDoughID = config.getItem(Archive.itemDough, iID++).getInt();
         itemPiePanID = config.getItem(Archive.itemPiePan, iID++).getInt();
         itemPumpkinMashID = config.getItem(Archive.itemPumpkinMash, iID++).getInt();
+        itemRawAluminumID = config.getItem(Archive.itemRawAluminum, iID++).getInt();
+        itemAluminumSheetID = config.getItem(Archive.itemAluminumSheet, iID++).getInt();
+        itemAluminumFoilID = config.getItem(Archive.itemAluminumFoil, iID++).getInt();
+        itemGrindStoneID = config.getItem(Archive.itemGrindStone, iID++).getInt();
+        itemGrindStonesID = config.getItem(Archive.itemGrindStones, iID++).getInt();
         // Creates the configurations for Food
         configFood(config, iID++);
     }
