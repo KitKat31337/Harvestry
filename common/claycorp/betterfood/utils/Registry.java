@@ -47,6 +47,8 @@ public class Registry {
         GameRegistry.registerItem(ModItems.itemModBucket, Archive.itemModBucket);
 
         GameRegistry.registerItem(ModItems.foodPeanuts, Archive.foodPeanuts);
+        
+        GameRegistry.registerItem(ModItems.foodScrambledEggs, Archive.foodScrambledEggs);
 
         GameRegistry.registerItem(ModItems.itemPiePan, Archive.itemPiePan);
 

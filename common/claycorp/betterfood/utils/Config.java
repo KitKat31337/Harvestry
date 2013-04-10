@@ -24,6 +24,7 @@ public class Config {
     public static int itemPumpkinMashID;
     // Food
     public static int foodPeanutsID;
+    public static int foodScrambledEggsID;
     // Ores
     public static int oreAluminumID;
 
@@ -74,6 +75,7 @@ public class Config {
     private static void configFood(Configuration config) {
         int fID = 8100;
         foodPeanutsID = config.getItem(Archive.foodPeanuts, fID++).getInt();
+        foodScrambledEggsID = config.getItem(Archive.foodScrambledEggs, fID++).getInt();
     }
 
     private static void configOres(Configuration config) {

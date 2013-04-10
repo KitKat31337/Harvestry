@@ -11,6 +11,7 @@ public class ModItems {
     public static Item itemCakeBatter;
     public static Item itemBreadpanwithDough;
     public static Item foodPeanuts;
+    public static Item foodScrambledEggs;
     public static Item itemflour;
     public static Item itemChocolateChips;
     public static Item itemCookieSheet;
@@ -46,6 +47,9 @@ public class ModItems {
 
         foodPeanuts = new Peanuts(Config.foodPeanutsID - 256, 1, 1)
             .setUnlocalizedName(Archive.foodPeanuts);
+        
+        foodScrambledEggs = new Peanuts(Config.foodScrambledEggsID - 256, 1, 1)
+        .setUnlocalizedName(Archive.foodScrambledEggs);
 
         itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID - 256)
             .setUnlocalizedName(Archive.itemBreadpanwithDough)

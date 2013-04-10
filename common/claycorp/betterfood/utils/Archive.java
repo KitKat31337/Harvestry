@@ -20,6 +20,7 @@ public class Archive{
     public static final String itemDough = "itemDough";
     public static final String itemPiePan = "itemPiePan";
     public static final String foodPeanuts = "foodPeanuts";
+    public static final String foodScrambledEggs = "foodScrambledEggs";
     public static final String itemBreadpanwithDough = "itemBreadpanwithDough";
     public static final String itemCakeBatter = "itemCakeBatter";
     public static final String itemCakePan = "itemCakePan";
