@@ -1,8 +1,11 @@
 package claycorp.betterfood.items;
 
+import java.util.logging.Level;
+
 import net.minecraft.item.Item;
 import claycorp.betterfood.utils.Archive;
 import claycorp.betterfood.utils.Config;
+import claycorp.betterfood.utils.handlers.Handler;
 
 public class ModItems {
     public static Item itemCakePanFull;
@@ -27,6 +30,7 @@ public class ModItems {
     public static Item itemGrindStones;
 
     public static void init() {
+        Handler.log(Level.INFO, "Loading Items");
 
         itemFlour = new ItemMod(Config.itemflourID).setUnlocalizedName(Archive.itemFlour);
 

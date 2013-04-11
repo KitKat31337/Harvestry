@@ -1,7 +1,5 @@
 package claycorp.betterfood;
 
-import java.util.logging.Level;
-
 import net.minecraft.creativetab.CreativeTabs;
 import claycorp.betterfood.blocks.ModBlocks;
 import claycorp.betterfood.items.ModItems;
@@ -37,8 +35,6 @@ public class BetterFood {
         if (!modLoaded){
 
             Handler.initLog();
-            
-            Handler.log(Level.INFO, "Loading configuration");
 
             // Loads the Configuration
             Config.init(evt);

@@ -1,8 +1,11 @@
 package claycorp.betterfood.utils;
 
+import java.util.logging.Level;
+
 import net.minecraftforge.oredict.OreDictionary;
 import claycorp.betterfood.blocks.ModBlocks;
 import claycorp.betterfood.items.ModItems;
+import claycorp.betterfood.utils.handlers.Handler;
 import claycorp.betterfood.utils.handlers.RecipeHandler;
 import claycorp.betterfood.utils.handlers.WorldGenHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -14,22 +17,24 @@ public class Registry {
     public static void register() {
 
         registerItems();
-        
+
         registerBlocks();
-        
+
         registerWorld();
-        
+
         oreDictionary();
 
         RecipeHandler.init();
     }
 
     private static void registerBlocks() {
+        Handler.log(Level.INFO, "Registering Blocks");
 
         GameRegistry.registerBlock(ModBlocks.oreAluminum, Archive.oreAluminum);
     }
 
     private static void registerItems() {
+        Handler.log(Level.INFO, "Registering Items");
 
         GameRegistry.registerItem(ModItems.itemBreadPan, Archive.itemBreadPan);
 
@@ -70,10 +75,12 @@ public class Registry {
     }
 
     private static void registerWorld() {
+        Handler.log(Level.INFO, "Registering World Gen");
         GameRegistry.registerWorldGenerator(worldGen);
     }
-    
+
     private static void oreDictionary() {
+        Handler.log(Level.INFO, "Adding Ore Dictionary Entries");
         OreDictionary.registerOre("dustWheat", ModItems.itemFlour);
         OreDictionary.registerOre("naturalAluminum", ModBlocks.oreAluminum);
         OreDictionary.registerOre("oreNaturalAluminium", ModBlocks.oreAluminum);

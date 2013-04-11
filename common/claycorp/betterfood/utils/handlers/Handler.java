@@ -36,7 +36,7 @@ public class Handler {
         IsLoaded = false;
     }
 
-    // **************************************Log Stuff***************************
+    // ***********************************Log Stuff************************
     private static Logger logger = Logger.getLogger(Archive.id);
 
     public static void initLog() {
@@ -45,7 +45,7 @@ public class Handler {
     }
 
     public static void log(Level logLevel, Object message) {
-        
+
         logger.log(logLevel, message.toString());
     }
 

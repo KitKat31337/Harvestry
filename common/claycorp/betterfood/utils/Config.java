@@ -49,6 +49,7 @@ public class Config {
         Configuration config = new Configuration(configFile);
 
         try{
+            Handler.log(Level.INFO, "Loading configuration");
             config.load();
 
             // Creates the configurations for Items
@@ -71,6 +72,7 @@ public class Config {
     }
 
     private static void configItems(Configuration config) {
+        Handler.log(Level.INFO, "Loading Item Configs");
         int iID = 8000;
         itemCakePanFullID = config.getItem(Archive.itemCakePanFull, iID++).getInt();
         itemCakePanID = config.getItem(Archive.itemCakePan, iID++).getInt();
@@ -94,12 +96,14 @@ public class Config {
     }
 
     private static void configFood(Configuration config, int fID) {
+        Handler.log(Level.INFO, "Loading Food Configs");
         fID++;
         foodPeanutsID = config.getItem(Archive.foodPeanuts, fID++).getInt();
         foodScrambledEggsID = config.getItem(Archive.foodScrambledEggs, fID++).getInt();
     }
 
     private static void configOres(Configuration config) {
+        Handler.log(Level.INFO, "Loading Ore Configs");
         int oID = 300;
         oreAluminumID = config.getBlock(Archive.oreAluminum, oID++).getInt();
         // Creates the configurations for Blocks
@@ -109,6 +113,7 @@ public class Config {
     private static void configBlocks(Configuration config, int bID) {}
 
     private static void configGeneral(Configuration config) {
+        Handler.log(Level.INFO, "Loading General Configs");
         oreDepthModifier = config.get(gen, "Depth Modifier", 32).getInt();
         oreDensityModifier = config.get(gen, "DensityModifier", 64).getInt();
         enableWorldGenAluminum = config.get(gen, "Enable WorldGen of Aluminum", true).getBoolean(
