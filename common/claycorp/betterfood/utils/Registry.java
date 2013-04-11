@@ -7,12 +7,10 @@ import claycorp.betterfood.blocks.ModBlocks;
 import claycorp.betterfood.items.ModItems;
 import claycorp.betterfood.utils.handlers.Handler;
 import claycorp.betterfood.utils.handlers.RecipeHandler;
-import claycorp.betterfood.utils.handlers.WorldGenHandler;
+import claycorp.betterfood.utils.worldgen.WorldGenHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Registry {
-
-    private static WorldGenHandler worldGen = new WorldGenHandler();
 
     public static void register() {
 
@@ -75,8 +73,12 @@ public class Registry {
     }
 
     private static void registerWorld() {
-        Handler.log(Level.INFO, "Registering World Gen");
-        GameRegistry.registerWorldGenerator(worldGen);
+        if (Config.enableWorldGenAluminum){
+            Handler.log(Level.INFO, "Registering World Generation for Aluminum");
+            final WorldGenHandler worldGenAlu = new WorldGenHandler(Config.oreAluminumID,
+                    Config.aMaxHeight, Config.aMinHeight);
+            GameRegistry.registerWorldGenerator(worldGenAlu);
+        }
     }
 
     private static void oreDictionary() {
