@@ -13,24 +13,24 @@ public class BlockMod extends Block {
     /**
      * Creates a new Block Instance.
      * 
-     * @param ID
+     * @param id
      *            The Block ID
      */
-    public BlockMod(int ID) {
-        super(ID, Material.ground); // Parameters: Block ID
+    public BlockMod(int id) {
+        super(id, Material.ground); // Parameters: Block ID
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
 
     /**
      * Creates a new Block Instance.
      * 
-     * @param ID
+     * @param id
      *            The Block ID
      * @param material
      *            The Material
      */
-    public BlockMod(int ID, Material material) {
-        super(ID, material); // Parameters: Block ID, Block material
+    public BlockMod(int id, Material material) {
+        super(id, material); // Parameters: Block ID, Block material
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
 

@@ -5,8 +5,8 @@ import net.minecraft.item.Item;
 
 public class ModCrops extends BlockCrops {
 
-    protected ModCrops(int par1) {
-        super(par1);
+    protected ModCrops(int id) {
+        super(id);
         // TODO Auto-generated constructor stub
     }
 

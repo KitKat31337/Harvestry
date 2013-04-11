@@ -104,7 +104,7 @@ public class Config {
 
     private static void configOres(Configuration config) {
         Handler.log(Level.INFO, "Loading Ore Configs");
-        int oID = 300;
+        int oID = 1000;
         oreAluminumID = config.getBlock(Archive.oreAluminum, oID++).getInt();
         // Creates the configurations for Blocks
         configBlocks(config, oID++);
