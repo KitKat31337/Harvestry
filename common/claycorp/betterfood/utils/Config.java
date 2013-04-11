@@ -29,6 +29,12 @@ public class Config {
     public static int itemRawAluminumID;
     public static int itemGrindStoneID;
     public static int itemGrindStonesID;
+    public static int itemRawPotatoID;
+    public static int itemCookieDoughID;
+    public static int itemChocolateChipCookieDoughID;
+    public static int itemPumpkinPieFillingID;
+    public static int itemPieCrustID;
+
 
     // Food
     public static int foodPeanutsID;
@@ -41,6 +47,7 @@ public class Config {
     public static boolean enableWorldGenAluminum;
     public static int aMaxHeight;
     public static int aMinHeight;
+
 
     public static void init(FMLPreInitializationEvent event) {
 
@@ -91,6 +98,14 @@ public class Config {
         itemAluminumFoilID = config.getItem(Archive.itemAluminumFoil, iID++).getInt();
         itemGrindStoneID = config.getItem(Archive.itemGrindStone, iID++).getInt();
         itemGrindStonesID = config.getItem(Archive.itemGrindStones, iID++).getInt();
+        itemRawPotatoID = config.getItem(Archive.itemRawPotato, iID++).getInt();
+        itemCookieDoughID = config.getItem(Archive.itemCookieDough, iID++).getInt();
+        itemChocolateChipCookieDoughID = config.getItem(Archive.itemChocolateChipCookieDough, iID++).getInt();
+        itemPumpkinPieFillingID = config.getItem(Archive.itemPumpkinPieFilling, iID++).getInt();
+        itemPieCrustID = config.getItem(Archive.itemPieCrust, iID++).getInt();
+       // itemCookieDoughID = config.getItem(Archive.itemCookieDough, iID++).getInt();
+        //itemCookieDoughID = config.getItem(Archive.itemCookieDough, iID++).getInt();
+        //itemCookieDoughID = config.getItem(Archive.itemCookieDough, iID++).getInt();
         // Creates the configurations for Food
         configFood(config, iID++);
     }

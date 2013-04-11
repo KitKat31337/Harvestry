@@ -23,4 +23,9 @@
 	<entry key="item.itemAluminumSheet.name">Aluminum Sheet</entry>
 	<entry key="item.itemAluminumFoil.name">Aluminum Foil</entry>
 	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
+	<entry key="tile.itemRawPotato.name">Raw Potato</entry>
+	<entry key="tile.itemCookieDough.name">Cookie Dough</entry>
+	<entry key="tile.itemChocolateChipCookieDough.name">Chocolate Chip Cookie Dough</entry>
+	<entry key="tile.itemPumpkinPieFilling.name">Pumpkin Pie Filling</entry>
+	<entry key="tile.itemPieCrust.name">Pie Crust</entry>
 </properties>

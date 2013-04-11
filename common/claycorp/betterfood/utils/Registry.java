@@ -67,6 +67,17 @@ public class Registry {
         GameRegistry.registerItem(ModItems.itemGrindStone, Archive.itemGrindStone);
 
         GameRegistry.registerItem(ModItems.itemGrindStones, Archive.itemGrindStones);
+        
+        GameRegistry.registerItem(ModItems.itemRawPotato, Archive.itemRawPotato);
+        
+        GameRegistry.registerItem(ModItems.itemCookieDough, Archive.itemCookieDough);
+        
+        GameRegistry.registerItem(ModItems.itemChocolateChipCookieDough, Archive.itemChocolateChipCookieDough);
+        
+        GameRegistry.registerItem(ModItems.itemPumpkinPieFilling, Archive.itemPumpkinPieFilling);
+        
+        GameRegistry.registerItem(ModItems.itemPieCrust, Archive.itemPieCrust);
+
 
         // GameRegistry.registerItem(ModItems.itemPoisonousPeanut,
         // Archive.foodPeanuts + "Poison");

@@ -31,6 +31,12 @@ public class Archive {
     public static final String itemRawAluminum = "itemRawAluminum";
     public static final String itemGrindStone = "itemGrindStone";
     public static final String itemGrindStones = "itemGrindStones";
+    public static final String itemRawPotato = "itemRawPotato";
+    public static final String itemCookieDough = "itemCookieDough";
+    public static final String itemChocolateChipCookieDough = "itemChocolateChipCookieDough";
+    public static final String itemPumpkinPieFilling = "itemPumpkinPieFilling";
+    public static final String itemPieCrust = "itemPieCrust";
+
 
     // **********************************Blocks*************************************
     public static final String oreAluminum = "oreAluminum";
@@ -42,4 +48,5 @@ public class Archive {
             lang + "en_US.xml",
             // ES Local
             lang + "es_ES.xml" };
+
 }

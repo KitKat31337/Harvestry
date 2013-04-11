@@ -63,7 +63,7 @@ public class RecipeHandler {
                 ModItems.itemCookieDough, ModItems.itemChocolateChips });
         
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemPumpkinPieFilling ), new Object[] {
-            ModItems.itemPumpkinMash, ModItems.item });
+            ModItems.itemPumpkinMash, Item.bucketMilk, Item.sugar, ModItems.itemPumpkinMash });
         
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemPieCrust ), new Object[] {
             ModItems.itemPiePan, ModItems.itemDough });

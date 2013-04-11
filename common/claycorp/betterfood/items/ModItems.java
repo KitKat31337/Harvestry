@@ -2,6 +2,7 @@ package claycorp.betterfood.items;
 
 import java.util.logging.Level;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import claycorp.betterfood.utils.Archive;
 import claycorp.betterfood.utils.Config;
@@ -28,6 +29,11 @@ public class ModItems {
     public static Item itemRawAluminum;
     public static Item itemGrindStone;
     public static Item itemGrindStones;
+    public static Item itemRawPotato;
+    public static Item itemCookieDough;
+    public static Item itemChocolateChipCookieDough;
+    public static Item itemPumpkinPieFilling;
+    public static Item itemPieCrust;
 
     public static void init() {
         Handler.log(Level.INFO, "Loading Items");
@@ -79,12 +85,28 @@ public class ModItems {
 
         itemRawAluminum = new ItemMod(Config.itemRawAluminumID)
                 .setUnlocalizedName(Archive.itemRawAluminum);
-
-        // Not fully implemented
+        
         itemGrindStone = new ItemMod(Config.itemGrindStoneID)
                 .setUnlocalizedName(Archive.itemGrindStone);
 
         itemGrindStones = new ItemMod(Config.itemGrindStonesID, false, 8).setUnlocalizedName(
-                Archive.itemGrindStones).setNoRepair();
+                Archive.itemGrindStones)
+                .setNoRepair();
+        
+        itemRawPotato = new ItemMod(Config.itemRawPotatoID)
+        .setUnlocalizedName(Archive.itemRawPotato);
+        
+        itemCookieDough = new ItemMod(Config.itemCookieDoughID)
+        .setUnlocalizedName(Archive.itemCookieDough);
+        
+        itemChocolateChipCookieDough = new ItemMod(Config.itemChocolateChipCookieDoughID)
+        .setUnlocalizedName(Archive.itemChocolateChipCookieDough);
+        
+        itemPumpkinPieFilling = new ItemMod(Config.itemPumpkinPieFillingID)
+        .setUnlocalizedName(Archive.itemPumpkinPieFilling);
+        
+        itemPieCrust = new ItemMod(Config.itemPieCrustID)
+        .setUnlocalizedName(Archive.itemPieCrust);
+        
     }
 }
