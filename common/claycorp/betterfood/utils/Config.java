@@ -9,7 +9,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class Config {
 
-    private static String gen = "General";
+    private static String gen = "World Generation";
 
     // Items
     public static int itemCakePanFullID;
@@ -37,10 +37,10 @@ public class Config {
     // Ores
     public static int oreAluminumID;
 
-    // World Generation Stuff
-    public static int oreDepthModifier;
-    public static int oreDensityModifier;
+    // World Generation Stuff (Aluminum)
     public static boolean enableWorldGenAluminum;
+    public static int aMaxHeight;
+    public static int aMinHeight;
 
     public static void init(FMLPreInitializationEvent event) {
 
@@ -59,7 +59,7 @@ public class Config {
             configOres(config);
 
             // Creates the configurations for other Stuff
-            configGeneral(config);
+            configWorldGen(config);
 
         }catch(Exception e){
             Handler.log(Level.SEVERE, Archive.modName
@@ -112,12 +112,17 @@ public class Config {
 
     private static void configBlocks(Configuration config, int bID) {}
 
-    private static void configGeneral(Configuration config) {
-        Handler.log(Level.INFO, "Loading General Configs");
-        oreDepthModifier = config.get(gen, "Depth Modifier", 32).getInt();
-        oreDensityModifier = config.get(gen, "DensityModifier", 64).getInt();
-        enableWorldGenAluminum = config.get(gen, "Enable WorldGen of Aluminum", true).getBoolean(
-                true);
+    private static void configWorldGen(Configuration config) {
+        genAluminum(config);
+    }
+
+    private static void genAluminum(Configuration config) {
+        Handler.log(Level.INFO, "Loading Aluminum Configs");
+        String alu = " of Aluminum";
+        enableWorldGenAluminum = config.get(gen + alu, "Enable Generation of Aluminum", true)
+                .getBoolean(true);
+        aMaxHeight = config.get(gen + alu, "Maximum Height", 50).getInt();
+        aMinHeight = config.get(gen + alu, "Minimum Height", 25).getInt();
     }
 
 }
