@@ -1,4 +1,4 @@
-Better-Food-Mod
+Harvestry
 ========================================================================================================================
 
 A COMPLETE Overhaul of the Minecraft Food system.
