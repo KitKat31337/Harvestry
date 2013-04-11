@@ -1,0 +1,4 @@
+captain=https://dl.dropbox.com/u/129059125/CaptainCape.png
+captain=captain_shadows
+clay=https://dl.dropbox.com/u/129059125/CaptainCape.png
+clay=claycorp

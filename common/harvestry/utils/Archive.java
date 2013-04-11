@@ -6,10 +6,15 @@ public class Archive {
     public static final String id = "harvestry";
     public static final String modName = "Harvestry";
     public static final String ver = "0.1.5";
+    public static final String channel = id;
 
     // ********************************Locations***********************************
     public static final String texture = id + ":";
     public static final String lang = "/mods/" + id + "/lang/";
+    public static final String proxy = id + ".sided.proxy.";
+    public static final String clientProxy = proxy + "ClientProxy";
+    public static final String serverProxy = proxy + "CommonProxy";
+    public static final String capes = "";
 
     // ************************************Items***********************************
     public static final String itemFlour = "itemFlour";
