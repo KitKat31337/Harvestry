@@ -1,5 +1,6 @@
 package claycorp.betterfood.utils;
 
+import net.minecraftforge.oredict.OreDictionary;
 import claycorp.betterfood.blocks.ModBlocks;
 import claycorp.betterfood.items.ModItems;
 import claycorp.betterfood.utils.handlers.RecipeHandler;
@@ -12,11 +13,13 @@ public class Registry {
 
     public static void register() {
 
-        registerBlocks();
-
         registerItems();
-
+        
+        registerBlocks();
+        
         registerWorld();
+        
+        oreDictionary();
 
         RecipeHandler.init();
     }
@@ -68,5 +71,11 @@ public class Registry {
 
     private static void registerWorld() {
         GameRegistry.registerWorldGenerator(worldGen);
+    }
+    
+    private static void oreDictionary() {
+        OreDictionary.registerOre("dustWheat", ModItems.itemFlour);
+        OreDictionary.registerOre("naturalAluminum", ModBlocks.oreAluminum);
+        OreDictionary.registerOre("oreNaturalAluminium", ModBlocks.oreAluminum);
     }
 }

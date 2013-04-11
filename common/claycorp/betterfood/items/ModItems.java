@@ -12,7 +12,7 @@ public class ModItems {
     public static Item itemBreadpanwithDough;
     public static Item foodPeanuts;
     public static Item foodScrambledEggs;
-    public static Item itemflour;
+    public static Item itemFlour;
     public static Item itemChocolateChips;
     public static Item itemCookieSheet;
     public static Item itemDough;
@@ -28,7 +28,7 @@ public class ModItems {
 
     public static void init() {
 
-        itemflour = new ItemMod(Config.itemflourID).setUnlocalizedName(Archive.itemflour);
+        itemFlour = new ItemMod(Config.itemflourID).setUnlocalizedName(Archive.itemFlour);
 
         itemBreadPan = new ItemMod(Config.itemBreadPanID).setUnlocalizedName(Archive.itemBreadPan);
 

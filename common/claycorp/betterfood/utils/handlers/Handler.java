@@ -13,7 +13,9 @@ public class Handler {
         if (IsLoaded == true){
 
             throw new Exeptions(
-                    "Why did you install my Mod twice? Remove the second Cooler-Universal-"
+                    "Why did you install my Mod twice? Remove the second "
+                            + Archive.modName
+                            + "-Universal-"
                             + Archive.ver
                             + ".jar out of your mods-Folder, you need only one of them. And another Question: Why the Hax did Forge not detect that before me?");
 

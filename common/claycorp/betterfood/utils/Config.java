@@ -77,7 +77,7 @@ public class Config {
         itemModBucketID = config.getItem(Archive.itemModBucket, iID++).getInt();
         itemCakeBatterID = config.getItem(Archive.itemCakeBatter, iID++).getInt();
         itemBreadpanwithDoughID = config.getItem(Archive.itemBreadpanwithDough, iID++).getInt();
-        itemflourID = config.getItem(Archive.itemflour, iID++).getInt();
+        itemflourID = config.getItem(Archive.itemFlour, iID++).getInt();
         itemBreadPanID = config.getItem(Archive.itemBreadPan, iID++).getInt();
         itemChocolateChipsID = config.getItem(Archive.itemChocolateChips, iID++).getInt();
         itemCookieSheetID = config.getItem(Archive.itemCookieSheet, iID++).getInt();

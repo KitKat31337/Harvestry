@@ -12,7 +12,7 @@ public class Archive {
     public static final String lang = "/mods/" + id + "/lang/";
 
     // ************************************Items***********************************
-    public static final String itemflour = "itemFlour";
+    public static final String itemFlour = "itemFlour";
     public static final String itemPumpkinMash = "itemPumpkinMash";
     public static final String itemBreadPan = "itemBreadPan";
     public static final String itemChocolateChips = "itemChocolateChips";

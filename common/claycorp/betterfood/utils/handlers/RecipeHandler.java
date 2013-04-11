@@ -29,14 +29,14 @@ public class RecipeHandler {
         Handler.logName("Adding Recipies");
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemDough), new Object[] {
-                Item.bucketWater, ModItems.itemflour, ModItems.itemflour, ModItems.itemflour });
+                Item.bucketWater, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemBreadpanwithDough),
                 new Object[] { ModItems.itemBreadPan, ModItems.itemDough });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakeBatter), new Object[] {
-                (ModItems.itemModBucket), ModItems.itemflour, ModItems.itemflour,
-                ModItems.itemflour, Item.sugar, Item.egg });
+                (ModItems.itemModBucket), ModItems.itemFlour, ModItems.itemFlour,
+                ModItems.itemFlour, Item.sugar, Item.egg });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakePanFull), new Object[] {
                 ModItems.itemCakeBatter, ModItems.itemCakePan });
@@ -53,7 +53,7 @@ public class RecipeHandler {
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemGrindStones), new Object[] {
                 ModItems.itemGrindStone, ModItems.itemGrindStone });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemflour), new Object[] {
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemFlour), new Object[] {
                 Item.wheat, grindStones });
 
     }
