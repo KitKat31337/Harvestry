@@ -7,9 +7,9 @@ import net.minecraft.item.ItemFood;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class FoodMod extends ItemFood {
+public class BaseFood extends ItemFood {
 
-    public FoodMod(int id, int healAmount, float saturationModifier) {
+    public BaseFood(int id, int healAmount, float saturationModifier) {
         super(id - 256, healAmount, saturationModifier, true);
         this.setCreativeTab(Harvestry.tabHarvestry);
     }

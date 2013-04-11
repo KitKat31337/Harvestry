@@ -41,6 +41,10 @@ public class Archive {
     public static final String oreAluminum = "oreAluminum";
     public static final String blockGrinder = "blockGrinder";
 
+    // ****************************Tile Entity Stuff***************************
+    public static final String inventory   = "inventory";
+    public static final String grinderUnloc = id + ".grinder";
+    
     // *******************************NBT Stuff****************************
     public static final String NBT_TE_Direction = "direction";
     public static final String NBT_TE_State = "state";

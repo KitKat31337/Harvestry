@@ -31,4 +31,7 @@
 	<entry key="item.itemPieCrust.name">Pie Crust</entry>
 	<!-- Blocks -->
 	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
+	<entry key="tile.blockGrinder.name">Grinder</entry>
+	<!-- Tile Entities -->
+	<entry key="harvestry.grinder.name">Grinder</entry>
 </properties>

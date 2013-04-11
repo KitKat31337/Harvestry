@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemMod extends Item {
+public class BaseItem extends Item {
 
     private static boolean hasContainer = false;
     private static boolean leaveCrafting = true;
@@ -19,7 +19,7 @@ public class ItemMod extends Item {
      * @param id
      *            The Item ID
      */
-    public ItemMod(int id) {
+    public BaseItem(int id) {
         super(id - 256);
         this.setCreativeTab(Harvestry.tabHarvestry);
     }
@@ -34,7 +34,7 @@ public class ItemMod extends Item {
      * @param maxDamage
      *            The Maximum amount of uses
      */
-    public ItemMod(int id, boolean leave, int maxDamage) {
+    public BaseItem(int id, boolean leave, int maxDamage) {
         super(id - 256);
         this.setMaxStackSize(1);
         this.setCreativeTab(Harvestry.tabHarvestry);

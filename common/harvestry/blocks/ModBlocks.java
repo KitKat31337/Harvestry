@@ -1,5 +1,6 @@
 package harvestry.blocks;
 
+import harvestry.blocks.te.GrinderTE;
 import harvestry.utils.Archive;
 import harvestry.utils.Config;
 import harvestry.utils.handlers.Handler;
@@ -15,8 +16,11 @@ public class ModBlocks {
 
     public static void init() {
         Handler.log(Level.INFO, "Loading Blocks");
-        oreAluminum = new BlockMod(Config.oreAluminumID).setUnlocalizedName(Archive.oreAluminum);
-        // blockGrinder = new ModContainer(Config.blockGrinderID, new
-        // GrinderTE()).setUnlocalizedName(Archive.blockGrinder);
+        
+        oreAluminum = new BaseOre(Config.oreAluminumID).setUnlocalizedName(Archive.oreAluminum)
+                .setHardness(3.0F).setResistance(5.0F);
+        
+        blockGrinder = new BaseContainer(Config.blockGrinderID, new GrinderTE())
+                .setUnlocalizedName(Archive.blockGrinder);
     }
 }

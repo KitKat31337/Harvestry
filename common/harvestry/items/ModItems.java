@@ -38,73 +38,73 @@ public class ModItems {
     public static void init() {
         Handler.log(Level.INFO, "Loading Items");
 
-        itemFlour = new ItemMod(Config.itemflourID).setUnlocalizedName(Archive.itemFlour);
+        itemFlour = new BaseItem(Config.itemflourID).setUnlocalizedName(Archive.itemFlour);
 
-        itemBreadPan = new ItemMod(Config.itemBreadPanID).setUnlocalizedName(Archive.itemBreadPan);
+        itemBreadPan = new BaseItem(Config.itemBreadPanID).setUnlocalizedName(Archive.itemBreadPan);
 
-        itemChocolateChips = new ItemMod(Config.itemChocolateChipsID)
+        itemChocolateChips = new BaseItem(Config.itemChocolateChipsID)
                 .setUnlocalizedName(Archive.itemChocolateChips);
 
-        itemCookieSheet = new ItemMod(Config.itemCookieSheetID)
+        itemCookieSheet = new BaseItem(Config.itemCookieSheetID)
                 .setUnlocalizedName(Archive.itemCookieSheet);
 
-        itemDough = new ItemMod(Config.itemDoughID).setUnlocalizedName(Archive.itemDough);
+        itemDough = new BaseItem(Config.itemDoughID).setUnlocalizedName(Archive.itemDough);
 
-        itemPiePan = new ItemMod(Config.itemPiePanID).setUnlocalizedName(Archive.itemPiePan)
+        itemPiePan = new BaseItem(Config.itemPiePanID).setUnlocalizedName(Archive.itemPiePan)
                 .setMaxStackSize(16);
 
-        itemPumpkinMash = new ItemMod(Config.itemPumpkinMashID)
+        itemPumpkinMash = new BaseItem(Config.itemPumpkinMashID)
                 .setUnlocalizedName(Archive.itemPumpkinMash);
 
-        foodPeanuts = new FoodMod(Config.foodPeanutsID, 1, 1)
+        foodPeanuts = new BaseFood(Config.foodPeanutsID, 1, 1)
                 .setUnlocalizedName(Archive.foodPeanuts);
 
-        foodScrambledEggs = new FoodMod(Config.foodScrambledEggsID, 1, 1)
+        foodScrambledEggs = new BaseFood(Config.foodScrambledEggsID, 1, 1)
                 .setUnlocalizedName(Archive.foodScrambledEggs);
 
-        itemBreadpanwithDough = new ItemMod(Config.itemBreadpanwithDoughID).setUnlocalizedName(
+        itemBreadpanwithDough = new BaseItem(Config.itemBreadpanwithDoughID).setUnlocalizedName(
                 Archive.itemBreadpanwithDough).setMaxStackSize(16);
 
-        itemCakeBatter = new ItemMod(Config.itemCakeBatterID)
+        itemCakeBatter = new BaseItem(Config.itemCakeBatterID)
                 .setUnlocalizedName(Archive.itemCakeBatter);
 
-        itemModBucket = new ItemMod(Config.itemModBucketID).setUnlocalizedName(
+        itemModBucket = new BaseItem(Config.itemModBucketID).setUnlocalizedName(
                 Archive.itemModBucket).setMaxStackSize(16);
 
-        itemCakePan = new ItemMod(Config.itemCakePanID).setUnlocalizedName(Archive.itemCakePan)
+        itemCakePan = new BaseItem(Config.itemCakePanID).setUnlocalizedName(Archive.itemCakePan)
                 .setMaxStackSize(16);
 
-        itemCakePanFull = new ItemMod(Config.itemCakePanFullID).setUnlocalizedName(
+        itemCakePanFull = new BaseItem(Config.itemCakePanFullID).setUnlocalizedName(
                 Archive.itemCakePanFull).setMaxStackSize(16);
 
-        itemAluminumFoil = new ItemMod(Config.itemAluminumFoilID)
+        itemAluminumFoil = new BaseItem(Config.itemAluminumFoilID)
                 .setUnlocalizedName(Archive.itemAluminumFoil);
 
-        itemAluminumSheet = new ItemMod(Config.itemAluminumSheetID)
+        itemAluminumSheet = new BaseItem(Config.itemAluminumSheetID)
                 .setUnlocalizedName(Archive.itemAluminumSheet);
 
-        itemRawAluminum = new ItemMod(Config.itemRawAluminumID)
+        itemRawAluminum = new BaseItem(Config.itemRawAluminumID)
                 .setUnlocalizedName(Archive.itemRawAluminum);
 
-        itemGrindStone = new ItemMod(Config.itemGrindStoneID)
+        itemGrindStone = new BaseItem(Config.itemGrindStoneID)
                 .setUnlocalizedName(Archive.itemGrindStone);
 
-        itemGrindStones = new ItemMod(Config.itemGrindStonesID, false, 8).setUnlocalizedName(
+        itemGrindStones = new BaseItem(Config.itemGrindStonesID, false, 8).setUnlocalizedName(
                 Archive.itemGrindStones).setNoRepair();
 
-        itemRawPotato = new ItemMod(Config.itemRawPotatoID)
+        itemRawPotato = new BaseItem(Config.itemRawPotatoID)
                 .setUnlocalizedName(Archive.itemRawPotato);
 
-        itemCookieDough = new ItemMod(Config.itemCookieDoughID)
+        itemCookieDough = new BaseItem(Config.itemCookieDoughID)
                 .setUnlocalizedName(Archive.itemCookieDough);
 
-        itemChocolateChipCookieDough = new ItemMod(Config.itemChocolateChipCookieDoughID)
+        itemChocolateChipCookieDough = new BaseItem(Config.itemChocolateChipCookieDoughID)
                 .setUnlocalizedName(Archive.itemChocolateChipCookieDough);
 
-        itemPumpkinPieFilling = new ItemMod(Config.itemPumpkinPieFillingID)
+        itemPumpkinPieFilling = new BaseItem(Config.itemPumpkinPieFillingID)
                 .setUnlocalizedName(Archive.itemPumpkinPieFilling);
 
-        itemPieCrust = new ItemMod(Config.itemPieCrustID).setUnlocalizedName(Archive.itemPieCrust);
+        itemPieCrust = new BaseItem(Config.itemPieCrustID).setUnlocalizedName(Archive.itemPieCrust);
 
     }
 }

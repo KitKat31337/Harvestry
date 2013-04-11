@@ -1,6 +1,7 @@
 package harvestry.utils;
 
 import harvestry.blocks.ModBlocks;
+import harvestry.blocks.te.GrinderTE;
 import harvestry.items.ModItems;
 import harvestry.utils.handlers.Handler;
 import harvestry.utils.handlers.RecipeHandler;
@@ -15,6 +16,8 @@ public class Registry {
 
     public static void register() {
 
+        registerTE();
+        
         registerItems();
 
         registerBlocks();
@@ -26,10 +29,10 @@ public class Registry {
         RecipeHandler.init();
     }
 
-    private static void registerBlocks() {
-        Handler.log(Level.INFO, "Registering Blocks");
+    private static void registerTE() {
+        Handler.log(Level.INFO, "Registering Tile Entities");
 
-        GameRegistry.registerBlock(ModBlocks.oreAluminum, Archive.oreAluminum);
+        GameRegistry.registerTileEntity(GrinderTE.class, Archive.grinderUnloc);
     }
 
     private static void registerItems() {
@@ -79,9 +82,13 @@ public class Registry {
         GameRegistry.registerItem(ModItems.itemPumpkinPieFilling, Archive.itemPumpkinPieFilling);
 
         GameRegistry.registerItem(ModItems.itemPieCrust, Archive.itemPieCrust);
+    }
+    
+    private static void registerBlocks() {
+        Handler.log(Level.INFO, "Registering Blocks");
 
-        // GameRegistry.registerItem(ModItems.itemPoisonousPeanut,
-        // Archive.foodPeanuts + "Poison");
+        GameRegistry.registerBlock(ModBlocks.oreAluminum, Archive.oreAluminum);
+        GameRegistry.registerBlock(ModBlocks.blockGrinder, Archive.blockGrinder);
     }
 
     private static void registerWorld() {

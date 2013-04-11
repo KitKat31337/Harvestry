@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMod extends Block {
+public class BaseBlock extends Block {
 
     /**
      * Creates a new Block Instance.
@@ -16,7 +16,7 @@ public class BlockMod extends Block {
      * @param id
      *            The Block ID
      */
-    public BlockMod(int id) {
+    public BaseBlock(int id) {
         super(id, Material.ground);
         this.setCreativeTab(Harvestry.tabHarvestry);
     }
@@ -29,7 +29,7 @@ public class BlockMod extends Block {
      * @param material
      *            The Material
      */
-    public BlockMod(int id, Material material) {
+    public BaseBlock(int id, Material material) {
         super(id, material);
         this.setCreativeTab(Harvestry.tabHarvestry);
     }
