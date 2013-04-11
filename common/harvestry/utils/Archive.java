@@ -14,7 +14,7 @@ public class Archive {
     public static final String proxy = id + ".sided.proxy.";
     public static final String clientProxy = proxy + "ClientProxy";
     public static final String serverProxy = proxy + "CommonProxy";
-    public static final String capes = "";
+    public static final String capes = "https://github.com/Claycorp/Harvestry/blob/master/capes.txt";
 
     // ************************************Items***********************************
     public static final String itemFlour = "itemFlour";
