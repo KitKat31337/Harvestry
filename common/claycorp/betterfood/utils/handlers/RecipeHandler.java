@@ -28,34 +28,62 @@ public class RecipeHandler {
 
     private static void add() {
         Handler.log(Level.INFO, "Adding Recipies");
-
+        
+        
+        // Shapeless Recipes
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemDough), new Object[] {
                 Item.bucketWater, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemBreadpanwithDough),
-                new Object[] { ModItems.itemBreadPan, ModItems.itemDough });
+                new Object[] { ModItems.itemBreadPan,ModItems.itemDough });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakeBatter), new Object[] {
-                (ModItems.itemModBucket), ModItems.itemFlour, ModItems.itemFlour,
-                ModItems.itemFlour, Item.sugar, Item.egg });
+                ModItems.itemModBucket, ModItems.itemFlour, ModItems.itemFlour,
+                ModItems.itemFlour, Item.sugar, Item.egg, Item.bucketMilk});
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakePanFull), new Object[] {
                 ModItems.itemCakeBatter, ModItems.itemCakePan });
-
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemBreadPan), new Object[] { "T   T",
-                "T T", "TTT", 'T', ModItems.itemAluminumSheet });
-
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCakePan), new Object[] { "   ",
-                "T T", "TTT", 'T', ModItems.itemAluminumSheet });
-
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemGrindStone), new Object[] { "SSS",
-                "SLS", "SSS", 'S', Block.stone, 'L', Block.wood });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemGrindStones), new Object[] {
                 ModItems.itemGrindStone, ModItems.itemGrindStone });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemFlour), new Object[] {
                 Item.wheat, grindStones });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemRawPotato), new Object[] {
+                ModItems.itemAluminumFoil, Item.potato });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.sugar), new Object[] {
+                Item.reed, grindStones });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCookieDough ), new Object[] {
+                Item.sugar, ModItems.itemFlour, ModItems.itemFlour, Item.bucketMilk, Item.egg, ModItems.itemModBucket });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemChocolateChipCookieDough ), new Object[] {
+                ModItems.itemCookieDough, ModItems.itemChocolateChips });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemPumpkinPieFilling ), new Object[] {
+            ModItems.itemPumpkinMash, ModItems.item });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemPieCrust ), new Object[] {
+            ModItems.itemPiePan, ModItems.itemDough });
+        
+        
+        
+        // Shaped Recipes
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemBreadPan), new Object[] 
+                { "T   T", "T T", "TTT", 
+            'T', ModItems.itemAluminumSheet });
+
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCakePan), new Object[] 
+                { "   ", "T T", "TTT", 
+                'T', ModItems.itemAluminumSheet });
+
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemGrindStone), new Object[] 
+                { "SSS", "SLS", "SSS", 
+                'S', Block.stone, 
+                'L', Block.wood });
+
 
     }
 
@@ -66,7 +94,7 @@ public class RecipeHandler {
         List<String> noCraft = new ArrayList<String>();
 
         // Any IDs to delete do next to the 297
-        noCraft = Arrays.asList(new String[] { "297", "354", "357", "400" });
+        noCraft = Arrays.asList(new String[] { "297", "354", "357", "400", "353" });
 
         int id;
         int meta;
