@@ -1,7 +1,11 @@
 package claycorp.betterfood.utils.handlers;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import claycorp.betterfood.utils.Archive;
 import claycorp.betterfood.utils.exeptions.Exeptions;
+import cpw.mods.fml.common.FMLLog;
 
 public class Handler {
 
@@ -32,11 +36,20 @@ public class Handler {
         IsLoaded = false;
     }
 
-    public static void log(Object s) {
-        System.out.println(s);
+    // **************************************Log Stuff***************************
+    private static Logger logger = Logger.getLogger(Archive.id);
+
+    public static void initLog() {
+
+        logger.setParent(FMLLog.getLogger());
     }
 
-    public static void logName(String s) {
-        System.out.println("[" + Archive.modName + "]" + " " + s);
+    public static void log(Level logLevel, Object message) {
+        
+        logger.log(logLevel, message.toString());
+    }
+
+    public static void print(Object s) {
+        System.out.println(s);
     }
 }

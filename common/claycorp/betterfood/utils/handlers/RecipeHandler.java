@@ -3,6 +3,7 @@ package claycorp.betterfood.utils.handlers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -26,7 +27,7 @@ public class RecipeHandler {
             OreDictionary.WILDCARD_VALUE);
 
     private static void add() {
-        Handler.logName("Adding Recipies");
+        Handler.log(Level.INFO, "Adding Recipies");
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemDough), new Object[] {
                 Item.bucketWater, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour });
@@ -60,7 +61,7 @@ public class RecipeHandler {
 
     private static void delete() {
 
-        Handler.logName("Overwriting Food Stuffs!");
+        Handler.log(Level.INFO, "Overwriting Food Stuffs!");
 
         List<String> noCraft = new ArrayList<String>();
 
@@ -112,7 +113,7 @@ public class RecipeHandler {
                             && ((removedItem.getItemDamage() == -1) || (result.getItemDamage() == removedItem
                                     .getItemDamage()))){
                         minecraftRecipes.remove(i);
-                        Handler.logName("Recipes removed for item " + removedItem.itemID);
+                        Handler.log(Level.INFO, "Recipes removed for item " + removedItem.itemID);
                         --i;
                     }
                 }

@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
-import cpw.mods.fml.common.FMLLog;
+import claycorp.betterfood.utils.handlers.Handler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class Config {
@@ -61,7 +61,7 @@ public class Config {
             configGeneral(config);
 
         }catch(Exception e){
-            FMLLog.log(Level.SEVERE, e, Archive.modName
+            Handler.log(Level.SEVERE, Archive.modName
                     + " has had a problem loading its configuration");
         }finally{
             if (config.hasChanged()){
@@ -94,6 +94,7 @@ public class Config {
     }
 
     private static void configFood(Configuration config, int fID) {
+        fID++;
         foodPeanutsID = config.getItem(Archive.foodPeanuts, fID++).getInt();
         foodScrambledEggsID = config.getItem(Archive.foodScrambledEggs, fID++).getInt();
     }
