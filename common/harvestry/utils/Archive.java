@@ -37,12 +37,11 @@ public class Archive {
     public static final String itemPumpkinPieFilling = "itemPumpkinPieFilling";
     public static final String itemPieCrust = "itemPieCrust";
 
-    // **********************************Blocks*************************************
+    // ********************************Blocks*************************************
     public static final String oreAluminum = "oreAluminum";
     public static final String blockGrinder = "blockGrinder";
 
-    // ***********************************NBT
-    // Stuff***********************************
+    // *******************************NBT Stuff****************************
     public static final String NBT_TE_Direction = "direction";
     public static final String NBT_TE_State = "state";
     public static final String NBT_TE_Custom_Name = "name";

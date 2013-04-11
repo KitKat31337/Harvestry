@@ -2,7 +2,9 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties version="1.0">
 	<comment>English (US) Language File</comment>
+	<!-- Tabs -->
 	<entry key="itemGroup.tabHarvestry">Harvestry</entry>
+	<!-- Items -->
 	<entry key="item.itemFlour.name">Flour</entry>
 	<entry key="item.itemBreadPan.name">Bread Pan</entry>
 	<entry key="item.itemChocolateChips.name">Chocolate Chips</entry>
@@ -22,10 +24,12 @@
 	<entry key="item.itemRawAluminum.name">Raw Aluminum</entry>
 	<entry key="item.itemAluminumSheet.name">Aluminum Sheet</entry>
 	<entry key="item.itemAluminumFoil.name">Aluminum Foil</entry>
+	<entry key="item.itemRawPotato.name">Raw Potato</entry>
+	<entry key="item.itemCookieDough.name">Cookie Dough</entry>
+	<entry key="item.itemChocolateChipCookieDough.name">Chocolate Chip Cookie Dough</entry>
+	<entry key="item.itemPumpkinPieFilling.name">Pumpkin Pie Filling</entry>
+	<entry key="item.itemPieCrust.name">Pie Crust</entry>
+	<!-- Blocks -->
 	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
-	<entry key="tile.itemRawPotato.name">Raw Potato</entry>
-	<entry key="tile.itemCookieDough.name">Cookie Dough</entry>
-	<entry key="tile.itemChocolateChipCookieDough.name">Chocolate Chip Cookie Dough</entry>
-	<entry key="tile.itemPumpkinPieFilling.name">Pumpkin Pie Filling</entry>
-	<entry key="tile.itemPieCrust.name">Pie Crust</entry>
+	<entry key="tile.blockGrinder.name">Grinder</entry>
 </properties>
