@@ -17,7 +17,7 @@ public class BlockMod extends Block {
      *            The Block ID
      */
     public BlockMod(int id) {
-        super(id, Material.ground); // Parameters: Block ID
+        super(id, Material.ground);
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
 
@@ -30,7 +30,7 @@ public class BlockMod extends Block {
      *            The Material
      */
     public BlockMod(int id, Material material) {
-        super(id, material); // Parameters: Block ID, Block material
+        super(id, material);
         this.setCreativeTab(BetterFood.tabBetterFood);
     }
 

@@ -40,8 +40,9 @@ public class Config {
     public static int foodPeanutsID;
     public static int foodScrambledEggsID;
 
-    // Ores
+    // Blocks
     public static int oreAluminumID;
+    public static int blockGrinderID;
 
     // World Generation Stuff (Aluminum)
     public static boolean enableWorldGenAluminum;
@@ -125,7 +126,10 @@ public class Config {
         configBlocks(config, oID++);
     }
 
-    private static void configBlocks(Configuration config, int bID) {}
+    private static void configBlocks(Configuration config, int bID) {
+        bID++;
+        blockGrinderID = config.getBlock(Archive.blockGrinder, bID++).getInt();
+    }
 
     private static void configWorldGen(Configuration config) {
         genAluminum(config);

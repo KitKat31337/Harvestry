@@ -40,9 +40,17 @@ public class Archive {
 
     // **********************************Blocks*************************************
     public static final String oreAluminum = "oreAluminum";
+    public static final String blockGrinder = "blockGrinder";
+    
+    //***********************************NBT Stuff***********************************
+    public static final String NBT_TE_Direction = "direction";
+    public static final String NBT_TE_State = "state";
+    public static final String NBT_TE_Custom_Name = "name";
+    public static final String NBT_TE_Owner = "owner";
 
     // *********************************Languages***********************************
     public static final String tabBetterFood = "tabBetterFood";
+    
     public static String[] langFiles = {
             // US Local
             lang + "en_US.xml",
