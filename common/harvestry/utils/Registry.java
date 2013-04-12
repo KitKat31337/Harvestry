@@ -17,6 +17,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Registry {
 
+    /**
+     * Registers everything that needs to be Registered.
+     */
     public static void register() {
 
         NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, new GuiHandler());
@@ -34,12 +37,18 @@ public class Registry {
         RecipeHandler.init();
     }
 
+    /**
+     * Registers all the Tile Entitys.
+     */
     private static void registerTE() {
         Handler.log(Level.INFO, "Registering Tile Entities");
 
         GameRegistry.registerTileEntity(GrinderTE.class, Archive.grinderUnloc);
     }
 
+    /**
+     * Registers all the Items.
+     */
     private static void registerItems() {
         Handler.log(Level.INFO, "Registering Items");
 
@@ -89,6 +98,9 @@ public class Registry {
         GameRegistry.registerItem(ModItems.itemPieCrust, Archive.itemPieCrust);
     }
 
+    /**
+     * Registers all the Blocks.
+     */
     private static void registerBlocks() {
         Handler.log(Level.INFO, "Registering Blocks");
 
@@ -96,15 +108,21 @@ public class Registry {
         GameRegistry.registerBlock(ModBlocks.blockGrinder, Archive.blockGrinder);
     }
 
+    /**
+     * Registers all the World Generation.
+     */
     private static void registerWorld() {
         if (Config.enableWorldGenAluminum){
             Handler.log(Level.INFO, "Registering World Generation for Aluminum");
             final WorldGenHandler worldGenAlu = new WorldGenHandler(Config.oreAluminumID,
-                    Config.aMaxHeight, Config.aMinHeight);
+                    Config.aluMaxHeight, Config.aluMinHeight);
             GameRegistry.registerWorldGenerator(worldGenAlu);
         }
     }
 
+    /**
+     * Registers all the Entries to the Ore Dictionary.
+     */
     private static void oreDictionary() {
         Handler.log(Level.INFO, "Adding Ore Dictionary Entries");
         OreDictionary.registerOre("dustWheat", ModItems.itemFlour);

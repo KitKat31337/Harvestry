@@ -12,6 +12,8 @@ import net.minecraft.world.World;
 public class BaseOre extends Block {
 
     /**
+     * Creates a new Block instance capable of being a Ore
+     * 
      * @param id
      *            Block Id
      */

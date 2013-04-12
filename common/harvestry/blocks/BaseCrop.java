@@ -10,6 +10,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BaseCrop extends BlockCrops {
 
+    /**
+     * Creates a new Block instance capable of being a Crop
+     * 
+     * @param id
+     *            The Block ID.
+     */
     protected BaseCrop(int id) {
         super(id);
         setCreativeTab(Harvestry.tabHarvestry);
@@ -31,6 +37,9 @@ public class BaseCrop extends BlockCrops {
         return Item.wheat.itemID;
     }
 
+    /**
+     * Registers the Icon for the Block
+     */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {

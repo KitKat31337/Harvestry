@@ -1,6 +1,8 @@
 package harvestry.sided.proxy;
 
 public class CommonProxy {
-    // Cape Method
+    /**
+     * Initializes the Capes Client Side Only
+     */
     public void initCapes() {}
 }

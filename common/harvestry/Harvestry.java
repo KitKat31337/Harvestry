@@ -38,32 +38,25 @@ public class Harvestry {
     @PreInit
     public void preInit(FMLPreInitializationEvent evt) {
 
-        boolean modLoaded = Handler.isModLoaded();
-
-        if (!modLoaded){
+        if (!Handler.isModLoaded()){
 
             Handler.initLog();
 
-            // Loads the Configuration
             Config.init(evt);
 
-            // Initialize Items
             ModItems.init();
 
-            // Initialize Blocks
             ModBlocks.init();
 
-            // Load Languages
             LanguageHandler.loadLanguages();
 
-            // Loads the Mod
             Handler.LoadMod();
         }
     }
 
     @Init
     public void init(FMLInitializationEvent event) {
-        // Loads Registry stuff
+
         Registry.register();
 
         proxy.initCapes();

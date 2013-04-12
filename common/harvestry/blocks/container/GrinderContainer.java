@@ -7,34 +7,47 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 
 public class GrinderContainer extends Container {
+
     private GrinderTE grinder;
 
+    /**
+     * Creates the Container for the Grinders GUI
+     * 
+     * @param player
+     *            The Player looking at the GUI
+     * @param grinder
+     *            The {@link GrinderTE} instance that the player is looking at.
+     */
     public GrinderContainer(InventoryPlayer player, GrinderTE grinder) {
 
         this.grinder = grinder;
-        this.addSlotToContainer(new Slot(grinder, 0, -15, 36));
-        this.addSlotToContainer(new Slot(grinder, 1, 36, 36));
-        this.addSlotToContainer(new Slot(grinder, 2, 79, 36));
-        this.addSlotToContainer(new Slot(grinder, 3, 122, 36));
+        // Top Slot
+        this.addSlotToContainer(new Slot(grinder, 0, 80, 21));
+        // Bottom Slot
+        this.addSlotToContainer(new Slot(grinder, 1, 80, 57));
+        // Left Hand Slot
+        this.addSlotToContainer(new Slot(grinder, 2, 53, 39));
+        // Right Hand Slot
+        this.addSlotToContainer(new Slot(grinder, 3, 107, 39));
 
-        int i;
-
-        // players inventory
-        for (i = 0; i < 3; ++i){
-            for (int j = 0; j < 9; ++j){
-                this.addSlotToContainer(new Slot(player, j + (i * 9) + 9, 7 + (j * 18),
-                        97 + (i * 18)));
+        // Add the player's inventory slots to the container
+        for (int inventoryRowIndex = 0; inventoryRowIndex < 3; ++inventoryRowIndex){
+            for (int inventoryColumnIndex = 0; inventoryColumnIndex < 9; ++inventoryColumnIndex){
+                this.addSlotToContainer(new Slot(player, inventoryColumnIndex
+                        + (inventoryRowIndex * 9) + 9, 8 + (inventoryColumnIndex * 18),
+                        84 + (inventoryRowIndex * 18)));
             }
         }
 
-        // players quickBar
-        for (i = 0; i < 9; ++i){
-            this.addSlotToContainer(new Slot(player, i, 7 + (i * 18), 155));
+        // Add the player's action bar slots to the container
+        for (int actionBarSlotIndex = 0; actionBarSlotIndex < 9; ++actionBarSlotIndex){
+            this.addSlotToContainer(new Slot(player, actionBarSlotIndex,
+                    8 + (actionBarSlotIndex * 18), 142));
         }
     }
 
     @Override
     public boolean canInteractWith(EntityPlayer entityplayer) {
-        return grinder.isUseableByPlayer(entityplayer);
+        return grinder.isUsableByPlayer(entityplayer);
     }
 }

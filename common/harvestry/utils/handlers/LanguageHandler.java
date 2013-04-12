@@ -9,6 +9,9 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LanguageHandler {
 
+    /**
+     * Creates the Localizations for everything in the Mod.
+     */
     public static void loadLanguages() {
 
         Handler.log(Level.INFO, "Loading Languages");

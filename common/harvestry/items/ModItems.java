@@ -35,6 +35,9 @@ public class ModItems {
     public static Item itemPumpkinPieFilling;
     public static Item itemPieCrust;
 
+    /**
+     * Creates all the Item Objects in the Mod.
+     */
     public static void init() {
         Handler.log(Level.INFO, "Loading Items");
 

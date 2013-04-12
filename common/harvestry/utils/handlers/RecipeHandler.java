@@ -17,20 +17,26 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeHandler {
 
-    public static void init() {
-        // Adds Recipes
-        add();
-        // Deletes Recipes
-        delete();
-    }
-
     private static ItemStack grindStones = new ItemStack(ModItems.itemGrindStones, 1,
             OreDictionary.WILDCARD_VALUE);
 
-    private static void add() {
-        Handler.log(Level.INFO, "Adding Recipies");
+    /**
+     * Initializes all the methods that handle Recipes.
+     */
+    public static void init() {
 
-        // Shapeless Recipes
+        addShapeless();
+
+        addShaped();
+
+        delete();
+    }
+
+    /**
+     * Adds all Shapeless the recipes in the Mod.
+     */
+    private static void addShapeless() {
+
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemDough), new Object[] {
                 Item.bucketWater, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour });
 
@@ -69,8 +75,12 @@ public class RecipeHandler {
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemPieCrust), new Object[] {
                 ModItems.itemPiePan, ModItems.itemDough });
+    }
 
-        // Shaped Recipes
+    /**
+     * Adds all Shaped the recipes in the Mod.
+     */
+    private static void addShaped() {
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemBreadPan), new Object[] { "T   T",
                 "T T", "TTT", 'T', ModItems.itemAluminumSheet });
 
@@ -79,9 +89,11 @@ public class RecipeHandler {
 
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemGrindStone), new Object[] { "SSS",
                 "SLS", "SSS", 'S', Block.stone, 'L', Block.wood });
-
     }
 
+    /**
+     * Deletes any recipes that have to be deleted because of Game play choices.
+     */
     private static void delete() {
 
         Handler.log(Level.INFO, "Overwriting Food Stuffs!");
@@ -119,8 +131,10 @@ public class RecipeHandler {
             }
         }
 
-        // Iterate over recipe list, and remove a recipe when its output matches
-        // one of our ItemStacks.
+        /*
+         * Iterate over recipe list, and remove a recipe when its output matches
+         * one of our ItemStacks.
+         */
         @SuppressWarnings("unchecked")
         List<IRecipe> minecraftRecipes = CraftingManager.getInstance().getRecipeList();
         ItemStack result;
@@ -130,8 +144,10 @@ public class RecipeHandler {
 
             if (result != null){
                 for (ItemStack removedItem : items){
-                    // Remove the item if the ID & meta match, OR if the IDs
-                    // match, and banned meta is -1.
+                    /*
+                     * Remove the item if the ID & meta match, OR if the IDs
+                     * match, and banned meta is -1.
+                     */
                     if ((result.itemID == removedItem.itemID)
                             && ((removedItem.getItemDamage() == -1) || (result.getItemDamage() == removedItem
                                     .getItemDamage()))){

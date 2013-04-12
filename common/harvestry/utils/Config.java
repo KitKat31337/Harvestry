@@ -12,7 +12,7 @@ public class Config {
 
     private static String gen = "World Generation";
 
-    // Items
+    // Item IDs
     public static int itemCakePanFullID;
     public static int itemCakePanID;
     public static int itemModBucketID;
@@ -36,19 +36,26 @@ public class Config {
     public static int itemPumpkinPieFillingID;
     public static int itemPieCrustID;
 
-    // Food
+    // Food IDs
     public static int foodPeanutsID;
     public static int foodScrambledEggsID;
 
-    // Blocks
+    // Blocks IDs
     public static int oreAluminumID;
     public static int blockGrinderID;
 
     // World Generation Stuff (Aluminum)
     public static boolean enableWorldGenAluminum;
-    public static int aMaxHeight;
-    public static int aMinHeight;
+    public static int aluMaxHeight;
+    public static int aluMinHeight;
 
+    /**
+     * Initializes the Configuration file.
+     * 
+     * @param event
+     *            The FMLPreInitializationEvent that is used to get the
+     *            ModConfigurationDirectory.
+     */
     public static void init(FMLPreInitializationEvent event) {
 
         File configFile = new File(event.getModConfigurationDirectory(), Archive.modName + ".cfg");
@@ -57,15 +64,15 @@ public class Config {
 
         try{
             Handler.log(Level.INFO, "Loading configuration");
+            /**
+             * Loads a pre-existing Configuration file.
+             */
             config.load();
 
-            // Creates the configurations for Items
             configItems(config);
 
-            // Creates the configurations for Ores
             configOres(config);
 
-            // Creates the configurations for other Stuff
             configWorldGen(config);
 
         }catch(Exception e){
@@ -73,11 +80,23 @@ public class Config {
                     + " has had a problem loading its configuration");
         }finally{
             if (config.hasChanged()){
+                /**
+                 * If a pre-existing Configuration file didn't exist it creates
+                 * a new one.
+                 * If there were changes to the existing Configuration file, It
+                 * saves them.
+                 */
                 config.save();
             }
         }
     }
 
+    /**
+     * Loads or creates the Items in the Configuration file.
+     * 
+     * @param config
+     *            The Configuration file that is being edited.
+     */
     private static void configItems(Configuration config) {
         Handler.log(Level.INFO, "Loading Item Configs");
         int iID = 8000;
@@ -104,16 +123,18 @@ public class Config {
                 .getItem(Archive.itemChocolateChipCookieDough, iID++).getInt();
         itemPumpkinPieFillingID = config.getItem(Archive.itemPumpkinPieFilling, iID++).getInt();
         itemPieCrustID = config.getItem(Archive.itemPieCrust, iID++).getInt();
-        // itemCookieDoughID = config.getItem(Archive.itemCookieDough,
-        // iID++).getInt();
-        // itemCookieDoughID = config.getItem(Archive.itemCookieDough,
-        // iID++).getInt();
-        // itemCookieDoughID = config.getItem(Archive.itemCookieDough,
-        // iID++).getInt();
-        // Creates the configurations for Food
         configFood(config, iID++);
     }
 
+    /**
+     * Loads or creates the Food Items in the Configuration file.
+     * 
+     * @param config
+     *            The Configuration file that is being edited.
+     * @param fID
+     *            The Last Item ID, used so that the Items and Foods would never
+     *            conflict.
+     */
     private static void configFood(Configuration config, int fID) {
         Handler.log(Level.INFO, "Loading Food Configs");
         fID++;
@@ -121,6 +142,12 @@ public class Config {
         foodScrambledEggsID = config.getItem(Archive.foodScrambledEggs, fID++).getInt();
     }
 
+    /**
+     * Loads or creates the Ores in the Configuration file.
+     * 
+     * @param config
+     *            The Configuration file that is being edited.
+     */
     private static void configOres(Configuration config) {
         Handler.log(Level.INFO, "Loading Ore Configs");
         int oID = 1000;
@@ -129,22 +156,43 @@ public class Config {
         configBlocks(config, oID++);
     }
 
+    /**
+     * Loads or creates the Blocks in the Configuration file.
+     * 
+     * @param config
+     *            The Configuration file that is being edited.
+     * @param bID
+     *            The Last Ore ID, used so that the Ores and Blocks would never
+     *            conflict.
+     */
     private static void configBlocks(Configuration config, int bID) {
         bID++;
         blockGrinderID = config.getBlock(Archive.blockGrinder, bID++).getInt();
     }
 
+    /**
+     * Loads or creates the World Generation Section in the Configuration file.
+     * 
+     * @param config
+     *            The Configuration file that is being edited.
+     */
     private static void configWorldGen(Configuration config) {
         genAluminum(config);
     }
 
+    /**
+     * Loads or creates the Aluminum World Generation in the Configuration file.
+     * 
+     * @param config
+     *            The Configuration file that is being edited.
+     */
     private static void genAluminum(Configuration config) {
         Handler.log(Level.INFO, "Loading Aluminum Configs");
         String alu = " of Aluminum";
         enableWorldGenAluminum = config.get(gen + alu, "Enable Generation of Aluminum", true)
                 .getBoolean(true);
-        aMaxHeight = config.get(gen + alu, "Maximum Height", 50).getInt();
-        aMinHeight = config.get(gen + alu, "Minimum Height", 25).getInt();
+        aluMaxHeight = config.get(gen + alu, "Maximum Height", 50).getInt();
+        aluMinHeight = config.get(gen + alu, "Minimum Height", 25).getInt();
     }
 
 }

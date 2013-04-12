@@ -34,6 +34,9 @@ public class BaseBlock extends Block {
         this.setCreativeTab(Harvestry.tabHarvestry);
     }
 
+    /**
+     * Registers the Icon for the Block
+     */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {

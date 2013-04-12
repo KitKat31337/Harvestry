@@ -12,6 +12,9 @@ public class HarvestryTabs extends CreativeTabs {
         super(id, name);
     }
 
+    /**
+     * Gets the Icon from a Item to display as the Tab's Icon
+     */
     @Override
     @SideOnly(Side.CLIENT)
     public ItemStack getIconItemStack() {

@@ -69,9 +69,9 @@ public class Archive {
      * Tile Entity Stuff
      * ******************************************************
      */
-    public static final String inventory = "inventory";
+    public static final String inventory = "Inventory";
     // Grinder
-    public static final String grinderUnloc = id + ".grinder";
+    public static final String grinderUnloc = "Grinder";
     public static final String grinderGUI = gui + "guiGrindstone.png";
     public static final int grinderGUID = 0;
 
@@ -92,9 +92,9 @@ public class Archive {
      */
     public static final String tabHarvestry = "tabHarvestry";
     public static String[] langFiles = {
-            // US Local
+            // US Language
             lang + "en_US.xml",
-            // ES Local
+            // ES Language
             lang + "es_ES.xml" };
 
 }

@@ -13,6 +13,9 @@ public class GrinderTE extends BaseTE implements IInventory {
      */
     private ItemStack[] inventory;
 
+    /**
+     * Creates a new {@link GrinderTE} Instance.
+     */
     public GrinderTE() {
         inventory = new ItemStack[4];
     }
@@ -37,63 +40,54 @@ public class GrinderTE extends BaseTE implements IInventory {
 
     @Override
     public int getSizeInventory() {
-        // TODO Auto-generated method stub
         return inventory.length;
     }
 
     @Override
     public ItemStack getStackInSlot(int slot) {
-        // TODO Auto-generated method stub
         return inventory[slot];
     }
 
     @Override
     public ItemStack decrStackSize(int i, int j) {
-        // TODO Auto-generated method stub
         return FunctionHelper.decrStackSize(i, j, inventory, this);
     }
 
     @Override
     public ItemStack getStackInSlotOnClosing(int i) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public void setInventorySlotContents(int i, ItemStack itemstack) {
-        // TODO Auto-generated method stub
-
+        // TODO
     }
 
     @Override
     public String getInvName() {
-        // TODO Auto-generated method stub
         return Archive.grinderUnloc;
     }
 
     @Override
     public boolean isInvNameLocalized() {
-        // TODO Auto-generated method stub
         return this.hasCustomName();
     }
 
     @Override
     public int getInventoryStackLimit() {
-        // TODO Auto-generated method stub
         return 64;
     }
 
     @Override
     public boolean isStackValidForSlot(int i, ItemStack itemstack) {
-        // TODO Auto-generated method stub
         return true;
     }
 
-    @Override
     // Useless
+    @Override
     public void openChest() {}
 
-    @Override
     // Useless
+    @Override
     public void closeChest() {}
 }

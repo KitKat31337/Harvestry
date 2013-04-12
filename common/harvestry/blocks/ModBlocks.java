@@ -13,6 +13,9 @@ public class ModBlocks {
     public static Block oreAluminum;
     public static Block blockGrinder;
 
+    /**
+     * Creates all the Block Objects in the Mod.
+     */
     public static void init() {
         Handler.log(Level.INFO, "Loading Blocks");
 

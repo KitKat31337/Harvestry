@@ -10,42 +10,51 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 public class GUIGrinder extends GuiContainer {
+
     private GrinderTE grinder;
 
+    /**
+     * Creates the Grinders GUI
+     * 
+     * @param player
+     *            The Player looking at the GUI
+     * @param grinder
+     *            The {@link GrinderTE} instance that the player is looking at.
+     */
     public GUIGrinder(InventoryPlayer player, GrinderTE grinder) {
         super(new GrinderContainer(player, grinder));
         this.grinder = grinder;
     }
 
-    @Override
-    public void initGui() {
-        super.initGui();
-    }
-
     /**
-     * Draw the foreground layer for the GuiContainer (everything in front of
+     * Draw the Foreground layer for the GuiContainer (everything in front of
      * the items)
      */
     @Override
-    protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-        String s = StatCollector.translateToLocal(this.grinder.getInvName());
-        this.fontRenderer.drawString(s, (this.xSize / 2)
-                - (this.fontRenderer.getStringWidth(s) / 2), 0, 4210752);
-        this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8,
-                (this.ySize - 83) + 2, 4210752);
+    protected void drawGuiContainerForegroundLayer(int x, int y) {
+        String containerName;
+        if (grinder.isInvNameLocalized()){
+            containerName = grinder.getInvName();
+        }else{
+            containerName = StatCollector.translateToLocal(grinder.getInvName());
+        }
+        fontRenderer.drawString(containerName,
+                (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 6, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(Archive.inventory), 9,
+                (ySize - 96) + 2, 4210752);
     }
 
+    /**
+     * Draw the Background layer for the GuiContainer (everything in back of
+     * the items)
+     */
     @Override
-    protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
+    protected void drawGuiContainerBackgroundLayer(float opacity, int x, int y) {
 
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.renderEngine.bindTexture(Archive.grinderGUI);
-        int startX = ((this.width - this.xSize) / 2) - ((this.width - this.xSize) / 6);
-        int startY = ((this.height - this.ySize) / 2) - ((this.height - this.ySize) / 6);
-
-        int x = (int) (this.xSize * (256 / 176.0));
-        int y = (int) (this.ySize * (191 / 165.0));
-
-        this.drawTexturedModalRect(startX, startY, 0, 0, x, y);
+        int xStart = (width - xSize) / 2;
+        int yStart = (height - ySize) / 2;
+        this.drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
     }
 }

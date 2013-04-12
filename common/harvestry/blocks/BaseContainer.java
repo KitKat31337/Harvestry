@@ -95,6 +95,9 @@ public class BaseContainer extends BlockContainer {
         return true;
     }
 
+    /**
+     * Registers the Icon for the Block
+     */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
