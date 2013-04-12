@@ -6,12 +6,16 @@
 	<target name="clean">
 		<delete file="${dir.development}\${dir.mcp}\src\minecraft\mcmod.info" />
 		<delete dir="${dir.development}\${dir.mcp}\src\minecraft\${dir.modPackege}" />
+		<delete dir="${dir.development}\${dir.mcp}\src\minecraft\com" />
 		<delete dir="${dir.development}\${dir.mcp}\reobf\minecraft" />
 	</target>
 	
 	<target name="build">
 		<copy todir="${dir.development}\${dir.mcp}\src\minecraft">
-			<fileset dir="${dir.development}\${dir.modFloder}\common" />
+			<fileset dir="${dir.development}\${dir.modFloder}\${dir.src}" />
+		</copy>
+		<copy todir="${dir.development}\${dir.mcp}\src\minecraft">
+			<fileset dir="${dir.development}\${dir.modFloder}\${dir.lib}" />
 		</copy>
 		<replace dir="${dir.development}\${dir.mcp}\src\minecraft" token="@VERSION@" value="${release.mod.majorVersion}.${release.mod.minorVersion}.${release.mod.revision}" />
 	</target>
