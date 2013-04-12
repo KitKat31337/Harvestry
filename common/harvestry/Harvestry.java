@@ -31,7 +31,7 @@ public class Harvestry {
     public static Harvestry instance;
     
     @SidedProxy(serverSide = Archive.serverProxy, clientSide = Archive.clientProxy)
-    public static CommonProxy   proxy;
+    public static CommonProxy proxy;
     
     // Declares a new Creative Tab
     public static CreativeTabs tabHarvestry = new HarvestryTabs(CreativeTabs.getNextID(),
@@ -58,8 +58,6 @@ public class Harvestry {
             // Load Languages
             LanguageHandler.loadLanguages();
             
-            proxy.initCapes();
-
             // Loads the Mod
             Handler.LoadMod();
         }
@@ -69,5 +67,7 @@ public class Harvestry {
     public void init(FMLInitializationEvent event) {
         // Loads Registry stuff
         Registry.register();
+        
+        proxy.initCapes();
     }
 }

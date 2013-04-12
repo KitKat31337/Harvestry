@@ -11,6 +11,6 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void initCapes() {
         // Link for the file that makes the capes work
-        DeveloperCapesAPI.init(Archive.capes);
+        DeveloperCapesAPI.getInstance().init(Archive.capes);
     }
 }
