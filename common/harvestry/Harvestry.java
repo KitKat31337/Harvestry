@@ -21,18 +21,16 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
 
-@Mod(modid = Archive.id, name = Archive.modName, version = Archive.ver, useMetadata = true)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, 
-clientPacketHandlerSpec = @SidedPacketHandler(channels = { Archive.channel }, packetHandler = HandlerClient.class), 
-serverPacketHandlerSpec = @SidedPacketHandler(channels = { Archive.channel }, packetHandler = HandlerServer.class))
+@Mod(modid = Archive.id, name = Archive.modName, version = Archive.ver, useMetadata = true, dependencies = "required-after:Forge@[7.7.1.650,)")
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, clientPacketHandlerSpec = @SidedPacketHandler(channels = { Archive.channel }, packetHandler = HandlerClient.class), serverPacketHandlerSpec = @SidedPacketHandler(channels = { Archive.channel }, packetHandler = HandlerServer.class))
 public class Harvestry {
 
     @Instance(Archive.id)
     public static Harvestry instance;
-    
+
     @SidedProxy(serverSide = Archive.serverProxy, clientSide = Archive.clientProxy)
     public static CommonProxy proxy;
-    
+
     // Declares a new Creative Tab
     public static CreativeTabs tabHarvestry = new HarvestryTabs(CreativeTabs.getNextID(),
             Archive.tabHarvestry);
@@ -57,7 +55,7 @@ public class Harvestry {
 
             // Load Languages
             LanguageHandler.loadLanguages();
-            
+
             // Loads the Mod
             Handler.LoadMod();
         }
@@ -67,7 +65,7 @@ public class Harvestry {
     public void init(FMLInitializationEvent event) {
         // Loads Registry stuff
         Registry.register();
-        
+
         proxy.initCapes();
     }
 }

@@ -7,11 +7,11 @@
   "logoFile": "/mods/betterfood/textures/logo/logo.png",
   "version": "0.2.0",
   "url": "https://github.com/Claycorp/Harvestry",
-  "updateUrl": "",
+  "updateUrl": "https://github.com/Claycorp/Harvestry/tree/master/Releases",
   "authors": [ "claycorp", "captain_shadows", "Runeslielo" ],
-  "screenshots": [ "" ],
+  "screenshots": [ "/mods/betterfood/textures/screenshots/screenshot.png" ],
   "dependencies": [
-     "mod_MinecraftForge"
+     "required-after:Forge@[7.7.1.650,)"
   ]
 }
 ]
