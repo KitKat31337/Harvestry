@@ -1,8 +1,10 @@
 package harvestry.utils;
 
+import harvestry.Harvestry;
 import harvestry.blocks.ModBlocks;
 import harvestry.blocks.te.GrinderTE;
 import harvestry.items.ModItems;
+import harvestry.utils.handlers.GuiHandler;
 import harvestry.utils.handlers.Handler;
 import harvestry.utils.handlers.RecipeHandler;
 import harvestry.utils.worldgen.WorldGenHandler;
@@ -10,6 +12,7 @@ import harvestry.utils.worldgen.WorldGenHandler;
 import java.util.logging.Level;
 
 import net.minecraftforge.oredict.OreDictionary;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Registry {
@@ -17,7 +20,7 @@ public class Registry {
     public static void register() {
 
         registerTE();
-        
+
         registerItems();
 
         registerBlocks();
@@ -25,6 +28,8 @@ public class Registry {
         registerWorld();
 
         oreDictionary();
+
+        NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, new GuiHandler());
 
         RecipeHandler.init();
     }
@@ -83,7 +88,7 @@ public class Registry {
 
         GameRegistry.registerItem(ModItems.itemPieCrust, Archive.itemPieCrust);
     }
-    
+
     private static void registerBlocks() {
         Handler.log(Level.INFO, "Registering Blocks");
 

@@ -49,6 +49,7 @@ public class Archive {
     // ****************************Tile Entity Stuff***************************
     public static final String inventory   = "inventory";
     public static final String grinderUnloc = id + ".grinder";
+    public static final String grinderGUI = "/mods/" + id + "/textures/guis";
     
     // *******************************NBT Stuff****************************
     public static final String NBT_TE_Direction = "direction";
