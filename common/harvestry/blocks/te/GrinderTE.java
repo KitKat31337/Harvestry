@@ -14,12 +14,13 @@ public class GrinderTE extends BaseTE implements IInventory {
     private ItemStack[] inventory;
 
     public GrinderTE() {
-        inventory = new ItemStack[3];
+        inventory = new ItemStack[4];
     }
-    
+
     /**
      * Reads a tile entity from NBT.
      */
+    @Override
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
         inventory = FunctionHelper.readInventoryFromNBT(nbt.getTagList(Archive.inventory), 10);
@@ -28,6 +29,7 @@ public class GrinderTE extends BaseTE implements IInventory {
     /**
      * Writes a tile entity to NBT.
      */
+    @Override
     public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
         nbt.setTag(Archive.inventory, FunctionHelper.writeInventoryToNBT(inventory));

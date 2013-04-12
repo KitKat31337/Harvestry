@@ -53,7 +53,7 @@ public class BaseTE extends TileEntity {
 
     public boolean hasOwner() {
 
-        return owner != null && owner.length() > 0;
+        return (owner != null) && (owner.length() > 0);
     }
 
     public void setOwner(String owner) {
@@ -63,7 +63,7 @@ public class BaseTE extends TileEntity {
 
     public boolean hasCustomName() {
 
-        return customName != null && customName.length() > 0;
+        return (customName != null) && (customName.length() > 0);
     }
 
     public String getCustomName() {

@@ -28,8 +28,9 @@ public abstract class FunctionHelper {
         NBTTagCompound stackNBT;
         NBTTagList list = new NBTTagList();
         for (int i = 0; i < stacks.length; i++){
-            if (stacks[i] == null)
+            if (stacks[i] == null){
                 continue;
+            }
 
             stackNBT = new NBTTagCompound();
             stackNBT.setInteger(slot, i);

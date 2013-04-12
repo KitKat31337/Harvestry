@@ -26,12 +26,13 @@ public class GUIGrinder extends GuiContainer {
      * Draw the foreground layer for the GuiContainer (everything in front of
      * the items)
      */
+    @Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2) {
         String s = StatCollector.translateToLocal(this.grinder.getInvName());
-        this.fontRenderer.drawString(s, this.xSize / 2 - this.fontRenderer.getStringWidth(s) / 2,
-                0, 4210752);
+        this.fontRenderer.drawString(s, (this.xSize / 2)
+                - (this.fontRenderer.getStringWidth(s) / 2), 0, 4210752);
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8,
-                this.ySize - 83 + 2, 4210752);
+                (this.ySize - 83) + 2, 4210752);
     }
 
     @Override
@@ -39,8 +40,8 @@ public class GUIGrinder extends GuiContainer {
 
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.renderEngine.bindTexture(Archive.grinderGUI);
-        int startX = (this.width - this.xSize) / 2 - (this.width - this.xSize) / 6;
-        int startY = (this.height - this.ySize) / 2 - (this.height - this.ySize) / 6;
+        int startX = ((this.width - this.xSize) / 2) - ((this.width - this.xSize) / 6);
+        int startY = ((this.height - this.ySize) / 2) - ((this.height - this.ySize) / 6);
 
         int x = (int) (this.xSize * (256 / 176.0));
         int y = (int) (this.ySize * (191 / 165.0));

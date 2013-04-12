@@ -49,10 +49,11 @@ public class Handler {
 
         logger.log(logLevel, message.toString());
     }
-    
+
     public static void log(Level level, String msg, Throwable t) {
         logger.log(level, msg, t);
     }
+
     public static void print(Object s) {
         System.out.println(s);
     }

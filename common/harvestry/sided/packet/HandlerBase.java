@@ -18,37 +18,40 @@ public abstract class HandlerBase implements IPacketHandler {
     @Override
     public void onPacketData(INetworkManager manager, Packet250CustomPayload packet, Player player) {
         // no packet stuff
-        if (!packet.channel.equals(Archive.channel))
+        if (!packet.channel.equals(Archive.channel)){
             return;
+        }
 
         try{
             ByteArrayInputStream array = new ByteArrayInputStream(packet.data);
             ObjectInputStream stream = new ObjectInputStream(array);
-            int id = stream.readInt();
+            stream.readInt();
 
             PacketHBase parsedPacket = null;
 
-            /*switch (id) {
-                case 0:
-                    parsedPacket = new PacketSC0MountEntity(stream);
-                    break;
-                case 1:
-                    parsedPacket = new PacketSC1StartBoat(stream);
-                    break;
-                case 2:
-                    parsedPacket = new PacketSC2BuildBoat(stream);
-                    break;
-                case 3:
-                    parsedPacket = new PacketSC3ToggleAnchor(stream);
-                    break;
-            }*/
+            /*
+             * switch (id) {
+             * case 0:
+             * parsedPacket = new PacketSC0MountEntity(stream);
+             * break;
+             * case 1:
+             * parsedPacket = new PacketSC1StartBoat(stream);
+             * break;
+             * case 2:
+             * parsedPacket = new PacketSC2BuildBoat(stream);
+             * break;
+             * case 3:
+             * parsedPacket = new PacketSC3ToggleAnchor(stream);
+             * break;
+             * }
+             */
 
             doAction((EntityPlayerMP) player, parsedPacket);
             stream.close();
             array.close();
         }catch(Throwable t){
             Handler.log(Level.SEVERE,
-                    "Error receiving " + Archive.modName +" packet! " + this.toString(), t);
+                    "Error receiving " + Archive.modName + " packet! " + this.toString(), t);
         }
 
     }

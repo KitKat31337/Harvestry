@@ -19,6 +19,8 @@ public class Registry {
 
     public static void register() {
 
+        NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, new GuiHandler());
+
         registerTE();
 
         registerItems();
@@ -28,8 +30,6 @@ public class Registry {
         registerWorld();
 
         oreDictionary();
-
-        NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, new GuiHandler());
 
         RecipeHandler.init();
     }

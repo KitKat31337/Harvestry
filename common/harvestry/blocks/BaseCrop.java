@@ -1,12 +1,12 @@
 package harvestry.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import harvestry.Harvestry;
 import harvestry.utils.Archive;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BaseCrop extends BlockCrops {
 
@@ -30,7 +30,7 @@ public class BaseCrop extends BlockCrops {
     protected int getCropItem() {
         return Item.wheat.itemID;
     }
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
