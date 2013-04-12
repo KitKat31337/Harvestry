@@ -62,8 +62,8 @@ public class BaseItem extends Item {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister) {
-        this.itemIcon = par1IconRegister.registerIcon(Archive.texture
+    public void registerIcons(IconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(Archive.texture
                 + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 }

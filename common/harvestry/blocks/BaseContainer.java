@@ -80,7 +80,7 @@ public class BaseContainer extends BlockContainer {
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int wut,
             float clickX, float clickY, float clockZ) {
-        if (!player.isSneaking() || !world.isRemote){
+        if (!player.isSneaking() && !world.isRemote){
             switch (tileID) {
                 case 0:
                     GrinderTE grinder = (GrinderTE) world.getBlockTileEntity(x, y, z);
