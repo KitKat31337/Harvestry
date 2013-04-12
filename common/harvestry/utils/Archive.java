@@ -5,7 +5,7 @@ public class Archive {
     // ************************************Mod*************************************
     public static final String id = "harvestry";
     public static final String modName = "Harvestry";
-    public static final String ver = "0.1.5";
+    public static final String ver = "0.2.0";
     public static final String channel = id;
 
     // ********************************Locations***********************************

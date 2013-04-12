@@ -21,7 +21,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
 
-@Mod(modid = Archive.id, name = Archive.modName, version = Archive.ver)
+@Mod(modid = Archive.id, name = Archive.modName, version = Archive.ver, useMetadata = true)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, 
 clientPacketHandlerSpec = @SidedPacketHandler(channels = { Archive.channel }, packetHandler = HandlerClient.class), 
 serverPacketHandlerSpec = @SidedPacketHandler(channels = { Archive.channel }, packetHandler = HandlerServer.class))
