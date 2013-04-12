@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>Archivo de Lenguage en Español (ES)</comment>
+	<entry key="itemGroup.tabBetterFood">Better Food</entry>
+	<entry key="item.itemFlour.name">Flour</entry>
+	<entry key="item.itemBreadPan.name">Bread Pan</entry>
+	<entry key="item.itemChocolateChips.name">Chocolate Chips</entry>
+	<entry key="item.itemCookieSheet.name">Cookie Sheet</entry>
+	<entry key="item.itemDough.name">Dough</entry>
+	<entry key="item.itemPiePan.name">Pie Pan</entry>
+	<entry key="item.itemPumpkinMash.name">Pumpkin Mash</entry>
+	<entry key="item.foodPeanuts.name">Peanuts</entry>
+	<entry key="item.foodScrambledEggs.name">Scrambled Eggs</entry>
+	<entry key="item.itemModBucket.name">Empty Bucket o' Batter</entry>
+	<entry key="item.itemBreadpanwithDough.name">Pan of Bread Dough</entry>
+	<entry key="item.itemCakeBatter.name">Bucket o' Batter</entry>
+	<entry key="item.itemCakePan.name">Cake Pan</entry>
+	<entry key="item.itemCakePanFull.name">Cake Pan Full</entry>
+	<entry key="item.itemGrindStone.name">Grind Stone</entry>
+	<entry key="item.itemGrindStones.name">Grind Stones</entry>
+	<entry key="item.itemRawAluminum.name">Raw Aluminum</entry>
+	<entry key="item.itemAluminumSheet.name">Aluminum Sheet</entry>
+	<entry key="item.itemAluminumFoil.name">Aluminum Foil</entry>
+	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
+</properties>
