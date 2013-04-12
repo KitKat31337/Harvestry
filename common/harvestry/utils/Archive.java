@@ -2,21 +2,35 @@ package harvestry.utils;
 
 public class Archive {
 
-    // ************************************Mod*************************************
+    /*
+     * ******************************************************
+     * Mod
+     * ******************************************************
+     */
     public static final String id = "harvestry";
     public static final String modName = "Harvestry";
-    public static final String ver = "0.2.0";
+    public static final String ver = "@VERSION@";
     public static final String channel = id;
+    public static final String depend = "required-after:Forge@[7.7.1.650,)";
 
-    // ********************************Locations***********************************
+    /*
+     * ******************************************************
+     * Locations
+     * ******************************************************
+     */
     public static final String texture = id + ":";
     public static final String lang = "/mods/" + id + "/lang/";
     public static final String proxy = id + ".sided.proxy.";
     public static final String clientProxy = proxy + "ClientProxy";
     public static final String serverProxy = proxy + "CommonProxy";
     public static final String capes = "https://raw.github.com/Claycorp/Harvestry/master/capes.txt";
+    public static final String gui = "/mods/" + id + "/textures/guis/";
 
-    // ************************************Items***********************************
+    /*
+     * ******************************************************
+     * Items
+     * ******************************************************
+     */
     public static final String itemFlour = "itemFlour";
     public static final String itemPumpkinMash = "itemPumpkinMash";
     public static final String itemBreadPan = "itemBreadPan";
@@ -42,23 +56,40 @@ public class Archive {
     public static final String itemPumpkinPieFilling = "itemPumpkinPieFilling";
     public static final String itemPieCrust = "itemPieCrust";
 
-    // ********************************Blocks*************************************
+    /*
+     * ******************************************************
+     * Blocks
+     * ******************************************************
+     */
     public static final String oreAluminum = "oreAluminum";
     public static final String blockGrinder = "blockGrinder";
 
-    // ****************************Tile Entity Stuff***************************
+    /*
+     * ******************************************************
+     * Tile Entity Stuff
+     * ******************************************************
+     */
     public static final String inventory = "inventory";
+    // Grinder
     public static final String grinderUnloc = id + ".grinder";
-    public static final String grinderGUI = "/mods/" + id + "/textures/guis";
+    public static final String grinderGUI = gui + "guiGrindstone.png";
     public static final int grinderGUID = 0;
 
-    // *******************************NBT Stuff****************************
+    /*
+     * ******************************************************
+     * NBT Stuff
+     * ******************************************************
+     */
     public static final String NBT_TE_Direction = "direction";
     public static final String NBT_TE_State = "state";
     public static final String NBT_TE_Custom_Name = "name";
     public static final String NBT_TE_Owner = "owner";
 
-    // *********************************Languages***********************************
+    /*
+     * ******************************************************
+     * Languages
+     * ******************************************************
+     */
     public static final String tabHarvestry = "tabHarvestry";
     public static String[] langFiles = {
             // US Local
