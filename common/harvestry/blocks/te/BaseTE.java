@@ -147,7 +147,7 @@ public class BaseTE extends TileEntity {
      *            The player that is using the {@link TileEntity}.
      * @return true if the player is within 10 blocks.
      */
-    public boolean isUsableByPlayer(EntityPlayer player) {
+    public boolean isUseableByPlayer(EntityPlayer player) {
 
         return player.getDistance(xCoord, yCoord, zCoord) <= 10;
     }

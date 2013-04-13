@@ -48,6 +48,6 @@ public class GrinderContainer extends Container {
 
     @Override
     public boolean canInteractWith(EntityPlayer entityplayer) {
-        return grinder.isUsableByPlayer(entityplayer);
+        return grinder.isUseableByPlayer(entityplayer);
     }
 }
