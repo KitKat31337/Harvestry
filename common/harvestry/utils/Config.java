@@ -55,6 +55,7 @@ public class Config {
      */
     public static int oreAluminumID;
     public static int blockGrinderID;
+    public static int blockOvenID;
 
     /*
      * ***************************************************
@@ -184,6 +185,7 @@ public class Config {
     private static void configBlocks(Configuration config, int bID) {
         bID++;
         blockGrinderID = config.getBlock(Archive.blockGrinder, bID++).getInt();
+        blockOvenID = config.getBlock(Archive.blockOven, bID++).getInt();
     }
 
     /**

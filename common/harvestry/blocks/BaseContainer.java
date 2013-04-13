@@ -2,6 +2,7 @@ package harvestry.blocks;
 
 import harvestry.Harvestry;
 import harvestry.blocks.te.GrinderTE;
+import harvestry.blocks.te.OvenTE;
 import harvestry.utils.Archive;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockPistonBase;
@@ -27,9 +28,10 @@ public class BaseContainer extends BlockContainer {
      *            The Block ID.
      * @param tileID
      *            The Tile Entity for it to create.
-     *            0 is {@link GrinderTE}
+     *            0 is {@link GrinderTE}.
+     *            1 is {@link OvenTE}.
      */
-    protected BaseContainer(int id, int tileID) {
+    public BaseContainer(int id, int tileID) {
         super(id, Material.ground);
         setCreativeTab(Harvestry.tabHarvestry);
         this.tileID = tileID;
@@ -44,18 +46,22 @@ public class BaseContainer extends BlockContainer {
      *            The Material of the Block.
      * @param tileID
      *            The Tile Entity for it to create.
-     *            0 is {@link GrinderTE}
+     *            0 is {@link GrinderTE}.
+     *            1 is {@link OvenTE}.
      */
-    protected BaseContainer(int id, Material material, int tileID) {
+    public BaseContainer(int id, Material material, int tileID) {
         super(id, material);
+        setCreativeTab(Harvestry.tabHarvestry);
         this.tileID = tileID;
     }
 
     @Override
     public TileEntity createNewTileEntity(World world) {
         switch (tileID) {
-            case 0:
+            case Archive.grinderGUID:
                 return new GrinderTE();
+            case Archive.ovenGUID:
+                return new OvenTE();
             default:
                 return null;
         }
@@ -82,17 +88,23 @@ public class BaseContainer extends BlockContainer {
             float clickX, float clickY, float clockZ) {
         if (!player.isSneaking() && !world.isRemote){
             switch (tileID) {
-                case 0:
+                case Archive.grinderGUID:
                     GrinderTE grinder = (GrinderTE) world.getBlockTileEntity(x, y, z);
                     if (grinder != null){
                         player.openGui(Harvestry.instance, Archive.grinderGUID, world, x, y, z);
+                        return true;
+                    }
+                case Archive.ovenGUID:
+                    OvenTE oven = (OvenTE) world.getBlockTileEntity(x, y, z);
+                    if (oven != null){
+                        player.openGui(Harvestry.instance, Archive.ovenGUID, world, x, y, z);
                         return true;
                     }
                 default:
                     return false;
             }
         }
-        return true;
+        return false;
     }
 
     /**

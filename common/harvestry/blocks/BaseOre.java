@@ -1,11 +1,16 @@
 package harvestry.blocks;
 
 import harvestry.Harvestry;
+import harvestry.utils.Archive;
 
 import java.util.ArrayList;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -35,6 +40,14 @@ public class BaseOre extends Block {
         // The list of items
         ArrayList<ItemStack> list = new ArrayList<ItemStack>();
         return list;
-
+    }
+    
+    /**
+     * Registers the Icon for the Block
+     */
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister iconRegister) {
+        blockIcon = iconRegister.registerIcon(Archive.texture + this.getUnlocalizedName2());
     }
 }

@@ -3,6 +3,7 @@ package harvestry.utils;
 import harvestry.Harvestry;
 import harvestry.blocks.ModBlocks;
 import harvestry.blocks.te.GrinderTE;
+import harvestry.blocks.te.OvenTE;
 import harvestry.items.ModItems;
 import harvestry.utils.handlers.GuiHandler;
 import harvestry.utils.handlers.Handler;
@@ -11,6 +12,7 @@ import harvestry.utils.worldgen.WorldGenHandler;
 
 import java.util.logging.Level;
 
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -23,7 +25,7 @@ public class Registry {
     public static void register() {
 
         NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, new GuiHandler());
-
+        
         registerTE();
 
         registerItems();
@@ -43,7 +45,8 @@ public class Registry {
     private static void registerTE() {
         Handler.log(Level.INFO, "Registering Tile Entities");
 
-        GameRegistry.registerTileEntity(GrinderTE.class, Archive.grinderUnloc);
+        GameRegistry.registerTileEntity(GrinderTE.class, "te." + Archive.grinderUnloc);
+        GameRegistry.registerTileEntity(OvenTE.class, "te." + Archive.ovenUnloc);
     }
 
     /**
@@ -106,6 +109,7 @@ public class Registry {
 
         GameRegistry.registerBlock(ModBlocks.oreAluminum, Archive.oreAluminum);
         GameRegistry.registerBlock(ModBlocks.blockGrinder, Archive.blockGrinder);
+        GameRegistry.registerBlock(ModBlocks.blockOven, Archive.blockOven);
     }
 
     /**

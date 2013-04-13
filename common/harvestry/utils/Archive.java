@@ -64,6 +64,7 @@ public class Archive {
      */
     public static final String oreAluminum = "oreAluminum";
     public static final String blockGrinder = "blockGrinder";
+    public static final String blockOven = "blockOven";
 
     /*
      * ******************************************************
@@ -75,6 +76,10 @@ public class Archive {
     public static final String grinderUnloc = "Grinder";
     public static final String grinderGUI = gui + "guiGrindstone.png";
     public static final int grinderGUID = 0;
+    // Oven
+    public static final String ovenUnloc = "Oven";
+    public static final String ovenGUI = gui + "guiOven.png";
+    public static final int ovenGUID = 1;
 
     /*
      * ******************************************************

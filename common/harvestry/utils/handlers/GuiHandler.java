@@ -1,8 +1,10 @@
 package harvestry.utils.handlers;
 
 import harvestry.blocks.container.GrinderContainer;
+import harvestry.blocks.container.OvenContainer;
 import harvestry.blocks.gui.GUIGrinder;
 import harvestry.blocks.te.GrinderTE;
+import harvestry.blocks.te.OvenTE;
 import harvestry.utils.Archive;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -16,6 +18,9 @@ public class GuiHandler implements IGuiHandler {
             case Archive.grinderGUID:
                 GrinderTE grinder = (GrinderTE) world.getBlockTileEntity(x, y, z);
                 return new GrinderContainer(player.inventory, grinder);
+            case Archive.ovenGUID:
+                OvenTE oven = (OvenTE) world.getBlockTileEntity(x, y, z);
+                return new OvenContainer(player.inventory, oven);
             default:
                 return null;
         }
@@ -27,6 +32,9 @@ public class GuiHandler implements IGuiHandler {
             case Archive.grinderGUID:
                 GrinderTE grinder = (GrinderTE) world.getBlockTileEntity(x, y, z);
                 return new GUIGrinder(player.inventory, grinder);
+            case Archive.ovenGUID:
+                OvenTE oven = (OvenTE) world.getBlockTileEntity(x, y, z);
+                return new OvenContainer(player.inventory, oven);
             default:
                 return null;
         }

@@ -1,27 +1,57 @@
 package harvestry.blocks.te;
 
 import harvestry.utils.Archive;
+import harvestry.utils.FunctionHelper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
-public class BaseTE extends TileEntity {
+public class BaseTE extends TileEntity implements IInventory {
 
     private ForgeDirection orientation;
     private short state;
     private String owner;
     private String customName;
+    /**
+     * The ItemStacks that hold the items currently being used in the Tile
+     * Entity.
+     */
+    private ItemStack[] inventory;
+
+    private String tileUnloc;
 
     /**
      * Creates a new {@link BaseTE} Instance.
      */
-    public BaseTE() {
-
+    public BaseTE(int invSize, String name) {
+        tileUnloc = name;
+        inventory = new ItemStack[invSize];
         orientation = ForgeDirection.SOUTH;
         state = 0;
         owner = "";
         customName = "";
+    }
+
+    /**
+     * Getter Method for the {@link TileEntity}'s Inventory.
+     * 
+     * @return a Inventory ItemStack[].
+     */
+    public ItemStack[] getInventory() {
+        return inventory;
+    }
+
+    /**
+     * Setter Method for the {@link TileEntity}'s Inventory.
+     * 
+     * @param inventory
+     *            The ItemStack[] for the Inventory.
+     */
+    public void setInventory(ItemStack[] inventory) {
+        this.inventory = inventory;
     }
 
     /**
@@ -192,6 +222,57 @@ public class BaseTE extends TileEntity {
         }
     }
 
+    @Override
+    public int getSizeInventory() {
+        return inventory.length;
+    }
+
+    @Override
+    public ItemStack getStackInSlot(int slot) {
+        return inventory[slot];
+    }
+
+    @Override
+    public ItemStack decrStackSize(int i, int j) {
+        return FunctionHelper.decrStackSize(i, j, inventory, this);
+    }
+
+    @Override
+    public ItemStack getStackInSlotOnClosing(int i) {
+        return null;
+    }
+
+    @Override
+    public void setInventorySlotContents(int i, ItemStack itemstack) {
+        inventory[i] = itemstack;
+    }
+
+    @Override
+    public String getInvName() {
+        return tileUnloc;
+    }
+
+    @Override
+    public boolean isInvNameLocalized() {
+        return this.hasCustomName();
+    }
+
+    @Override
+    public int getInventoryStackLimit() {
+        return 64;
+    }
+
+    @Override
+    public void openChest() {}// Useless
+
+    @Override
+    public void closeChest() {}// Useless
+
+    @Override
+    public boolean isStackValidForSlot(int i, ItemStack itemstack) {
+        return true;
+    }
+
     /*
      * @Override
      * public Packet getDescriptionPacket() {
@@ -199,5 +280,4 @@ public class BaseTE extends TileEntity {
      * yCoord, zCoord, orientation, state, owner, customName));
      * }
      */
-
 }

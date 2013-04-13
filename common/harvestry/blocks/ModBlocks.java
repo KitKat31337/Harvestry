@@ -12,6 +12,7 @@ public class ModBlocks {
 
     public static Block oreAluminum;
     public static Block blockGrinder;
+    public static Block blockOven;
 
     /**
      * Creates all the Block Objects in the Mod.
@@ -22,7 +23,9 @@ public class ModBlocks {
         oreAluminum = new BaseOre(Config.oreAluminumID).setUnlocalizedName(Archive.oreAluminum)
                 .setHardness(3.0F).setResistance(5.0F);
 
-        blockGrinder = new BaseContainer(Config.blockGrinderID, 0)
+        blockGrinder = new BaseContainer(Config.blockGrinderID, Archive.grinderGUID)
                 .setUnlocalizedName(Archive.blockGrinder);
+
+        blockOven = new BaseContainer(Config.blockOvenID, Archive.ovenGUID).setUnlocalizedName(Archive.blockOven);
     }
 }

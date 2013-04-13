@@ -4,13 +4,13 @@ import harvestry.utils.Archive;
 import harvestry.utils.FunctionHelper;
 import net.minecraft.nbt.NBTTagCompound;
 
-public class GrinderTE extends BaseTE {
+public class OvenTE extends BaseTE {
 
     /**
-     * Creates a new {@link GrinderTE} Instance.
+     * Creates a new {@link OvenTE} Instance.
      */
-    public GrinderTE() {
-        super(4, Archive.grinderUnloc);
+    public OvenTE() {
+        super(4, Archive.ovenUnloc);
     }
 
     /**

@@ -16,7 +16,7 @@ public class BaseCrop extends BlockCrops {
      * @param id
      *            The Block ID.
      */
-    protected BaseCrop(int id) {
+    public BaseCrop(int id) {
         super(id);
         setCreativeTab(Harvestry.tabHarvestry);
     }
