@@ -3,6 +3,7 @@ package harvestry.utils.handlers;
 import harvestry.blocks.container.GrinderContainer;
 import harvestry.blocks.container.OvenContainer;
 import harvestry.blocks.gui.GUIGrinder;
+import harvestry.blocks.gui.GUIOven;
 import harvestry.blocks.te.GrinderTE;
 import harvestry.blocks.te.OvenTE;
 import harvestry.utils.Archive;
@@ -34,7 +35,7 @@ public class GuiHandler implements IGuiHandler {
                 return new GUIGrinder(player.inventory, grinder);
             case Archive.ovenGUID:
                 OvenTE oven = (OvenTE) world.getBlockTileEntity(x, y, z);
-                return new OvenContainer(player.inventory, oven);
+                return new GUIOven(player.inventory, oven);
             default:
                 return null;
         }

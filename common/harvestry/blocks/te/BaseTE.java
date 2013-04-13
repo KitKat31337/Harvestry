@@ -238,8 +238,14 @@ public class BaseTE extends TileEntity implements IInventory {
     }
 
     @Override
-    public ItemStack getStackInSlotOnClosing(int i) {
-        return null;
+    public ItemStack getStackInSlotOnClosing(int slot) {
+
+        if (inventory[slot] != null){
+            ItemStack itemStack = inventory[slot];
+            inventory[slot] = null;
+            return itemStack;
+        }else
+            return null;
     }
 
     @Override
@@ -249,7 +255,11 @@ public class BaseTE extends TileEntity implements IInventory {
 
     @Override
     public String getInvName() {
-        return tileUnloc;
+        if (this.hasCustomName()){
+            return this.getCustomName();
+        }else{
+            return tileUnloc;
+        }
     }
 
     @Override
