@@ -38,7 +38,7 @@ public class Registry {
     }
 
     /**
-     * Registers all the Tile Entitys.
+     * Registers all the {@link TileEntity}s.
      */
     private static void registerTE() {
         Handler.log(Level.INFO, "Registering Tile Entities");

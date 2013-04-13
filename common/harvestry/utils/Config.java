@@ -12,7 +12,11 @@ public class Config {
 
     private static String gen = "World Generation";
 
-    // Item IDs
+    /*
+     * ***************************************************
+     * Item IDs
+     * ***************************************************
+     */
     public static int itemCakePanFullID;
     public static int itemCakePanID;
     public static int itemModBucketID;
@@ -36,15 +40,27 @@ public class Config {
     public static int itemPumpkinPieFillingID;
     public static int itemPieCrustID;
 
-    // Food IDs
+    /*
+     * ***************************************************
+     * Food IDs
+     * ***************************************************
+     */
     public static int foodPeanutsID;
     public static int foodScrambledEggsID;
 
-    // Blocks IDs
+    /*
+     * ***************************************************
+     * Blocks IDs
+     * ***************************************************
+     */
     public static int oreAluminumID;
     public static int blockGrinderID;
 
-    // World Generation Stuff (Aluminum)
+    /*
+     * ***************************************************
+     * World Generation Stuff (Aluminum)
+     * ***************************************************
+     */
     public static boolean enableWorldGenAluminum;
     public static int aluMaxHeight;
     public static int aluMinHeight;

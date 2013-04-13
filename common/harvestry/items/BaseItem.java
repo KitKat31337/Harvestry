@@ -60,6 +60,9 @@ public class BaseItem extends Item {
         return leaveCrafting;
     }
 
+    /**
+     * Registers the Icon for the Item
+     */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {

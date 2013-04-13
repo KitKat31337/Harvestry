@@ -4,7 +4,7 @@ public class Archive {
 
     /*
      * ******************************************************
-     * Mod
+     * Mod Stuff
      * ******************************************************
      */
     public static final String id = "harvestry";
@@ -12,6 +12,7 @@ public class Archive {
     public static final String ver = "@VERSION@";
     public static final String channel = id;
     public static final String depend = "required-after:Forge@[7.7.1.650,)";
+    public static final String tabHarvestry = "tabHarvestry";
 
     /*
      * ******************************************************
@@ -90,7 +91,6 @@ public class Archive {
      * Languages
      * ******************************************************
      */
-    public static final String tabHarvestry = "tabHarvestry";
     public static String[] langFiles = {
             // US Language
             lang + "en_US.xml",

@@ -14,6 +14,9 @@ public class BaseFood extends ItemFood {
         this.setCreativeTab(Harvestry.tabHarvestry);
     }
 
+    /**
+     * Registers the Icon for the Food Item
+     */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {

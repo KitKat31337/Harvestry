@@ -8,6 +8,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class HarvestryTabs extends CreativeTabs {
 
+    /**
+     * Creates a new Creative Tab.
+     * 
+     * @param id
+     *            The Tab ID
+     * @param name
+     *            The Tab Name
+     */
     public HarvestryTabs(int id, String name) {
         super(id, name);
     }
