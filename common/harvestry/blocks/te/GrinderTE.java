@@ -6,11 +6,13 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public class GrinderTE extends BaseTE {
 
+    private static int invSize = 4;
+    
     /**
      * Creates a new {@link GrinderTE} Instance.
      */
     public GrinderTE() {
-        super(4, Archive.grinderUnloc);
+        super(invSize, Archive.grinderUnloc);
     }
 
     /**
@@ -19,7 +21,7 @@ public class GrinderTE extends BaseTE {
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        setInventory(FunctionHelper.readInventoryFromNBT(nbt.getTagList(Archive.inventory), 10));
+        setInventory(FunctionHelper.readInventoryFromNBT(nbt.getTagList(Archive.inventory), invSize));
     }
 
     /**

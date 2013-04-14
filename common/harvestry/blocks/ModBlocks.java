@@ -23,9 +23,9 @@ public class ModBlocks {
         oreAluminum = new BaseOre(Config.oreAluminumID).setUnlocalizedName(Archive.oreAluminum)
                 .setHardness(3.0F).setResistance(5.0F);
 
-        blockGrinder = new BaseContainer(Config.blockGrinderID, Archive.grinderGUID)
+        blockGrinder = new BaseContainerBlock(Config.blockGrinderID, Archive.grinderGUID)
                 .setUnlocalizedName(Archive.blockGrinder);
 
-        blockOven = new BaseContainer(Config.blockOvenID, Archive.ovenGUID).setUnlocalizedName(Archive.blockOven);
+        blockOven = new BaseContainerBlock(Config.blockOvenID, Archive.ovenGUID).setUnlocalizedName(Archive.blockOven);
     }
 }

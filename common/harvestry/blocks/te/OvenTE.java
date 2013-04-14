@@ -6,11 +6,13 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public class OvenTE extends BaseTE {
 
+    private static int invSize = 4;
+    
     /**
      * Creates a new {@link OvenTE} Instance.
      */
     public OvenTE() {
-        super(4, Archive.ovenUnloc);
+        super(invSize, Archive.ovenUnloc);
     }
 
     /**
@@ -19,7 +21,7 @@ public class OvenTE extends BaseTE {
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        setInventory(FunctionHelper.readInventoryFromNBT(nbt.getTagList(Archive.inventory), 10));
+        setInventory(FunctionHelper.readInventoryFromNBT(nbt.getTagList(Archive.inventory), invSize));
     }
 
     /**

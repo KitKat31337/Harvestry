@@ -24,7 +24,7 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BaseContainer extends BlockContainer {
+public class BaseContainerBlock extends BlockContainer {
 
     /**
      * Is the random generator used by all Containers to drop the inventory
@@ -48,7 +48,7 @@ public class BaseContainer extends BlockContainer {
      *            0 is {@link GrinderTE}.
      *            1 is {@link OvenTE}.
      */
-    public BaseContainer(int id, int tileID) {
+    public BaseContainerBlock(int id, int tileID) {
         super(id, Material.ground);
         setCreativeTab(Harvestry.tabHarvestry);
         this.tileID = tileID;
@@ -66,7 +66,7 @@ public class BaseContainer extends BlockContainer {
      *            0 is {@link GrinderTE}.
      *            1 is {@link OvenTE}.
      */
-    public BaseContainer(int id, Material material, int tileID) {
+    public BaseContainerBlock(int id, Material material, int tileID) {
         super(id, material);
         setCreativeTab(Harvestry.tabHarvestry);
         this.tileID = tileID;
@@ -90,7 +90,7 @@ public class BaseContainer extends BlockContainer {
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entityLiving,
             ItemStack itemStack) {
-        
+
         int direction = 0;
         int facing = MathHelper.floor_double(entityLiving.rotationYaw * 4.0F / 360.0F + 0.5D) & 3;
 
