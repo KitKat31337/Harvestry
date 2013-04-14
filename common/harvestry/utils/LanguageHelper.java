@@ -4,24 +4,26 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LanguageHelper {
 
-    /**
-     * Checks if the file ends with '.xml'
+    /***
+     * Simple test to determine if a specified file name represents a XML file
+     * or not
      * 
      * @param fileName
-     *            The name of the file that you are checking.
-     * @return true of the file ends with '.xml'
+     *            String representing the file name of the file in question
+     * @return True if the file name represents a XML file, false otherwise
      */
     public static boolean isXMLLanguageFile(String fileName) {
 
         return fileName.endsWith(".xml");
     }
 
-    /**
-     * Gets the localization from a file.
+    /***
+     * Returns the locale from the file name.
      * 
      * @param fileName
-     *            The file to get the localization from.
-     * @return the Localization.
+     *            String representing the file name of the file in question.
+     * @return {@link String} representation of the locale took from the file
+     *         name.
      */
     public static String getLocaleFromFileName(String fileName) {
 

@@ -34,6 +34,6 @@
 	<entry key="tile.blockGrinder.name">Grinder</entry>
 	<entry key="tile.blockOven.name">Oven</entry>
 	<!-- Tile Entities -->
-	<entry key="harvestry.grinder.name">Grinder</entry>
-	<entry key="harvestry.oven.name">Oven</entry>
+	<entry key="container.grinder">Grinder</entry>
+	<entry key="container.oven">Oven</entry>
 </properties>

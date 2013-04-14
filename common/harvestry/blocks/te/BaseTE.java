@@ -1,11 +1,14 @@
 package harvestry.blocks.te;
 
+import harvestry.sided.packet.PacketTileUpdate;
+import harvestry.sided.packet.PacketTypeHandler;
 import harvestry.utils.Archive;
 import harvestry.utils.FunctionHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -15,12 +18,16 @@ public class BaseTE extends TileEntity implements IInventory {
     private short state;
     private String owner;
     private String customName;
+
     /**
      * The ItemStacks that hold the items currently being used in the Tile
      * Entity.
      */
     private ItemStack[] inventory;
 
+    /**
+     * The {@link TileEntity}s Unlocalized name.
+     */
     private String tileUnloc;
 
     /**
@@ -255,11 +262,7 @@ public class BaseTE extends TileEntity implements IInventory {
 
     @Override
     public String getInvName() {
-        if (this.hasCustomName()){
-            return this.getCustomName();
-        }else{
-            return tileUnloc;
-        }
+        return this.hasCustomName() ? this.getCustomName() : tileUnloc;
     }
 
     @Override
@@ -283,11 +286,9 @@ public class BaseTE extends TileEntity implements IInventory {
         return true;
     }
 
-    /*
-     * @Override
-     * public Packet getDescriptionPacket() {
-     * return PacketTypeHandler.populatePacket(new PacketTileUpdate(xCoord,
-     * yCoord, zCoord, orientation, state, owner, customName));
-     * }
-     */
+    @Override
+    public Packet getDescriptionPacket() {
+        return PacketTypeHandler.populatePacket(new PacketTileUpdate(xCoord, yCoord, zCoord,
+                orientation, state, owner, customName));
+    }
 }

@@ -32,12 +32,8 @@ public class GUIGrinder extends GuiContainer {
      */
     @Override
     protected void drawGuiContainerForegroundLayer(int x, int y) {
-        String containerName;
-        if (grinder.isInvNameLocalized()){
-            containerName = grinder.getInvName();
-        }else{
-            containerName = StatCollector.translateToLocal(grinder.getInvName());
-        }
+        String containerName = grinder.isInvNameLocalized() ? grinder.getInvName() : StatCollector
+                .translateToLocal(grinder.getInvName());
         fontRenderer.drawString(containerName,
                 (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 6, 4210752);
         fontRenderer.drawString(StatCollector.translateToLocal(Archive.inventory), 9,

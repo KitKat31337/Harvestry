@@ -71,13 +71,14 @@ public class Archive {
      * Tile Entity Stuff
      * ******************************************************
      */
-    public static final String inventory = "Inventory";
+    public static final String container = "container.";
+    public static final String inventory = container + "inventory";
     // Grinder
-    public static final String grinderUnloc = "Grinder";
+    public static final String grinderUnloc = container + "grinder";
     public static final String grinderGUI = gui + "guiGrindstone.png";
     public static final int grinderGUID = 0;
     // Oven
-    public static final String ovenUnloc = "Oven";
+    public static final String ovenUnloc = container + "oven";
     public static final String ovenGUI = gui + "guiOven.png";
     public static final int ovenGUID = 1;
 

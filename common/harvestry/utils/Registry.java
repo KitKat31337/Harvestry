@@ -5,7 +5,6 @@ import harvestry.blocks.ModBlocks;
 import harvestry.blocks.te.GrinderTE;
 import harvestry.blocks.te.OvenTE;
 import harvestry.items.ModItems;
-import harvestry.utils.handlers.GuiHandler;
 import harvestry.utils.handlers.Handler;
 import harvestry.utils.handlers.RecipeHandler;
 import harvestry.utils.worldgen.WorldGenHandler;
@@ -24,8 +23,9 @@ public class Registry {
      */
     public static void register() {
 
-        NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, new GuiHandler());
-        
+        // Registers the GUI Handler
+        NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, Harvestry.proxy);
+
         registerTE();
 
         registerItems();
