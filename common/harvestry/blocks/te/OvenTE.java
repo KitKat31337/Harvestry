@@ -49,34 +49,34 @@ public class OvenTE extends BaseTE {
 
         if (!this.worldObj.isRemote)
         {
-            if (this.furnaceBurnTime == 0 && this.canSmelt())
+            if (this.furnaceBurnTime == 0 && this.canCook())
             {
-                this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.furnaceItemStacks[1]);
+                this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.inventory[1]);
 
                 if (this.furnaceBurnTime > 0)
                 {
                     flag1 = true;
 
-                    if (this.furnaceItemStacks[1] != null)
+                    if (this.inventory[1] != null)
                     {
-                        --this.furnaceItemStacks[1].stackSize;
+                        --this.inventory[1].stackSize;
 
-                        if (this.furnaceItemStacks[1].stackSize == 0)
+                        if (this.inventory[1].stackSize == 0)
                         {
-                            this.furnaceItemStacks[1] = this.furnaceItemStacks[1].getItem().getContainerItemStack(furnaceItemStacks[1]);
+                            this.inventory[1] = this.inventory[1].getItem().getContainerItemStack(inventory[1]);
                         }
                     }
                 }
             }
 
-            if (this.isBurning() && this.canSmelt())
+            if (this.isBurning() && this.canCook())
             {
                 ++this.furnaceCookTime;
 
                 if (this.furnaceCookTime == 200)
                 {
                     this.furnaceCookTime = 0;
-                    this.smeltItem();
+                    this.cookItem();
                     flag1 = true;
                 }
             }
@@ -88,7 +88,6 @@ public class OvenTE extends BaseTE {
             if (flag != this.furnaceBurnTime > 0)
             {
                 flag1 = true;
-                BlockFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
             }
         }
 
@@ -122,7 +121,7 @@ public class OvenTE extends BaseTE {
      * Turn one item from the oven source stack into the appropriate cooked
      * item in the furnace result stack
      */
-    public void cookedItem() {
+    public void cookItem() {
         if (this.canCook()){
             ItemStack itemstack = OvenRecipes.cooking().getCookingResult(this.inventory[0]);
 
