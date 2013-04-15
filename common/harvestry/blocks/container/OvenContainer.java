@@ -1,5 +1,7 @@
 package harvestry.blocks.container;
 
+import harvestry.blocks.container.slots.OutputSlot;
+import harvestry.blocks.container.slots.UseSlot;
 import harvestry.blocks.te.OvenTE;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -18,14 +20,14 @@ public class OvenContainer extends BaseContainer {
      */
     public OvenContainer(InventoryPlayer player, OvenTE oven) {
         super(player, oven, 8, 84, 142);
-        // Top Slot
-        this.addSlotToContainer(new Slot(oven, 0, 80, 21));
-        // Bottom Slot
-        this.addSlotToContainer(new Slot(oven, 1, 80, 57));
-        // Left Hand Slot
-        this.addSlotToContainer(new Slot(oven, 2, 53, 39));
-        // Right Hand Slot
-        this.addSlotToContainer(new Slot(oven, 3, 107, 39));
+        // Left Hand Slot (Input)
+        this.addSlotToContainer(new Slot(oven, 0, 53, 39));
+        // Bottom Slot (Heating)
+        this.addSlotToContainer(new UseSlot(oven, 1, 53, 57));
+        // Top Slot (Output 1)
+        this.addSlotToContainer(new OutputSlot(oven, 2, 107, 21));
+        // Right Hand Slot (Output 2)
+        this.addSlotToContainer(new OutputSlot(oven, 3, 107, 39));
     }
 
     @Override

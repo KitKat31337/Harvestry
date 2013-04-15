@@ -37,7 +37,7 @@ public class OvenTE extends BaseTE {
         nbt.setTag(Archive.inventory, FunctionHelper.writeInventoryToNBT(getInventory()));
     }
     
-    public void updateEntity()
+    /*public void updateEntity()
     {
         boolean flag = this.furnaceBurnTime > 0;
         boolean flag1 = false;
@@ -95,7 +95,7 @@ public class OvenTE extends BaseTE {
         {
             this.onInventoryChanged();
         }
-    }
+    }*/
 
     /**
      * Returns true if the oven can cook an item, i.e. has a source item,

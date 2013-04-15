@@ -1,5 +1,7 @@
 package harvestry.blocks.container;
 
+import harvestry.blocks.container.slots.OutputSlot;
+import harvestry.blocks.container.slots.UseSlot;
 import harvestry.blocks.te.GrinderTE;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -18,14 +20,14 @@ public class GrinderContainer extends BaseContainer {
      */
     public GrinderContainer(InventoryPlayer player, GrinderTE grinder) {
         super(player, grinder, 8, 84, 142);
-        // Top Slot
-        this.addSlotToContainer(new Slot(grinder, 0, 80, 21));
-        // Bottom Slot
-        this.addSlotToContainer(new Slot(grinder, 1, 80, 57));
-        // Left Hand Slot
-        this.addSlotToContainer(new Slot(grinder, 2, 53, 39));
-        // Right Hand Slot
-        this.addSlotToContainer(new Slot(grinder, 3, 107, 39));
+        // Left Hand Slot (Input)
+        this.addSlotToContainer(new Slot(grinder, 0, 53, 39));
+        // Top Slot (Grinding)
+        this.addSlotToContainer(new UseSlot(grinder, 1, 80, 21));
+        // Bottom Slot (Grinding)
+        this.addSlotToContainer(new UseSlot(grinder, 2, 80, 57));
+        // Right Hand Slot (Output)
+        this.addSlotToContainer(new OutputSlot(grinder, 3, 107, 39));
     }
 
     @Override
