@@ -14,7 +14,9 @@ public final class OvenRecipes {
 
     /** The list of Oven results. */
     private Map<Integer, ItemStack> ovenList = new HashMap<Integer, ItemStack>();
+    private Map<Integer, ItemStack> ovenList2 = new HashMap<Integer, ItemStack>();
     private HashMap<List<Integer>, ItemStack> metaOvenList = new HashMap<List<Integer>, ItemStack>();
+    private HashMap<List<Integer>, ItemStack> metaOvenList2 = new HashMap<List<Integer>, ItemStack>();
 
     /**
      * Used to call methods addOvenRecipe and getOvenResult.
@@ -37,10 +39,10 @@ public final class OvenRecipes {
     }
 
     /**
-     * Adds a Grinding recipe. It natively supports meta data. And passing Items
+     * Adds a Grinding recipe. It natively supports meta data, and passing Items
      * as the first parameter :D
      */
-    public void addGrinding(Item input, ItemStack output) {
+    public void addOvenRecipe(Item input, ItemStack output) {
         ItemStack in = new ItemStack(input);
         if (in.isItemStackDamageable()){
             metaOvenList.put(Arrays.asList(input.itemID, in.getItemDamage()), output);
@@ -49,8 +51,33 @@ public final class OvenRecipes {
         }
     }
 
-    public Map<Integer, ItemStack> getOvenList() {
-        return this.ovenList;
+    /**
+     * Adds a Oven Recipe. It natively supports meta data, and a Second Return.
+     */
+    public void addOvenRecipe(ItemStack input, ItemStack output, ItemStack output2) {
+        if (input.isItemStackDamageable()){
+            metaOvenList.put(Arrays.asList(input.itemID, input.getItemDamage()), output);
+            metaOvenList2.put(Arrays.asList(input.itemID, input.getItemDamage()), output2);
+        }else{
+            this.ovenList.put(Integer.valueOf(input.itemID), output);
+            this.ovenList2.put(Integer.valueOf(input.itemID), output2);
+        }
+    }
+
+    /**
+     * Adds a Grinding recipe. It natively supports meta data, a Second Return,
+     * and passing Items
+     * as the first parameter :D
+     */
+    public void addOvenRecipe(Item input, ItemStack output, ItemStack output2) {
+        ItemStack in = new ItemStack(input);
+        if (in.isItemStackDamageable()){
+            metaOvenList.put(Arrays.asList(input.itemID, in.getItemDamage()), output);
+            metaOvenList2.put(Arrays.asList(input.itemID, in.getItemDamage()), output2);
+        }else{
+            this.ovenList.put(Integer.valueOf(input.itemID), output);
+            this.ovenList2.put(Integer.valueOf(input.itemID), output2);
+        }
     }
 
     /**
@@ -61,17 +88,51 @@ public final class OvenRecipes {
      * @return The result ItemStack
      */
     public ItemStack getOvenResult(ItemStack item) {
-        if (item == null){
+        if (item != null){
+            ItemStack ret = metaOvenList.get(Arrays.asList(item.itemID, item.getItemDamage()));
+            if (ret != null){
+                return ret;
+            }else{
+                return ovenList.get(Integer.valueOf(item.itemID));
+            }
+        }else{
             return null;
         }
-        ItemStack ret = metaOvenList.get(Arrays.asList(item.itemID, item.getItemDamage()));
-        if (ret != null){
-            return ret;
+    }
+
+    /**
+     * Used to get the resulting Second ItemStack form a source ItemStack
+     * 
+     * @param item
+     *            The Source ItemStack
+     * @return The resulting Second ItemStack
+     */
+    public ItemStack getOvenResult2(ItemStack item) {
+        if (item != null){
+            ItemStack ret = metaOvenList2.get(Arrays.asList(item.itemID, item.getItemDamage()));
+            if (ret != null){
+                return ret;
+            }else{
+                return ovenList2.get(Integer.valueOf(item.itemID));
+            }
+        }else{
+            return null;
         }
-        return ovenList.get(Integer.valueOf(item.itemID));
+    }
+
+    public Map<Integer, ItemStack> getOvenList() {
+        return this.ovenList;
+    }
+
+    public Map<Integer, ItemStack> getOvenList2() {
+        return this.ovenList2;
     }
 
     public Map<List<Integer>, ItemStack> getMetaOvenList() {
         return metaOvenList;
+    }
+
+    public Map<List<Integer>, ItemStack> getMetaOvenList2() {
+        return metaOvenList2;
     }
 }
