@@ -23,7 +23,7 @@ public class BaseTE extends TileEntity implements IInventory {
      * The ItemStacks that hold the items currently being used in the Tile
      * Entity.
      */
-    private ItemStack[] inventory;
+    protected ItemStack[] inventory;
 
     /**
      * The {@link TileEntity}s Unlocalized name.

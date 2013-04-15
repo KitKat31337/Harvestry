@@ -28,7 +28,7 @@ public class RecipeHandler {
     public static void init() {
 
         crafting();
-        
+
         modRecipes();
     }
 
@@ -36,7 +36,7 @@ public class RecipeHandler {
      * Adds all the crafting related recipes in the Mod.
      */
     private static void crafting() {
-        
+
         addShapeless();
 
         addShaped();
@@ -177,15 +177,16 @@ public class RecipeHandler {
      */
     private static void modRecipes() {
         addGrinder();
-        
+
         addOven();
     }
 
     private static void addGrinder() {
         GrinderRecipes.grinding().addGrinding(Item.wheat, new ItemStack(ModItems.itemFlour));
     }
-    
+
     private static void addOven() {
-       OvenRecipes.oven().addOvenRecipe(ModItems.itemBreadpanwithDough, new ItemStack(Item.bread), new ItemStack(ModItems.itemBreadPan));
+        OvenRecipes.cooking().addCookingRecipe(ModItems.itemBreadpanwithDough, new ItemStack(Item.bread),
+                new ItemStack(ModItems.itemBreadPan));
     }
 }
