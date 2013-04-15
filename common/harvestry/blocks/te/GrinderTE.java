@@ -3,6 +3,7 @@ package harvestry.blocks.te;
 import harvestry.api.GrinderRecipes;
 import harvestry.utils.Archive;
 import harvestry.utils.FunctionHelper;
+import net.minecraft.block.BlockFurnace;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -34,6 +35,66 @@ public class GrinderTE extends BaseTE {
     public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
         nbt.setTag(Archive.inventory, FunctionHelper.writeInventoryToNBT(getInventory()));
+    }
+    
+    public void updateEntity()
+    {
+        boolean flag = this.furnaceBurnTime > 0;
+        boolean flag1 = false;
+
+        if (this.furnaceBurnTime > 0)
+        {
+            --this.furnaceBurnTime;
+        }
+
+        if (!this.worldObj.isRemote)
+        {
+            if (this.furnaceBurnTime == 0 && this.canGrind())
+            {
+                this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.inventory[1]);
+
+                if (this.furnaceBurnTime > 0)
+                {
+                    flag1 = true;
+
+                    if (this.inventory[1] != null)
+                    {
+                        --this.inventory[1].stackSize;
+
+                        if (this.inventory[1].stackSize == 0)
+                        {
+                            this.inventory[1] = this.inventory[1].getItem().getContainerItemStack(inventory[1]);
+                        }
+                    }
+                }
+            }
+
+            if (this.isBurning() && this.canGrind())
+            {
+                ++this.furnaceCookTime;
+
+                if (this.furnaceCookTime == 200)
+                {
+                    this.furnaceCookTime = 0;
+                    this.grindItem();
+                    flag1 = true;
+                }
+            }
+            else
+            {
+                this.furnaceCookTime = 0;
+            }
+
+            if (flag != this.furnaceBurnTime > 0)
+            {
+                flag1 = true;
+            }
+        }
+
+        if (flag1)
+        {
+            this.onInventoryChanged();
+        }
     }
 
     /**
