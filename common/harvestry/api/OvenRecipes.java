@@ -5,11 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class OvenRecipes {
+public final class OvenRecipes {
 
     private static final OvenRecipes ovenBase = new OvenRecipes();
 
@@ -24,44 +23,34 @@ public class OvenRecipes {
         return ovenBase;
     }
 
-    private OvenRecipes() {
-        this.addOvenRecipe(Block.oreIron.blockID, new ItemStack(Item.ingotIron));
-        this.addOvenRecipe(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
-        this.addOvenRecipe(Block.oreDiamond.blockID, new ItemStack(Item.diamond));
-        this.addOvenRecipe(Block.sand.blockID, new ItemStack(Block.glass));
-        this.addOvenRecipe(Item.porkRaw.itemID, new ItemStack(Item.porkCooked));
-        this.addOvenRecipe(Item.beefRaw.itemID, new ItemStack(Item.beefCooked));
-        this.addOvenRecipe(Item.chickenRaw.itemID, new ItemStack(Item.chickenCooked));
-        this.addOvenRecipe(Item.fishRaw.itemID, new ItemStack(Item.fishCooked));
-        this.addOvenRecipe(Block.cobblestone.blockID, new ItemStack(Block.stone));
-        this.addOvenRecipe(Item.clay.itemID, new ItemStack(Item.brick));
-        this.addOvenRecipe(Block.cactus.blockID, new ItemStack(Item.dyePowder, 1, 2));
-        this.addOvenRecipe(Block.wood.blockID, new ItemStack(Item.coal, 1, 1));
-        this.addOvenRecipe(Block.oreEmerald.blockID, new ItemStack(Item.emerald));
-        this.addOvenRecipe(Item.potato.itemID, new ItemStack(Item.bakedPotato));
-        this.addOvenRecipe(Block.netherrack.blockID, new ItemStack(Item.netherrackBrick));
-        this.addOvenRecipe(Block.oreCoal.blockID, new ItemStack(Item.coal));
-        this.addOvenRecipe(Block.oreRedstone.blockID, new ItemStack(Item.redstone));
-        this.addOvenRecipe(Block.oreLapis.blockID, new ItemStack(Item.dyePowder, 1, 4));
-        this.addOvenRecipe(Block.oreNetherQuartz.blockID, new ItemStack(Item.netherQuartz));
+    private OvenRecipes() {}
+
+    /**
+     * Adds a Oven Recipe. It natively supports meta data.
+     */
+    public void addOvenRecipe(ItemStack input, ItemStack output) {
+        if (input.isItemStackDamageable()){
+            metaOvenList.put(Arrays.asList(input.itemID, input.getItemDamage()), output);
+        }else{
+            this.ovenList.put(Integer.valueOf(input.itemID), output);
+        }
     }
 
     /**
-     * Adds a Oven Recipe.
+     * Adds a Grinding recipe. It natively supports meta data. And passing Items
+     * as the first parameter :D
      */
-    public void addOvenRecipe(int par1, ItemStack par2ItemStack) {
-        this.ovenList.put(Integer.valueOf(par1), par2ItemStack);
+    public void addGrinding(Item input, ItemStack output) {
+        ItemStack in = new ItemStack(input);
+        if (in.isItemStackDamageable()){
+            metaOvenList.put(Arrays.asList(input.itemID, in.getItemDamage()), output);
+        }else{
+            this.ovenList.put(Integer.valueOf(input.itemID), output);
+        }
     }
 
     public Map<Integer, ItemStack> getOvenList() {
         return this.ovenList;
-    }
-
-    /**
-     * A meta data sensitive version of adding a furnace recipe.
-     */
-    public void addOvenRecipe(int itemID, int metadata, ItemStack itemstack) {
-        metaOvenList.put(Arrays.asList(itemID, metadata), itemstack);
     }
 
     /**

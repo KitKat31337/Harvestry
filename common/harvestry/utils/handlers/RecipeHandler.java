@@ -1,5 +1,7 @@
 package harvestry.utils.handlers;
 
+import harvestry.api.GrinderRecipes;
+import harvestry.api.OvenRecipes;
 import harvestry.items.ModItems;
 
 import java.util.ArrayList;
@@ -25,6 +27,16 @@ public class RecipeHandler {
      */
     public static void init() {
 
+        crafting();
+        
+        modRecipes();
+    }
+
+    /**
+     * Adds all the crafting related recipes in the Mod.
+     */
+    private static void crafting() {
+        
         addShapeless();
 
         addShaped();
@@ -158,5 +170,22 @@ public class RecipeHandler {
                 }
             }
         }
+    }
+
+    /**
+     * Adds all the non Crafting related recipes in the Mod.
+     */
+    private static void modRecipes() {
+        addGrinder();
+        
+        addOven();
+    }
+
+    private static void addGrinder() {
+        GrinderRecipes.grinding().addGrinding(Item.wheat, new ItemStack(ModItems.itemFlour));
+    }
+    
+    private static void addOven() {
+       // OvenRecipes.oven().addOvenRecipe(ModItems.itemBreadpanwithDough, par2ItemStack, ItemStack);
     }
 }

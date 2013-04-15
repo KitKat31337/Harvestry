@@ -5,11 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class GrinderRecipes {
+public final class GrinderRecipes {
 
     private static final GrinderRecipes grindingBase = new GrinderRecipes();
 
@@ -24,44 +23,34 @@ public class GrinderRecipes {
         return grindingBase;
     }
 
-    private GrinderRecipes() {
-        this.addGrinding(Block.oreIron.blockID, new ItemStack(Item.ingotIron));
-        this.addGrinding(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
-        this.addGrinding(Block.oreDiamond.blockID, new ItemStack(Item.diamond));
-        this.addGrinding(Block.sand.blockID, new ItemStack(Block.glass));
-        this.addGrinding(Item.porkRaw.itemID, new ItemStack(Item.porkCooked));
-        this.addGrinding(Item.beefRaw.itemID, new ItemStack(Item.beefCooked));
-        this.addGrinding(Item.chickenRaw.itemID, new ItemStack(Item.chickenCooked));
-        this.addGrinding(Item.fishRaw.itemID, new ItemStack(Item.fishCooked));
-        this.addGrinding(Block.cobblestone.blockID, new ItemStack(Block.stone));
-        this.addGrinding(Item.clay.itemID, new ItemStack(Item.brick));
-        this.addGrinding(Block.cactus.blockID, new ItemStack(Item.dyePowder, 1, 2));
-        this.addGrinding(Block.wood.blockID, new ItemStack(Item.coal, 1, 1));
-        this.addGrinding(Block.oreEmerald.blockID, new ItemStack(Item.emerald));
-        this.addGrinding(Item.potato.itemID, new ItemStack(Item.bakedPotato));
-        this.addGrinding(Block.netherrack.blockID, new ItemStack(Item.netherrackBrick));
-        this.addGrinding(Block.oreCoal.blockID, new ItemStack(Item.coal));
-        this.addGrinding(Block.oreRedstone.blockID, new ItemStack(Item.redstone));
-        this.addGrinding(Block.oreLapis.blockID, new ItemStack(Item.dyePowder, 1, 4));
-        this.addGrinding(Block.oreNetherQuartz.blockID, new ItemStack(Item.netherQuartz));
+    private GrinderRecipes() {}
+
+    /**
+     * Adds a Grinding recipe. It natively supports meta data.
+     */
+    public void addGrinding(ItemStack input, ItemStack output) {
+        if (input.isItemStackDamageable()){
+            metaGrindingList.put(Arrays.asList(input.itemID, input.getItemDamage()), output);
+        }else{
+            this.grindingList.put(Integer.valueOf(input.itemID), output);
+        }
     }
 
     /**
-     * Adds a Grinding recipe.
+     * Adds a Grinding recipe. It natively supports meta data. And passing Items
+     * as the first parameter :D
      */
-    public void addGrinding(int par1, ItemStack par2ItemStack) {
-        this.grindingList.put(Integer.valueOf(par1), par2ItemStack);
+    public void addGrinding(Item input, ItemStack output) {
+        ItemStack in = new ItemStack(input);
+        if (in.isItemStackDamageable()){
+            metaGrindingList.put(Arrays.asList(input.itemID, in.getItemDamage()), output);
+        }else{
+            this.grindingList.put(Integer.valueOf(input.itemID), output);
+        }
     }
 
     public Map<Integer, ItemStack> getGrindingList() {
         return this.grindingList;
-    }
-
-    /**
-     * A meta data sensitive version of adding a furnace recipe.
-     */
-    public void addGrinding(int itemID, int metadata, ItemStack itemstack) {
-        metaGrindingList.put(Arrays.asList(itemID, metadata), itemstack);
     }
 
     /**
