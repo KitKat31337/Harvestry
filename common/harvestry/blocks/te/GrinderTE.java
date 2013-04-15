@@ -1,9 +1,9 @@
 package harvestry.blocks.te;
 
+import harvestry.api.GrinderRecipes;
 import harvestry.utils.Archive;
 import harvestry.utils.FunctionHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 
 public class GrinderTE extends BaseTE {
@@ -37,14 +37,14 @@ public class GrinderTE extends BaseTE {
     }
 
     /**
-     * Returns true if the furnace can smelt an item, i.e. has a source item,
+     * Returns true if the grinder can grind an item, i.e. has a source item,
      * destination stack isn't full, etc.
      */
     private boolean canGrind() {
         if (this.inventory[0] == null){
             return false;
         }else{
-            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.inventory[0]);
+            ItemStack itemstack = GrinderRecipes.grinding().getGrindingResult(this.inventory[0]);
             if (itemstack == null)
                 return false;
             if (this.inventory[2] == null)
@@ -57,12 +57,12 @@ public class GrinderTE extends BaseTE {
     }
 
     /**
-     * Turn one item from the furnace source stack into the appropriate smelted
+     * Turn one item from the grinder source stack into the appropriate ground
      * item in the furnace result stack
      */
     public void grindItem() {
         if (this.canGrind()){
-            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.inventory[0]);
+            ItemStack itemstack = GrinderRecipes.grinding().getGrindingResult(this.inventory[0]);
 
             if (this.inventory[2] == null){
                 this.inventory[2] = itemstack.copy();

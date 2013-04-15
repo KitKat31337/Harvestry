@@ -1,9 +1,9 @@
 package harvestry.blocks.te;
 
+import harvestry.api.OvenRecipes;
 import harvestry.utils.Archive;
 import harvestry.utils.FunctionHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 
 public class OvenTE extends BaseTE {
@@ -35,16 +35,16 @@ public class OvenTE extends BaseTE {
         super.writeToNBT(nbt);
         nbt.setTag(Archive.inventory, FunctionHelper.writeInventoryToNBT(getInventory()));
     }
-    
+
     /**
-     * Returns true if the furnace can smelt an item, i.e. has a source item,
+     * Returns true if the oven can cook an item, i.e. has a source item,
      * destination stack isn't full, etc.
      */
     private boolean canCook() {
         if (this.inventory[0] == null){
             return false;
         }else{
-            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.inventory[0]);
+            ItemStack itemstack = OvenRecipes.cooking().getCookingResult(this.inventory[0]);
             if (itemstack == null)
                 return false;
             if (this.inventory[2] == null)
@@ -57,12 +57,12 @@ public class OvenTE extends BaseTE {
     }
 
     /**
-     * Turn one item from the furnace source stack into the appropriate smelted
+     * Turn one item from the oven source stack into the appropriate cooked
      * item in the furnace result stack
      */
     public void cookedItem() {
         if (this.canCook()){
-            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.inventory[0]);
+            ItemStack itemstack = OvenRecipes.cooking().getCookingResult(this.inventory[0]);
 
             if (this.inventory[2] == null){
                 this.inventory[2] = itemstack.copy();
