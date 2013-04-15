@@ -187,7 +187,5 @@ public class RecipeHandler {
     
     private static void addOven() {
        OvenRecipes.oven().addOvenRecipe(ModItems.itemBreadpanwithDough, new ItemStack(Item.bread), new ItemStack(ModItems.itemBreadPan));
-       System.out.print(OvenRecipes.oven().getOvenResult(new ItemStack(ModItems.itemBreadpanwithDough)));
-       System.out.print(OvenRecipes.oven().getOvenResult2(new ItemStack(ModItems.itemBreadpanwithDough)));
     }
 }
