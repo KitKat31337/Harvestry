@@ -9,7 +9,7 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet250CustomPayload;
 
 public enum PacketTypeHandler {
-    
+
     TILE(PacketTileUpdate.class);
 
     private Class<? extends BasePacket> clazz;
@@ -27,10 +27,9 @@ public enum PacketTypeHandler {
 
         BasePacket packet = null;
 
-        try {
+        try{
             packet = values()[selector].clazz.newInstance();
-        }
-        catch (Exception e) {
+        }catch(Exception e){
             e.printStackTrace(System.err);
         }
 
@@ -43,10 +42,9 @@ public enum PacketTypeHandler {
 
         BasePacket packet = null;
 
-        try {
+        try{
             packet = values()[type.ordinal()].clazz.newInstance();
-        }
-        catch (Exception e) {
+        }catch(Exception e){
             e.printStackTrace(System.err);
         }
 

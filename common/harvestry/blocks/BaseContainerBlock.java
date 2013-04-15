@@ -92,7 +92,7 @@ public class BaseContainerBlock extends BlockContainer {
             ItemStack itemStack) {
 
         int direction = 0;
-        int facing = MathHelper.floor_double(entityLiving.rotationYaw * 4.0F / 360.0F + 0.5D) & 3;
+        int facing = MathHelper.floor_double(((entityLiving.rotationYaw * 4.0F) / 360.0F) + 0.5D) & 3;
 
         if (facing == 0){
             direction = ForgeDirection.NORTH.ordinal();
@@ -161,8 +161,9 @@ public class BaseContainerBlock extends BlockContainer {
 
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
 
-        if (!(tileEntity instanceof IInventory))
+        if (!(tileEntity instanceof IInventory)){
             return;
+        }
 
         IInventory inventory = (IInventory) tileEntity;
 
@@ -170,10 +171,10 @@ public class BaseContainerBlock extends BlockContainer {
 
             ItemStack itemStack = inventory.getStackInSlot(i);
 
-            if (itemStack != null && itemStack.stackSize > 0){
-                float dX = rand.nextFloat() * 0.8F + 0.1F;
-                float dY = rand.nextFloat() * 0.8F + 0.1F;
-                float dZ = rand.nextFloat() * 0.8F + 0.1F;
+            if ((itemStack != null) && (itemStack.stackSize > 0)){
+                float dX = (rand.nextFloat() * 0.8F) + 0.1F;
+                float dY = (rand.nextFloat() * 0.8F) + 0.1F;
+                float dZ = (rand.nextFloat() * 0.8F) + 0.1F;
 
                 EntityItem entityItem = new EntityItem(world, x + dX, y + dY, z + dZ,
                         new ItemStack(itemStack.itemID, itemStack.stackSize,
@@ -186,7 +187,7 @@ public class BaseContainerBlock extends BlockContainer {
 
                 float factor = 0.05F;
                 entityItem.motionX = rand.nextGaussian() * factor;
-                entityItem.motionY = rand.nextGaussian() * factor + 0.2F;
+                entityItem.motionY = (rand.nextGaussian() * factor) + 0.2F;
                 entityItem.motionZ = rand.nextGaussian() * factor;
                 world.spawnEntityInWorld(entityItem);
                 itemStack.stackSize = 0;

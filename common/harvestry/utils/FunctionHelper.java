@@ -115,7 +115,7 @@ public abstract class FunctionHelper {
         return world.isDaytime()
                 && !world.provider.hasNoSky
                 && world.canBlockSeeTheSky(xCoord, yCoord, zCoord)
-                && (world.getWorldChunkManager().getBiomeGenAt(xCoord, zCoord) instanceof BiomeGenDesert || !world
-                        .isRaining() && !world.isThundering());
+                && ((world.getWorldChunkManager().getBiomeGenAt(xCoord, zCoord) instanceof BiomeGenDesert) || (!world
+                        .isRaining() && !world.isThundering()));
     }
 }

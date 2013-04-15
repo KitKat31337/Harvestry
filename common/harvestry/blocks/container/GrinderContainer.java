@@ -8,7 +8,6 @@ import net.minecraft.item.ItemStack;
 
 public class GrinderContainer extends BaseContainer {
 
-
     /**
      * Creates the Container for the Grinders GUI
      * 

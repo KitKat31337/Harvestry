@@ -26,6 +26,7 @@ public class ModBlocks {
         blockGrinder = new BaseContainerBlock(Config.blockGrinderID, Archive.grinderGUID)
                 .setUnlocalizedName(Archive.blockGrinder);
 
-        blockOven = new BaseContainerBlock(Config.blockOvenID, Archive.ovenGUID).setUnlocalizedName(Archive.blockOven);
+        blockOven = new BaseContainerBlock(Config.blockOvenID, Archive.ovenGUID)
+                .setUnlocalizedName(Archive.blockOven);
     }
 }

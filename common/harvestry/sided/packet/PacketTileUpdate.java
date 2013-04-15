@@ -8,8 +8,6 @@ import java.io.IOException;
 
 import net.minecraft.network.INetworkManager;
 import net.minecraftforge.common.ForgeDirection;
-
-
 import cpw.mods.fml.common.network.Player;
 
 public class PacketTileUpdate extends BasePacket {
@@ -25,7 +23,8 @@ public class PacketTileUpdate extends BasePacket {
         super(PacketTypeHandler.TILE, true);
     }
 
-    public PacketTileUpdate(int x, int y, int z, ForgeDirection orientation, short state, String owner, String customName) {
+    public PacketTileUpdate(int x, int y, int z, ForgeDirection orientation, short state,
+            String owner, String customName) {
 
         super(PacketTypeHandler.TILE, true);
         this.x = x;
@@ -64,6 +63,7 @@ public class PacketTileUpdate extends BasePacket {
     @Override
     public void execute(INetworkManager manager, Player player) {
 
-        Harvestry.proxy.handleTileEntityPacket(x, y, z, ForgeDirection.getOrientation(orientation), state, owner, customName);
+        Harvestry.proxy.handleTileEntityPacket(x, y, z, ForgeDirection.getOrientation(orientation),
+                state, owner, customName);
     }
 }

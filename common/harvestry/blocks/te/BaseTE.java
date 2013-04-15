@@ -184,6 +184,7 @@ public class BaseTE extends TileEntity implements IInventory {
      *            The player that is using the {@link TileEntity}.
      * @return true if the player is within 10 blocks.
      */
+    @Override
     public boolean isUseableByPlayer(EntityPlayer player) {
 
         return player.getDistance(xCoord, yCoord, zCoord) <= 10;
@@ -251,8 +252,9 @@ public class BaseTE extends TileEntity implements IInventory {
             ItemStack itemStack = inventory[slot];
             inventory[slot] = null;
             return itemStack;
-        }else
+        }else{
             return null;
+        }
     }
 
     @Override
