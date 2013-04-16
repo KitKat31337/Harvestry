@@ -1,5 +1,7 @@
 package harvestry.blocks.container.slots;
 
+import harvestry.blocks.te.GrinderTE;
+import harvestry.blocks.te.OvenTE;
 import harvestry.items.BaseGrindStone;
 import harvestry.items.BaseHeatingElements;
 import net.minecraft.inventory.IInventory;
@@ -8,8 +10,8 @@ import net.minecraft.item.ItemStack;
 
 public class UseSlot extends Slot {
 
-    public UseSlot(IInventory par1iInventory, int par2, int par3, int par4) {
-        super(par1iInventory, par2, par3, par4);
+    public UseSlot(IInventory inventory, int index, int x, int y) {
+        super(inventory, index, x, y);
     }
 
     /**
@@ -18,9 +20,9 @@ public class UseSlot extends Slot {
      */
     @Override
     public boolean isItemValid(ItemStack item) {
-        if (item.getItem() instanceof BaseGrindStone){
+        if (item.getItem() instanceof BaseGrindStone && inventory instanceof GrinderTE){
             return true;
-        }else if (item.getItem() instanceof BaseHeatingElements){
+        }else if (item.getItem() instanceof BaseHeatingElements && inventory instanceof OvenTE){
             return true;
         }else{
             return false;
