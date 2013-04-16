@@ -57,13 +57,13 @@ public class Registry {
 
         GameRegistry.registerItem(ModItems.itemBreadPan, Archive.itemBreadPan);
 
-        GameRegistry.registerItem(ModItems.itemBreadpanwithDough, Archive.itemBreadpanwithDough);
+        GameRegistry.registerItem(ModItems.itemUncookedBread, Archive.itemUncookedBread);
 
         GameRegistry.registerItem(ModItems.itemCakeBatter, Archive.itemCakeBatter);
 
         GameRegistry.registerItem(ModItems.itemCakePan, Archive.itemCakePan);
 
-        GameRegistry.registerItem(ModItems.itemCakePanFull, Archive.itemCakePanFull);
+        GameRegistry.registerItem(ModItems.itemUncookedCake, Archive.itemUncookedCake);
 
         GameRegistry.registerItem(ModItems.itemChocolateChips, Archive.itemChocolateChips);
 
@@ -71,7 +71,7 @@ public class Registry {
 
         GameRegistry.registerItem(ModItems.itemDough, Archive.itemDough);
 
-        GameRegistry.registerItem(ModItems.itemModBucket, Archive.itemModBucket);
+        GameRegistry.registerItem(ModItems.itemBowl, Archive.itemBowl);
 
         GameRegistry.registerItem(ModItems.foodPeanuts, Archive.foodPeanuts);
 
@@ -83,13 +83,13 @@ public class Registry {
 
         GameRegistry.registerItem(ModItems.itemAluminumFoil, Archive.itemAluminumFoil);
 
-        GameRegistry.registerItem(ModItems.itemRawAluminum, Archive.itemRawAluminum);
+        GameRegistry.registerItem(ModItems.itemPureAluminum, Archive.itemPureAluminum);
 
         GameRegistry.registerItem(ModItems.itemGrindStone, Archive.itemGrindStone);
 
         GameRegistry.registerItem(ModItems.itemGrindStones, Archive.itemGrindStones);
 
-        GameRegistry.registerItem(ModItems.itemRawPotato, Archive.itemRawPotato);
+        GameRegistry.registerItem(ModItems.itemUncookedPotato, Archive.itemUncookedPotato);
 
         GameRegistry.registerItem(ModItems.itemCookieDough, Archive.itemCookieDough);
 
@@ -98,7 +98,26 @@ public class Registry {
 
         GameRegistry.registerItem(ModItems.itemPumpkinPieFilling, Archive.itemPumpkinPieFilling);
 
+        GameRegistry.registerItem(ModItems.itemChocolatePaste, Archive.itemChocolatePaste);
+        
         GameRegistry.registerItem(ModItems.itemPieCrust, Archive.itemPieCrust);
+        
+        GameRegistry.registerItem(ModItems.itemUncookedPumpkinPie, Archive.itemUncookedPumpkinPie);
+        
+        GameRegistry.registerItem(ModItems.itemUncookedSugarCookies, Archive.itemUncookedSugarCookies);
+ 
+        GameRegistry.registerItem(ModItems.itemUncookedChocolateChipCookies, Archive.itemUncookedChocolateChipCookies);
+
+        GameRegistry.registerItem(ModItems.itemUncookedCookies, Archive.itemUncookedCookies);
+        
+        GameRegistry.registerItem(ModItems.itemChocolateChipCookie, Archive.itemChocolateChipCookie);
+        
+        GameRegistry.registerItem(ModItems.itemCookie, Archive.itemCookie);
+
+        GameRegistry.registerItem(ModItems.itemSugarCookie, Archive.itemSugarCookie);
+        
+        GameRegistry.registerItem(ModItems.itemSugarCookieDough, Archive.itemSugarCookieDough);
+
     }
 
     /**

@@ -17,11 +17,11 @@ public class Config {
      * Item IDs
      * ***************************************************
      */
-    public static int itemCakePanFullID;
+    public static int itemUncookedCakeID;
     public static int itemCakePanID;
-    public static int itemModBucketID;
+    public static int itemBowlID;
     public static int itemCakeBatterID;
-    public static int itemBreadpanwithDoughID;
+    public static int itemUncookedBreadID;
     public static int itemflourID;
     public static int itemBreadPanID;
     public static int itemChocolateChipsID;
@@ -31,14 +31,23 @@ public class Config {
     public static int itemPumpkinMashID;
     public static int itemAluminumFoilID;
     public static int itemAluminumSheetID;
-    public static int itemRawAluminumID;
+    public static int itemPureAluminumID;
     public static int itemGrindStoneID;
     public static int itemGrindStonesID;
-    public static int itemRawPotatoID;
+    public static int itemUncookedPotatoID;
     public static int itemCookieDoughID;
     public static int itemChocolateChipCookieDoughID;
     public static int itemPumpkinPieFillingID;
     public static int itemPieCrustID;
+    public static int itemChocolatePasteID;
+    public static int itemUncookedPumpkinPieID;
+    public static int itemUncookedSugarCookiesID;
+    public static int itemUncookedChocolateChipCookiesID;
+    public static int itemUncookedCookiesID;
+    public static int itemCookieID;
+    public static int itemSugarCookieID;
+    public static int itemSugarCookieDoughID;
+    public static int itemChocolateChipCookieID;
 
     /*
      * ***************************************************
@@ -65,6 +74,7 @@ public class Config {
     public static boolean enableWorldGenAluminum;
     public static int aluMaxHeight;
     public static int aluMinHeight;
+
 
     /**
      * Initializes the Configuration file.
@@ -117,11 +127,11 @@ public class Config {
     private static void configItems(Configuration config) {
         Handler.log(Level.INFO, "Loading Item Configs");
         int iID = 8000;
-        itemCakePanFullID = config.getItem(Archive.itemCakePanFull, iID++).getInt();
+        itemUncookedCakeID = config.getItem(Archive.itemUncookedCake, iID++).getInt();
         itemCakePanID = config.getItem(Archive.itemCakePan, iID++).getInt();
-        itemModBucketID = config.getItem(Archive.itemModBucket, iID++).getInt();
+        itemBowlID = config.getItem(Archive.itemBowl, iID++).getInt();
         itemCakeBatterID = config.getItem(Archive.itemCakeBatter, iID++).getInt();
-        itemBreadpanwithDoughID = config.getItem(Archive.itemBreadpanwithDough, iID++).getInt();
+        itemUncookedBreadID = config.getItem(Archive.itemUncookedBread, iID++).getInt();
         itemflourID = config.getItem(Archive.itemFlour, iID++).getInt();
         itemBreadPanID = config.getItem(Archive.itemBreadPan, iID++).getInt();
         itemChocolateChipsID = config.getItem(Archive.itemChocolateChips, iID++).getInt();
@@ -129,16 +139,26 @@ public class Config {
         itemDoughID = config.getItem(Archive.itemDough, iID++).getInt();
         itemPiePanID = config.getItem(Archive.itemPiePan, iID++).getInt();
         itemPumpkinMashID = config.getItem(Archive.itemPumpkinMash, iID++).getInt();
-        itemRawAluminumID = config.getItem(Archive.itemRawAluminum, iID++).getInt();
+        itemPureAluminumID = config.getItem(Archive.itemPureAluminum, iID++).getInt();
         itemAluminumSheetID = config.getItem(Archive.itemAluminumSheet, iID++).getInt();
         itemAluminumFoilID = config.getItem(Archive.itemAluminumFoil, iID++).getInt();
         itemGrindStoneID = config.getItem(Archive.itemGrindStone, iID++).getInt();
         itemGrindStonesID = config.getItem(Archive.itemGrindStones, iID++).getInt();
-        itemRawPotatoID = config.getItem(Archive.itemRawPotato, iID++).getInt();
+        itemUncookedPotatoID = config.getItem(Archive.itemUncookedPotato, iID++).getInt();
         itemCookieDoughID = config.getItem(Archive.itemCookieDough, iID++).getInt();
         itemChocolateChipCookieDoughID = config
                 .getItem(Archive.itemChocolateChipCookieDough, iID++).getInt();
         itemPumpkinPieFillingID = config.getItem(Archive.itemPumpkinPieFilling, iID++).getInt();
+        itemPieCrustID = config.getItem(Archive.itemPieCrust, iID++).getInt();
+        itemUncookedPumpkinPieID = config.getItem(Archive.itemUncookedPumpkinPie, iID++).getInt();
+        itemUncookedSugarCookiesID = config.getItem(Archive.itemUncookedSugarCookies, iID++).getInt();
+        itemUncookedChocolateChipCookiesID = config.getItem(Archive.itemUncookedChocolateChipCookies, iID++).getInt();
+        itemUncookedCookiesID = config.getItem(Archive.itemUncookedCookies, iID++).getInt();
+        itemChocolateChipCookieID = config.getItem(Archive.itemChocolateChipCookie, iID++).getInt();
+        itemCookieID = config.getItem(Archive.itemCookie, iID++).getInt();
+        itemSugarCookieID = config.getItem(Archive.itemSugarCookie, iID++).getInt();
+        itemSugarCookieDoughID = config.getItem(Archive.itemSugarCookieDough, iID++).getInt();
+        itemPieCrustID = config.getItem(Archive.itemPieCrust, iID++).getInt();
         itemPieCrustID = config.getItem(Archive.itemPieCrust, iID++).getInt();
         configFood(config, iID++);
     }

@@ -41,21 +41,31 @@ public class Archive {
     public static final String itemPiePan = "itemPiePan";
     public static final String foodPeanuts = "foodPeanuts";
     public static final String foodScrambledEggs = "foodScrambledEggs";
-    public static final String itemBreadpanwithDough = "itemBreadpanwithDough";
+    public static final String itemUncookedBread = "itemUncookedBread";
     public static final String itemCakeBatter = "itemCakeBatter";
     public static final String itemCakePan = "itemCakePan";
-    public static final String itemModBucket = "itemModBucket";
-    public static final String itemCakePanFull = "itemCakePanFull";
+    public static final String itemBowl = "itemBowl";
+    public static final String itemUncookedCake = "itemUncookedCake";
     public static final String itemAluminumFoil = "itemAluminumFoil";
     public static final String itemAluminumSheet = "itemAluminumSheet";
-    public static final String itemRawAluminum = "itemRawAluminum";
+    public static final String itemPureAluminum = "itemPureAluminum";
     public static final String itemGrindStone = "itemGrindStone";
     public static final String itemGrindStones = "itemGrindStones";
-    public static final String itemRawPotato = "itemRawPotato";
+    public static final String itemUncookedPotato = "itemUncookedPotato";
     public static final String itemCookieDough = "itemCookieDough";
     public static final String itemChocolateChipCookieDough = "itemChocolateChipCookieDough";
     public static final String itemPumpkinPieFilling = "itemPumpkinPieFilling";
+    public static final String itemChocolatePaste = "itemChocolatePaste";
+    public static final String itemUncookedPumpkinPie = "itemUncookedPumpkinPie";
+    public static final String itemUncookedSugarCookies = "itemUncookedSugarCookies";
+    public static final String itemUncookedChocolateChipCookies = "itemUncookedChocolateChipCookies";
+    public static final String itemUncookedCookies = "itemUncookedCookies";
     public static final String itemPieCrust = "itemPieCrust";
+    public static final String itemCookie = "itemCookie";
+    public static final String itemSugarCookie = "itemSugarCookie";
+    public static final String itemChocolateChipCookie = "itemChocolateChipCookie";
+    public static final String itemSugarCookieDough = "itemSugarCookieDough";
+
 
     /*
      * ******************************************************
