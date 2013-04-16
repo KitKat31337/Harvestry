@@ -80,30 +80,30 @@ public class ModItems {
 
     private static void initCrafting() {
 
-        itemFlour = new BaseItem(Config.itemflourID).setUnlocalizedName(Archive.itemFlour);
+        //itemFlour = new BaseItem(Config.itemflourID).setUnlocalizedName(Archive.itemFlour);
 
-        itemChocolateChips = new BaseItem(Config.itemChocolateChipsID)
-                .setUnlocalizedName(Archive.itemChocolateChips);
+       // itemChocolateChips = new BaseItem(Config.itemChocolateChipsID)
+        //        .setUnlocalizedName(Archive.itemChocolateChips);
 
-        itemDough = new BaseItem(Config.itemDoughID).setUnlocalizedName(Archive.itemDough);
+       // itemDough = new BaseItem(Config.itemDoughID).setUnlocalizedName(Archive.itemDough);
 
-        itemPumpkinMash = new BaseItem(Config.itemPumpkinMashID)
-                .setUnlocalizedName(Archive.itemPumpkinMash);
+       // itemPumpkinMash = new BaseItem(Config.itemPumpkinMashID)
+         //       .setUnlocalizedName(Archive.itemPumpkinMash);
 
-        itemCakeBatter = new BaseItem(Config.itemCakeBatterID)
-                .setUnlocalizedName(Archive.itemCakeBatter);
+       // itemCakeBatter = new BaseItem(Config.itemCakeBatterID)
+        //        .setUnlocalizedName(Archive.itemCakeBatter);
 
         itemGrindStones = new BaseItem(Config.itemGrindStonesID, false, 8).setUnlocalizedName(
                 Archive.itemGrindStones).setNoRepair();
 
-        itemCookieDough = new BaseItem(Config.itemCookieDoughID)
-                .setUnlocalizedName(Archive.itemCookieDough);
+       // itemCookieDough = new BaseItem(Config.itemCookieDoughID)
+        //        .setUnlocalizedName(Archive.itemCookieDough);
 
-        itemChocolateChipCookieDough = new BaseItem(Config.itemChocolateChipCookieDoughID)
-                .setUnlocalizedName(Archive.itemChocolateChipCookieDough);
+       // itemChocolateChipCookieDough = new BaseItem(Config.itemChocolateChipCookieDoughID)
+         //       .setUnlocalizedName(Archive.itemChocolateChipCookieDough);
 
-        itemPumpkinPieFilling = new BaseItem(Config.itemPumpkinPieFillingID)
-                .setUnlocalizedName(Archive.itemPumpkinPieFilling);
+      //  itemPumpkinPieFilling = new BaseItem(Config.itemPumpkinPieFillingID)
+           //     .setUnlocalizedName(Archive.itemPumpkinPieFilling);
 
         itemPieCrust = new BaseItem(Config.itemPieCrustID).setUnlocalizedName(Archive.itemPieCrust)
                 .setMaxStackSize(16);
@@ -149,7 +149,8 @@ public class ModItems {
     }
 
     private static void initEmpty() {
-        itemBreadPan = new BaseItem(Config.itemBreadPanID).setUnlocalizedName(Archive.itemBreadPan);
+        itemBreadPan = new BaseItem(Config.itemBreadPanID).setUnlocalizedName(Archive.itemBreadPan)
+                .setMaxStackSize(16);;
 
         itemBowl = new BaseItem(Config.itemBowlID).setUnlocalizedName(Archive.itemBowl)
                 .setMaxStackSize(16);

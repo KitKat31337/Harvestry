@@ -8,7 +8,13 @@ public enum EnumItem {
 
     // Items
     itemFlour(Archive.itemFlour, Archive.texture + Archive.itemFlour),
-    itemPumpkinMash(Archive.itemPumpkinMash, Archive.texture + Archive.itemPumpkinMash);
+    itemPumpkinMash(Archive.itemPumpkinMash, Archive.texture + Archive.itemPumpkinMash),
+    itemChocolateChips(Archive.itemChocolateChips, Archive.texture + Archive.itemChocolateChips),
+    itemDough(Archive.itemDough, Archive.texture + Archive.itemDough),
+    itemCakeBatter(Archive.itemCakeBatter, Archive.texture + Archive.itemCakeBatter),
+    itemChocolateChipCookieDough(Archive.itemChocolateChipCookieDough, Archive.texture + Archive.itemChocolateChipCookieDough),
+    itemPumpkinPieFilling(Archive.itemPumpkinPieFilling, Archive.texture + Archive.itemPumpkinPieFilling),
+    itemCookieDough(Archive.itemCookieDough, Archive.texture + Archive.itemCookieDough);
     
     public final String unlocalized;
     public final String texture;
