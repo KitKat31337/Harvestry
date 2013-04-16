@@ -2,9 +2,9 @@ package harvestry.items;
 
 import harvestry.Harvestry;
 
-public class BaseGrindStone extends BaseItem {
+public class BaseHeatingElement extends BaseItem {
 
-    public BaseGrindStone(int id, int maxDamage) {
+    public BaseHeatingElement(int id, int maxDamage) {
         super(id);
         this.setMaxStackSize(1);
         this.setCreativeTab(Harvestry.tabHarvestry);

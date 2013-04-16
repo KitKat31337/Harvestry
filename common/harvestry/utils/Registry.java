@@ -85,7 +85,7 @@ public class Registry {
 
         GameRegistry.registerItem(ModItems.itemPureAluminum, Archive.itemPureAluminum);
 
-        GameRegistry.registerItem(ModItems.itemGrindStone, Archive.itemGrindStone);
+        GameRegistry.registerItem(ModItems.gStone, Archive.itemGrindStone);
 
         GameRegistry.registerItem(ModItems.itemGrindStones, Archive.itemGrindStones);
 
@@ -113,11 +113,11 @@ public class Registry {
         GameRegistry.registerItem(ModItems.itemUncookedCookies, Archive.itemUncookedCookies);
 
         GameRegistry
-                .registerItem(ModItems.itemChocolateChipCookie, Archive.itemChocolateChipCookie);
+                .registerItem(ModItems.foodChocolateChipCookie, Archive.foodChocolateChipCookie);
 
-        GameRegistry.registerItem(ModItems.itemCookie, Archive.itemCookie);
+        GameRegistry.registerItem(ModItems.foodCookie, Archive.foodCookie);
 
-        GameRegistry.registerItem(ModItems.itemSugarCookie, Archive.itemSugarCookie);
+        GameRegistry.registerItem(ModItems.foodSugarCookie, Archive.foodSugarCookie);
 
         GameRegistry.registerItem(ModItems.itemSugarCookieDough, Archive.itemSugarCookieDough);
 

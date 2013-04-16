@@ -44,10 +44,10 @@ public class Config {
     public static int itemUncookedSugarCookiesID;
     public static int itemUncookedChocolateChipCookiesID;
     public static int itemUncookedCookiesID;
-    public static int itemCookieID;
-    public static int itemSugarCookieID;
+    public static int foodCookieID;
+    public static int foodSugarCookieID;
     public static int itemSugarCookieDoughID;
-    public static int itemChocolateChipCookieID;
+    public static int foodChocolateChipCookieID;
 
     /*
      * ***************************************************
@@ -155,9 +155,9 @@ public class Config {
         itemUncookedChocolateChipCookiesID = config.getItem(
                 Archive.itemUncookedChocolateChipCookies, iID++).getInt();
         itemUncookedCookiesID = config.getItem(Archive.itemUncookedCookies, iID++).getInt();
-        itemChocolateChipCookieID = config.getItem(Archive.itemChocolateChipCookie, iID++).getInt();
-        itemCookieID = config.getItem(Archive.itemCookie, iID++).getInt();
-        itemSugarCookieID = config.getItem(Archive.itemSugarCookie, iID++).getInt();
+        foodChocolateChipCookieID = config.getItem(Archive.foodChocolateChipCookie, iID++).getInt();
+        foodCookieID = config.getItem(Archive.foodCookie, iID++).getInt();
+        foodSugarCookieID = config.getItem(Archive.foodSugarCookie, iID++).getInt();
         itemSugarCookieDoughID = config.getItem(Archive.itemSugarCookieDough, iID++).getInt();
         itemPieCrustID = config.getItem(Archive.itemPieCrust, iID++).getInt();
         itemPieCrustID = config.getItem(Archive.itemPieCrust, iID++).getInt();

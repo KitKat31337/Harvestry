@@ -1,9 +1,7 @@
 package harvestry.api;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,8 +11,7 @@ public final class GrinderRecipes {
     private static final GrinderRecipes grindingBase = new GrinderRecipes();
 
     /** The list of grinding results. */
-    private Map<Integer, ItemStack> grindingList = new HashMap<Integer, ItemStack>();
-    private HashMap<List<Integer>, ItemStack> metaGrindingList = new HashMap<List<Integer>, ItemStack>();
+    private HashSet<Recipes> recipes = new HashSet<Recipes>();
 
     /**
      * Used to call methods addGrinding and getGrindingResult.
@@ -29,11 +26,7 @@ public final class GrinderRecipes {
      * Adds a Grinding recipe. It natively supports meta data.
      */
     public void addGrinding(ItemStack input, ItemStack output) {
-        if (input.isItemStackDamageable()){
-            metaGrindingList.put(Arrays.asList(input.itemID, input.getItemDamage()), output);
-        }else{
-            this.grindingList.put(Integer.valueOf(input.itemID), output);
-        }
+        recipes.add(new Recipes(input, output));
     }
 
     /**
@@ -42,15 +35,7 @@ public final class GrinderRecipes {
      */
     public void addGrinding(Item input, ItemStack output) {
         ItemStack in = new ItemStack(input);
-        if (in.isItemStackDamageable()){
-            metaGrindingList.put(Arrays.asList(input.itemID, in.getItemDamage()), output);
-        }else{
-            this.grindingList.put(Integer.valueOf(input.itemID), output);
-        }
-    }
-
-    public Map<Integer, ItemStack> getGrindingList() {
-        return this.grindingList;
+        recipes.add(new Recipes(in, output));
     }
 
     /**
@@ -60,18 +45,14 @@ public final class GrinderRecipes {
      *            The Source ItemStack
      * @return The result ItemStack
      */
-    public ItemStack getGrindingResult(ItemStack item) {
-        if (item == null){
-            return null;
-        }
-        ItemStack ret = metaGrindingList.get(Arrays.asList(item.itemID, item.getItemDamage()));
-        if (ret != null){
-            return ret;
-        }
-        return grindingList.get(Integer.valueOf(item.itemID));
+    public Recipes getGrindingResult(ItemStack item) {
+        for (Recipes r : recipes)
+            if (r.isInput(item))
+                return r;
+        return null;
     }
 
-    public Map<List<Integer>, ItemStack> getMetaSmeltingList() {
-        return metaGrindingList;
+    public Set<Recipes> getGrindingList() {
+        return this.recipes;
     }
 }

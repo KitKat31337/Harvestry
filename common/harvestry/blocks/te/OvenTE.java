@@ -114,7 +114,7 @@ public class OvenTE extends BaseTE {
         if (this.inventory[0] == null){
             return false;
         }else{
-            ItemStack itemstack = OvenRecipes.cooking().getCookingResult(this.inventory[0]);
+            ItemStack itemstack = OvenRecipes.cooking().getCookingResult(this.inventory[0]).getOutput1();
             if (itemstack == null){
                 return false;
             }
@@ -135,7 +135,7 @@ public class OvenTE extends BaseTE {
      */
     public void cookItem() {
         if (this.canCook()){
-            ItemStack itemstack = OvenRecipes.cooking().getCookingResult(this.inventory[0]);
+            ItemStack itemstack = OvenRecipes.cooking().getCookingResult(this.inventory[0]).getOutput1();
 
             if (this.inventory[2] == null){
                 this.inventory[2] = itemstack.copy();

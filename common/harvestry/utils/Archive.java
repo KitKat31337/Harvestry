@@ -61,9 +61,9 @@ public class Archive {
     public static final String itemUncookedChocolateChipCookies = "itemUncookedChocolateChipCookies";
     public static final String itemUncookedCookies = "itemUncookedCookies";
     public static final String itemPieCrust = "itemPieCrust";
-    public static final String itemCookie = "itemCookie";
-    public static final String itemSugarCookie = "itemSugarCookie";
-    public static final String itemChocolateChipCookie = "itemChocolateChipCookie";
+    public static final String foodCookie = "itemCookie";
+    public static final String foodSugarCookie = "itemSugarCookie";
+    public static final String foodChocolateChipCookie = "itemChocolateChipCookie";
     public static final String itemSugarCookieDough = "itemSugarCookieDough";
 
     /*

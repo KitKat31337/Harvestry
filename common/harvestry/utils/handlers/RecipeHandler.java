@@ -63,7 +63,7 @@ public class RecipeHandler {
                 ModItems.itemCakeBatter, ModItems.itemCakePan });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemGrindStones), new Object[] {
-                ModItems.itemGrindStone, ModItems.itemGrindStone });
+                ModItems.gStone, ModItems.gStone });
 
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemFlour), new Object[] {
                 Item.wheat, grindStones });
@@ -105,7 +105,7 @@ public class RecipeHandler {
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCakePan), new Object[] { "   ",
                 "T T", "TTT", 'T', ModItems.itemAluminumSheet });
 
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemGrindStone), new Object[] { "SSS",
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.gStone), new Object[] { "SSS",
                 "SLS", "SSS", 'S', Block.stone, 'L', Block.wood });
 
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCookieSheet), new Object[] { "   ",
@@ -216,11 +216,11 @@ public class RecipeHandler {
                 new ItemStack(Item.pumpkinPie), new ItemStack(ModItems.itemPiePan));
 
         OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedSugarCookies,
-                new ItemStack(ModItems.itemSugarCookie, 16),
+                new ItemStack(ModItems.foodSugarCookie, 16),
                 new ItemStack(ModItems.itemCookieSheet));
 
         OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedChocolateChipCookies,
-                new ItemStack(ModItems.itemChocolateChipCookie, 16),
+                new ItemStack(ModItems.foodChocolateChipCookie, 16),
                 new ItemStack(ModItems.itemCookieSheet));
 
         OvenRecipes.cooking().addCookingRecipe(ModItems.itemPumpkinMash,
