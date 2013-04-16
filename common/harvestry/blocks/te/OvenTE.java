@@ -52,6 +52,7 @@ public class OvenTE extends BaseTE {
         nbt.setTag(Archive.inventory, FunctionHelper.writeInventoryToNBT(getInventory()));
     }
 
+    @Override
     public void updateEntity() {
         boolean flag = this.cookingTime > 0;
         boolean flag1 = false;
@@ -61,9 +62,8 @@ public class OvenTE extends BaseTE {
         }
 
         if (!this.worldObj.isRemote){
-            if (this.cookingTime == 0 && this.canCook()){
-                this.currentItemCookTime = this.cookingTime = getItemCookTime(
-                        this.inventory[1]);
+            if ((this.cookingTime == 0) && this.canCook()){
+                this.currentItemCookTime = this.cookingTime = getItemCookTime(this.inventory[1]);
 
                 if (this.cookingTime > 0){
                     flag1 = true;
@@ -83,7 +83,7 @@ public class OvenTE extends BaseTE {
             this.cookTime = 0;
         }
 
-        if (flag != this.cookingTime > 0){
+        if (flag != (this.cookingTime > 0)){
             flag1 = true;
         }
 
@@ -115,14 +115,17 @@ public class OvenTE extends BaseTE {
             return false;
         }else{
             ItemStack itemstack = OvenRecipes.cooking().getCookingResult(this.inventory[0]);
-            if (itemstack == null)
+            if (itemstack == null){
                 return false;
-            if (this.inventory[2] == null)
+            }
+            if (this.inventory[2] == null){
                 return true;
-            if (!this.inventory[2].isItemEqual(itemstack))
+            }
+            if (!this.inventory[2].isItemEqual(itemstack)){
                 return false;
+            }
             int result = inventory[2].stackSize + itemstack.stackSize;
-            return (result <= getInventoryStackLimit() && result <= itemstack.getMaxStackSize());
+            return ((result <= getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize()));
         }
     }
 

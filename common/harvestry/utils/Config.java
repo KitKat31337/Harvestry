@@ -75,7 +75,6 @@ public class Config {
     public static int aluMaxHeight;
     public static int aluMinHeight;
 
-
     /**
      * Initializes the Configuration file.
      * 
@@ -151,8 +150,10 @@ public class Config {
         itemPumpkinPieFillingID = config.getItem(Archive.itemPumpkinPieFilling, iID++).getInt();
         itemPieCrustID = config.getItem(Archive.itemPieCrust, iID++).getInt();
         itemUncookedPumpkinPieID = config.getItem(Archive.itemUncookedPumpkinPie, iID++).getInt();
-        itemUncookedSugarCookiesID = config.getItem(Archive.itemUncookedSugarCookies, iID++).getInt();
-        itemUncookedChocolateChipCookiesID = config.getItem(Archive.itemUncookedChocolateChipCookies, iID++).getInt();
+        itemUncookedSugarCookiesID = config.getItem(Archive.itemUncookedSugarCookies, iID++)
+                .getInt();
+        itemUncookedChocolateChipCookiesID = config.getItem(
+                Archive.itemUncookedChocolateChipCookies, iID++).getInt();
         itemUncookedCookiesID = config.getItem(Archive.itemUncookedCookies, iID++).getInt();
         itemChocolateChipCookieID = config.getItem(Archive.itemChocolateChipCookie, iID++).getInt();
         itemCookieID = config.getItem(Archive.itemCookie, iID++).getInt();

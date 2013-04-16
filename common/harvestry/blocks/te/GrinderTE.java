@@ -52,6 +52,7 @@ public class GrinderTE extends BaseTE {
         nbt.setTag(Archive.inventory, FunctionHelper.writeInventoryToNBT(getInventory()));
     }
 
+    @Override
     public void updateEntity() {
         boolean flag = this.grindergGrindingTime > 0;
         boolean flag1 = false;
@@ -61,7 +62,7 @@ public class GrinderTE extends BaseTE {
         }
 
         if (!this.worldObj.isRemote){
-            if (this.grindergGrindingTime == 0 && this.canGrind()){
+            if ((this.grindergGrindingTime == 0) && this.canGrind()){
                 this.currentItemBurnTime = this.grindergGrindingTime = getItemBurnTime(
                         this.inventory[1], this.inventory[2]);
 
@@ -83,7 +84,7 @@ public class GrinderTE extends BaseTE {
             this.grinderCookTime = 0;
         }
 
-        if (flag != this.grindergGrindingTime > 0){
+        if (flag != (this.grindergGrindingTime > 0)){
             flag1 = true;
         }
 
@@ -101,14 +102,17 @@ public class GrinderTE extends BaseTE {
             return false;
         }else{
             ItemStack itemstack = GrinderRecipes.grinding().getGrindingResult(this.inventory[0]);
-            if (itemstack == null)
+            if (itemstack == null){
                 return false;
-            if (this.inventory[3] == null)
+            }
+            if (this.inventory[3] == null){
                 return true;
-            if (!this.inventory[3].isItemEqual(itemstack))
+            }
+            if (!this.inventory[3].isItemEqual(itemstack)){
                 return false;
+            }
             int result = inventory[3].stackSize + itemstack.stackSize;
-            return (result <= getInventoryStackLimit() && result <= itemstack.getMaxStackSize());
+            return ((result <= getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize()));
         }
     }
 
@@ -140,7 +144,7 @@ public class GrinderTE extends BaseTE {
      * fuel
      */
     public static int getItemBurnTime(ItemStack itemStack, ItemStack itemStack2) {
-        if (itemStack != null && itemStack2 != null){
+        if ((itemStack != null) && (itemStack2 != null)){
             int result;
             Random rand = new Random();
             EntityPlayer player = null;

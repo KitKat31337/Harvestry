@@ -6,7 +6,6 @@ import harvestry.utils.handlers.Handler;
 
 import java.util.logging.Level;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 public class ModItems {
@@ -44,6 +43,7 @@ public class ModItems {
     public static Item itemCookie;
     public static Item itemChocolateChipCookie;
     public static Item itemSugarCookieDough;
+
     /**
      * Creates all the Item Objects in the Mod.
      */
@@ -80,8 +80,8 @@ public class ModItems {
         itemCakeBatter = new BaseItem(Config.itemCakeBatterID)
                 .setUnlocalizedName(Archive.itemCakeBatter);
 
-        itemBowl = new BaseItem(Config.itemBowlID).setUnlocalizedName(
-                Archive.itemBowl).setMaxStackSize(16);
+        itemBowl = new BaseItem(Config.itemBowlID).setUnlocalizedName(Archive.itemBowl)
+                .setMaxStackSize(16);
 
         itemCakePan = new BaseItem(Config.itemCakePanID).setUnlocalizedName(Archive.itemCakePan)
                 .setMaxStackSize(16);
@@ -118,34 +118,28 @@ public class ModItems {
 
         itemPieCrust = new BaseItem(Config.itemPieCrustID).setUnlocalizedName(Archive.itemPieCrust)
                 .setMaxStackSize(16);
-        
-        itemChocolatePaste = new BaseItem(Config.itemChocolatePasteID)
-            .setUnlocalizedName(Archive.itemChocolatePaste)
-                .setMaxStackSize(16);
-        
-        itemUncookedPumpkinPie = new BaseItem(Config.itemUncookedPumpkinPieID)
-            .setUnlocalizedName(Archive.itemUncookedPumpkinPie)
-                .setMaxStackSize(16);
+
+        itemChocolatePaste = new BaseItem(Config.itemChocolatePasteID).setUnlocalizedName(
+                Archive.itemChocolatePaste).setMaxStackSize(16);
+
+        itemUncookedPumpkinPie = new BaseItem(Config.itemUncookedPumpkinPieID).setUnlocalizedName(
+                Archive.itemUncookedPumpkinPie).setMaxStackSize(16);
 
         itemUncookedSugarCookies = new BaseItem(Config.itemUncookedSugarCookiesID)
-            .setUnlocalizedName(Archive.itemUncookedSugarCookies)
-                .setMaxStackSize(16);
-        
+                .setUnlocalizedName(Archive.itemUncookedSugarCookies).setMaxStackSize(16);
+
         itemUncookedChocolateChipCookies = new BaseItem(Config.itemUncookedChocolateChipCookiesID)
-            .setUnlocalizedName(Archive.itemUncookedChocolateChipCookies)
-                .setMaxStackSize(16);
-        
-        itemUncookedCookies = new BaseItem(Config.itemUncookedCookiesID)
-            .setUnlocalizedName(Archive.itemUncookedCookies)
-                .setMaxStackSize(16);
-        
-        itemCookie = new BaseItem(Config.itemCookieID)
-            .setUnlocalizedName(Archive.itemCookie);
-        
+                .setUnlocalizedName(Archive.itemUncookedChocolateChipCookies).setMaxStackSize(16);
+
+        itemUncookedCookies = new BaseItem(Config.itemUncookedCookiesID).setUnlocalizedName(
+                Archive.itemUncookedCookies).setMaxStackSize(16);
+
+        itemCookie = new BaseItem(Config.itemCookieID).setUnlocalizedName(Archive.itemCookie);
+
         itemSugarCookie = new BaseItem(Config.itemSugarCookieID)
                 .setUnlocalizedName(Archive.itemSugarCookie);
-        
+
         itemSugarCookieDough = new BaseItem(Config.itemSugarCookieDoughID)
-            .setUnlocalizedName(Archive.itemSugarCookieDough);
+                .setUnlocalizedName(Archive.itemSugarCookieDough);
     }
 }

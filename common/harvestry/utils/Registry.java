@@ -99,23 +99,26 @@ public class Registry {
         GameRegistry.registerItem(ModItems.itemPumpkinPieFilling, Archive.itemPumpkinPieFilling);
 
         GameRegistry.registerItem(ModItems.itemChocolatePaste, Archive.itemChocolatePaste);
-        
+
         GameRegistry.registerItem(ModItems.itemPieCrust, Archive.itemPieCrust);
-        
+
         GameRegistry.registerItem(ModItems.itemUncookedPumpkinPie, Archive.itemUncookedPumpkinPie);
-        
-        GameRegistry.registerItem(ModItems.itemUncookedSugarCookies, Archive.itemUncookedSugarCookies);
- 
-        GameRegistry.registerItem(ModItems.itemUncookedChocolateChipCookies, Archive.itemUncookedChocolateChipCookies);
+
+        GameRegistry.registerItem(ModItems.itemUncookedSugarCookies,
+                Archive.itemUncookedSugarCookies);
+
+        GameRegistry.registerItem(ModItems.itemUncookedChocolateChipCookies,
+                Archive.itemUncookedChocolateChipCookies);
 
         GameRegistry.registerItem(ModItems.itemUncookedCookies, Archive.itemUncookedCookies);
-        
-        GameRegistry.registerItem(ModItems.itemChocolateChipCookie, Archive.itemChocolateChipCookie);
-        
+
+        GameRegistry
+                .registerItem(ModItems.itemChocolateChipCookie, Archive.itemChocolateChipCookie);
+
         GameRegistry.registerItem(ModItems.itemCookie, Archive.itemCookie);
 
         GameRegistry.registerItem(ModItems.itemSugarCookie, Archive.itemSugarCookie);
-        
+
         GameRegistry.registerItem(ModItems.itemSugarCookieDough, Archive.itemSugarCookieDough);
 
     }

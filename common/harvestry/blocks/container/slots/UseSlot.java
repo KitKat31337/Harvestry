@@ -16,6 +16,7 @@ public class UseSlot extends Slot {
      * Check if the stack is a valid item for this slot. Always true beside for
      * the armor slots.
      */
+    @Override
     public boolean isItemValid(ItemStack item) {
         if (item.getItem() instanceof BaseGrindStone){
             return true;

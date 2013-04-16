@@ -66,7 +66,6 @@ public class Archive {
     public static final String itemChocolateChipCookie = "itemChocolateChipCookie";
     public static final String itemSugarCookieDough = "itemSugarCookieDough";
 
-
     /*
      * ******************************************************
      * Blocks
