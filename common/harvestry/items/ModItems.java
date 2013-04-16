@@ -147,5 +147,8 @@ public class ModItems {
         
         itemSugarCookieDough = new BaseItem(Config.itemSugarCookieDoughID)
             .setUnlocalizedName(Archive.itemSugarCookieDough);
+        
+        itemChocolateChipCookie = new BaseItem(Config.itemChocolateChipCookieID)
+        .setUnlocalizedName(Archive.itemChocolateChipCookie);
     }
 }

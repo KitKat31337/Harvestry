@@ -207,16 +207,16 @@ public class RecipeHandler {
         OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedCake, new ItemStack(Item.cake),
                 new ItemStack(ModItems.itemCakePan));
         
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedCookies, new ItemStack(Item.cookie),
+        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedCookies, new ItemStack(Item.cookie, 16),
                 new ItemStack(ModItems.itemCookieSheet));
         
         OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedPumpkinPie, new ItemStack(Item.pumpkinPie),
                 new ItemStack(ModItems.itemPiePan));
         
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedSugarCookies, new ItemStack(ModItems.itemSugarCookie),
+        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedSugarCookies, new ItemStack(ModItems.itemSugarCookie, 16),
                 new ItemStack(ModItems.itemCookieSheet));
         
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedChocolateChipCookies, new ItemStack(ModItems.itemChocolateChipCookie),
+        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedChocolateChipCookies, new ItemStack(ModItems.itemChocolateChipCookie, 16),
                 new ItemStack(ModItems.itemCookieSheet));
         
         OvenRecipes.cooking().addCookingRecipe(ModItems.itemPumpkinMash, new ItemStack(Block.pumpkin));
