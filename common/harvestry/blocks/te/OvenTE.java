@@ -3,11 +3,26 @@ package harvestry.blocks.te;
 import harvestry.api.OvenRecipes;
 import harvestry.utils.Archive;
 import harvestry.utils.FunctionHelper;
-import net.minecraft.block.BlockFurnace;
+
+import java.util.Random;
+
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
 public class OvenTE extends BaseTE {
+
+    /** The number of ticks that the grinder will keep grinding */
+    public int cookingTime = 0;
+
+    /** The number of ticks that the current item has been grinding for */
+    public int cookTime = 0;
+
+    /**
+     * The number of ticks that a fresh copy of the currently-burning item would
+     * keep the furnace burning for
+     */
+    public int currentItemCookTime = 0;
 
     private static int invSize = 4;
 
@@ -36,66 +51,60 @@ public class OvenTE extends BaseTE {
         super.writeToNBT(nbt);
         nbt.setTag(Archive.inventory, FunctionHelper.writeInventoryToNBT(getInventory()));
     }
-    
-    /*public void updateEntity()
-    {
-        boolean flag = this.furnaceBurnTime > 0;
+
+    public void updateEntity() {
+        boolean flag = this.cookingTime > 0;
         boolean flag1 = false;
 
-        if (this.furnaceBurnTime > 0)
-        {
-            --this.furnaceBurnTime;
+        if (this.cookingTime > 0){
+            --this.cookingTime;
         }
 
-        if (!this.worldObj.isRemote)
-        {
-            if (this.furnaceBurnTime == 0 && this.canCook())
-            {
-                this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.inventory[1]);
+        if (!this.worldObj.isRemote){
+            if (this.cookingTime == 0 && this.canCook()){
+                this.currentItemCookTime = this.cookingTime = getItemCookTime(
+                        this.inventory[1]);
 
-                if (this.furnaceBurnTime > 0)
-                {
-                    flag1 = true;
-
-                    if (this.inventory[1] != null)
-                    {
-                        --this.inventory[1].stackSize;
-
-                        if (this.inventory[1].stackSize == 0)
-                        {
-                            this.inventory[1] = this.inventory[1].getItem().getContainerItemStack(inventory[1]);
-                        }
-                    }
-                }
-            }
-
-            if (this.isBurning() && this.canCook())
-            {
-                ++this.furnaceCookTime;
-
-                if (this.furnaceCookTime == 200)
-                {
-                    this.furnaceCookTime = 0;
-                    this.cookItem();
+                if (this.cookingTime > 0){
                     flag1 = true;
                 }
             }
-            else
-            {
-                this.furnaceCookTime = 0;
-            }
+        }
 
-            if (flag != this.furnaceBurnTime > 0)
-            {
+        if (this.isBurning() && this.canCook()){
+            ++this.cookTime;
+
+            if (this.cookTime == 200){
+                this.cookTime = 0;
+                this.cookItem();
                 flag1 = true;
             }
+        }else{
+            this.cookTime = 0;
         }
 
-        if (flag1)
-        {
+        if (flag != this.cookingTime > 0){
+            flag1 = true;
+        }
+
+        if (flag1){
             this.onInventoryChanged();
         }
-    }*/
+    }
+
+    private int getItemCookTime(ItemStack itemStack) {
+        if (itemStack != null){
+            int result;
+            Random rand = new Random();
+            EntityPlayer player = null;
+            if (rand.nextInt(100) > 51){
+                itemStack.damageItem(rand.nextInt(3) + 1, player);
+                result = itemStack.getItemDamage();
+                return result;
+            }
+        }
+        return 0;
+    }
 
     /**
      * Returns true if the oven can cook an item, i.e. has a source item,
@@ -137,5 +146,12 @@ public class OvenTE extends BaseTE {
                 this.inventory[0] = null;
             }
         }
+    }
+
+    /**
+     * Returns true if the furnace is currently burning
+     */
+    public boolean isBurning() {
+        return this.cookingTime > 0;
     }
 }
