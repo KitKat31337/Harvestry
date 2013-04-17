@@ -21,11 +21,11 @@ public final class ModItems {
     public static void init() {
         Handler.log(Level.INFO, "Loading Items");
 
-        mainItem = new BaseItem(Config.mainItemID);
+        mainItem = new BaseItem(10000/*Config.mainItemID*/);
         
-        foodItem = new BaseFood(Config.mainItemID);
+        foodItem = new BaseFood(10001/*Config.mainItemID*/);
         
-        nsItem = new BaseItem(Config.mainItemID);
+        nsItem = new BaseItem(10002/*Config.mainItemID*/);
 
         /*
          * initFood();

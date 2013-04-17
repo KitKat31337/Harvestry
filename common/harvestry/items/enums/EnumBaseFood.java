@@ -17,7 +17,7 @@ public enum EnumBaseFood {
     public final String unlocalized;
     public final String texture;
     public final int heal;
-    public final float sturation;
+    public final float saturation;
 
     private Icon icon;
 
@@ -25,7 +25,7 @@ public enum EnumBaseFood {
         this.unlocalized = unlocalized;
         this.texture = texture;
         this.heal = heal;
-        this.sturation = sturation;
+        this.saturation = sturation;
     }
 
     public Icon getIcon() {

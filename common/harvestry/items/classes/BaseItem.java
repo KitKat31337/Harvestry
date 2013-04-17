@@ -15,8 +15,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BaseItem extends Item {
 
-    EnumBaseItem currentItem;
-
+    private static EnumBaseItem[] currentItems = EnumBaseItem.values();
+    private int currentMeta;
+    
     /**
      * Creates an Item Instance.
      * 
@@ -28,26 +29,17 @@ public class BaseItem extends Item {
         this.setCreativeTab(Harvestry.tabHarvestry);
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
-        currentItem = EnumBaseItem.valueOf(getUnlocalizedName2());
+        this.setUnlocalizedName(currentItems[currentMeta].unlocalized);
     }
-
+    
     @Override
     @SideOnly(Side.CLIENT)
     /**
      * Gets an icon index based on an item's damage value
      */
     public Icon getIconFromDamage(int meta) {
-        return currentItem.getIcon();
-    }
-
-    @Override
-    /**
-     * Returns the unlocalized name of this item. This version accepts an
-     * ItemStack so different stacks can have
-     * different names based on their damage or NBT.
-     */
-    public String getUnlocalizedName(ItemStack item) {
-        return currentItem.unlocalized;
+        currentMeta = meta;
+        return currentItems[meta].getIcon();
     }
 
     @Override
@@ -67,9 +59,5 @@ public class BaseItem extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRergister) {
         EnumBaseItem.registerIcons(iconRergister);
-    }
-
-    public String getUnlocalizedName2() {
-        return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1);
     }
 }
