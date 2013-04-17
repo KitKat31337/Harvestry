@@ -1,28 +1,12 @@
-package harvestry.items;
+package harvestry.items.classes;
 
 import harvestry.Harvestry;
-import harvestry.utils.Archive;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
-public class BaseItem extends Item {
+public class BaseHeatingElement extends BaseItem {
 
     private static boolean hasContainer = false;
     private static boolean leaveCrafting = true;
-
-    /**
-     * Creates an Item Instance.
-     * 
-     * @param id
-     *            The Item ID
-     */
-    public BaseItem(int id) {
-        super(id - 256);
-        this.setCreativeTab(Harvestry.tabHarvestry);
-    }
 
     /**
      * Creates an Item Instance and Sets the container Item to Itself.
@@ -34,7 +18,7 @@ public class BaseItem extends Item {
      * @param maxDamage
      *            The Maximum amount of uses
      */
-    public BaseItem(int id, boolean leave, int maxDamage) {
+    public BaseHeatingElement(int id, boolean leave, int maxDamage) {
         super(id - 256);
         this.setMaxStackSize(1);
         this.setCreativeTab(Harvestry.tabHarvestry);
@@ -58,15 +42,5 @@ public class BaseItem extends Item {
     @Override
     public boolean doesContainerItemLeaveCraftingGrid(ItemStack par1ItemStack) {
         return leaveCrafting;
-    }
-
-    /**
-     * Registers the Icon for the Item
-     */
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(Archive.texture
-                + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 }

@@ -46,9 +46,11 @@ public final class GrinderRecipes {
      * @return The result ItemStack
      */
     public Recipes getGrindingResult(ItemStack item) {
-        for (Recipes r : recipes)
-            if (r.isInput(item))
+        for (Recipes r : recipes){
+            if (r.isInput(item)){
                 return r;
+            }
+        }
         return null;
     }
 

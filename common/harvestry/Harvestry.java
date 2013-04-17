@@ -19,8 +19,16 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid = Archive.id, name = Archive.modName, version = Archive.ver, useMetadata = true, dependencies = Archive.depend)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
+@Mod(
+        modid = Archive.id,
+        name = Archive.modName,
+        version = Archive.ver,
+        useMetadata = true,
+        dependencies = Archive.depend)
+@NetworkMod(
+        clientSideRequired = true,
+        serverSideRequired = false,
+        packetHandler = PacketHandler.class)
 public class Harvestry {
 
     @Instance(Archive.id)

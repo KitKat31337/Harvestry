@@ -30,8 +30,9 @@ public class FuelRegistry {
      */
     public static boolean isGrinderFuel(ItemStack stack) {
         for (ItemStack i : grinderList){
-            if (i.isItemEqual(stack))
+            if (i.isItemEqual(stack)){
                 return true;
+            }
         }
 
         return false;
@@ -61,8 +62,9 @@ public class FuelRegistry {
      */
     public static boolean isOvenFuel(ItemStack stack) {
         for (ItemStack i : ovenList){
-            if (i.isItemEqual(stack))
+            if (i.isItemEqual(stack)){
                 return true;
+            }
         }
 
         return false;

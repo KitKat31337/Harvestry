@@ -63,9 +63,11 @@ public final class OvenRecipes {
      * @return The result ItemStack
      */
     public Recipes getCookingResult(ItemStack item) {
-        for (Recipes r : recipes)
-            if (r.isInput(item))
+        for (Recipes r : recipes){
+            if (r.isInput(item)){
                 return r;
+            }
+        }
         return null;
     }
 

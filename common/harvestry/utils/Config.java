@@ -75,6 +75,8 @@ public class Config {
     public static int aluMaxHeight;
     public static int aluMinHeight;
 
+    public static int mainItemID;
+
     /**
      * Initializes the Configuration file.
      * 

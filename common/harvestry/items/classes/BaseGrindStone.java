@@ -1,10 +1,10 @@
-package harvestry.items;
+package harvestry.items.classes;
 
 import harvestry.Harvestry;
 
-public class BaseHeatingElement extends BaseItem {
+public class BaseGrindStone extends BaseItem {
 
-    public BaseHeatingElement(int id, int maxDamage) {
+    public BaseGrindStone(int id, int maxDamage) {
         super(id);
         this.setMaxStackSize(1);
         this.setCreativeTab(Harvestry.tabHarvestry);

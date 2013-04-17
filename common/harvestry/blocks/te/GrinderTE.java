@@ -101,7 +101,8 @@ public class GrinderTE extends BaseTE {
         if (this.inventory[0] == null){
             return false;
         }else{
-            ItemStack itemstack = GrinderRecipes.grinding().getGrindingResult(this.inventory[0]).getOutput1();
+            ItemStack itemstack = GrinderRecipes.grinding().getGrindingResult(this.inventory[0])
+                    .getOutput1();
             if (itemstack == null){
                 return false;
             }
@@ -122,7 +123,8 @@ public class GrinderTE extends BaseTE {
      */
     public void grindItem() {
         if (this.canGrind()){
-            ItemStack itemstack = GrinderRecipes.grinding().getGrindingResult(this.inventory[0]).getOutput1();
+            ItemStack itemstack = GrinderRecipes.grinding().getGrindingResult(this.inventory[0])
+                    .getOutput1();
 
             if (this.inventory[3] == null){
                 this.inventory[3] = itemstack.copy();

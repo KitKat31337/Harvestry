@@ -12,7 +12,11 @@ public class Handler {
 
     private static boolean IsLoaded = false;
 
-    // *******************************Mod State Check*************************
+    /*
+     * *******************************************************************
+     * Mod State Check
+     * *******************************************************************
+     */
     /**
      * Checks if the Mod has being loaded before and throws a exception. The
      * default response is false. Other wise you should get a Exception.
@@ -47,7 +51,11 @@ public class Handler {
         IsLoaded = false;
     }
 
-    // ***********************************Log Stuff************************
+    /*
+     * *******************************************************************
+     * Log Stuff
+     * *******************************************************************
+     */
     private static Logger logger = Logger.getLogger(Archive.id);
 
     /**

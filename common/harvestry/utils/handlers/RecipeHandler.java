@@ -3,6 +3,9 @@ package harvestry.utils.handlers;
 import harvestry.api.GrinderRecipes;
 import harvestry.api.OvenRecipes;
 import harvestry.items.ModItems;
+import harvestry.items.enums.EnumBaseFood;
+import harvestry.items.enums.EnumBaseItem;
+import harvestry.items.enums.EnumNonStack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,14 +13,16 @@ import java.util.List;
 import java.util.logging.Level;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class RecipeHandler {
+public final class RecipeHandler {
 
     private static ItemStack grindStones = new ItemStack(ModItems.itemGrindStones, 1,
             OreDictionary.WILDCARD_VALUE);
@@ -49,67 +54,76 @@ public class RecipeHandler {
      */
     private static void addShapeless() {
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemDough), new Object[] {
-                Item.bucketWater, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour });
+        GameRegistry.addShapelessRecipe(BaseItemEnum(EnumBaseItem.itemDough),
+                new Object[] { Item.bucketWater, BaseItemEnum(EnumBaseItem.itemFlour),
+            BaseItemEnum(EnumBaseItem.itemFlour), BaseItemEnum(EnumBaseItem.itemFlour) });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemUncookedBread), new Object[] {
-                ModItems.itemBreadPan, ModItems.itemDough });
+        GameRegistry.addShapelessRecipe(
+                BaseItemEnum(EnumBaseItem.itemUncookedBread),
+                new Object[] { BaseItemEnum(EnumBaseItem.itemBreadPan),
+                        BaseItemEnum(EnumBaseItem.itemDough) });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCakeBatter), new Object[] {
-                ModItems.itemBowl, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour,
-                Item.sugar, Item.egg, Item.bucketMilk });
+        GameRegistry.addShapelessRecipe(BaseItemEnum(EnumBaseItem.itemCakeBatter),
+                new Object[] { BaseItemEnum(EnumBaseItem.itemBowl), BaseItemEnum(EnumBaseItem.itemFlour),
+            BaseItemEnum(EnumBaseItem.itemFlour), BaseItemEnum(EnumBaseItem.itemFlour),
+                        Item.sugar, Item.egg, Item.bucketMilk });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemUncookedCake), new Object[] {
-                ModItems.itemCakeBatter, ModItems.itemCakePan });
+        GameRegistry.addShapelessRecipe(
+                new ItemStack(EnumBaseItem.itemUncookedCake),
+                new Object[] { EnumBaseItem.itemCakeBatter),
+                        EnumBaseItem.itemCakePan) });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemGrindStones), new Object[] {
-                ModItems.gStone, ModItems.gStone });
+        GameRegistry.addShapelessRecipe(new ItemStack(EnumBaseItem.itemGrindStones.),
+                new Object[] { EnumBaseItem.gStone), EnumBaseItem.gStone) });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemFlour), new Object[] {
-                Item.wheat, grindStones });
+        GameRegistry.addShapelessRecipe(new ItemStack(EnumBaseItem.itemFlour)),
+                new Object[] { Item.wheat, grindStones });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemUncookedPotato), new Object[] {
-                ModItems.itemAluminumFoil, Item.potato });
+        GameRegistry.addShapelessRecipe(new ItemStack(EnumBaseItem.itemUncookedPotato)),
+                new Object[] { EnumBaseItem.itemAluminumFoil., Item.potato });
 
         GameRegistry.addShapelessRecipe(new ItemStack(Item.sugar), new Object[] { Item.reed,
                 grindStones });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCookieDough), new Object[] {
-                Item.sugar, ModItems.itemFlour, ModItems.itemFlour, Item.bucketMilk, Item.egg,
-                ModItems.itemBowl });
+        GameRegistry.addShapelessRecipe(
+                BaseItemEnum(EnumBaseItem.itemCookieDough),
+                new Object[] { Item.sugar, BaseItemEnum(EnumBaseItem.itemFlour),
+                BaseItemEnum(EnumBaseItem.itemFlour), Item.bucketMilk, Item.egg,
+                        BaseItemEnum(EnumBaseItem.itemBowl) });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemChocolateChipCookieDough),
-                new Object[] { ModItems.itemCookieDough, ModItems.itemChocolateChips, Item.sugar });
+        GameRegistry.addShapelessRecipe(BaseItemEnum(EnumBaseItem.itemChocolateChipCookieDough),
+                new Object[] { EnumBaseItem.itemCookieDough, EnumBaseItem.itemChocolateChips,
+                        Item.sugar });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemPumpkinPieFilling),
-                new Object[] { ModItems.itemPumpkinMash, Item.bucketMilk, Item.sugar,
-                        ModItems.itemPumpkinMash });
+        GameRegistry.addShapelessRecipe(BaseItemEnum(EnumBaseItem.itemPumpkinPieFilling),
+                new Object[] { EnumBaseItem.itemPumpkinMash, Item.bucketMilk, Item.sugar,
+                        EnumBaseItem.itemPumpkinMash });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemPieCrust), new Object[] {
-                ModItems.itemPiePan, ModItems.itemDough });
+        GameRegistry.addShapelessRecipe(BaseItemEnum(EnumBaseItem.itemPieCrust), new Object[] {
+            BaseItemEnum(EnumBaseItem.itemPiePan), EnumBaseItem.itemDough });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemSugarCookieDough), new Object[] {
-                ModItems.itemCookieDough, Item.sugar });
+        GameRegistry.addShapelessRecipe(new ItemStack(EnumBaseItem.itemSugarCookieDough),
+                new Object[] { EnumBaseItem.itemCookieDough, Item.sugar });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemChocolateChips), new Object[] {
-                ModItems.itemChocolatePaste, Item.sugar });
+        GameRegistry.addShapelessRecipe(new ItemStack(EnumBaseItem.itemChocolateChips),
+                new Object[] { EnumBaseItem.itemChocolatePaste, Item.sugar });
     }
 
     /**
      * Adds all Shaped the recipes in the Mod.
      */
     private static void addShaped() {
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemBreadPan), new Object[] { "T   T",
-                "T T", "TTT", 'T', ModItems.itemAluminumSheet });
+        GameRegistry.addShapedRecipe(new ItemStack(EnumBaseItem.itemBreadPan), new Object[] {
+                "T   T", "T T", "TTT", 'T', EnumBaseItem.itemAluminumSheet });
 
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCakePan), new Object[] { "   ",
-                "T T", "TTT", 'T', ModItems.itemAluminumSheet });
+        GameRegistry.addShapedRecipe(new ItemStack(EnumBaseItem.itemCakePan), new Object[] { "   ",
+                "T T", "TTT", 'T', EnumBaseItem.itemAluminumSheet });
 
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.gStone), new Object[] { "SSS",
+        GameRegistry.addShapedRecipe(new ItemStack(EnumBaseItem.gStone), new Object[] { "SSS",
                 "SLS", "SSS", 'S', Block.stone, 'L', Block.wood });
 
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemCookieSheet), new Object[] { "   ",
-                "TTT", "TTT", 'T', ModItems.itemAluminumSheet });
+        GameRegistry.addShapedRecipe(new ItemStack(EnumBaseItem.itemCookieSheet), new Object[] {
+                "   ", "TTT", "TTT", 'T', EnumBaseItem.itemAluminumSheet });
     }
 
     /**
@@ -191,39 +205,39 @@ public class RecipeHandler {
     }
 
     private static void addGrinder() {
-        GrinderRecipes.grinding().addGrinding(Item.wheat, new ItemStack(ModItems.itemFlour));
+        GrinderRecipes.grinding().addGrinding(Item.wheat, new ItemStack(EnumBaseItem.itemFlour));
 
         GrinderRecipes.grinding().addGrinding(new ItemStack(Item.dyePowder, 1, 4),
-                new ItemStack(ModItems.itemChocolatePaste));
+                BaseItemEnum(EnumBaseItem.itemChocolatePaste));
 
         GrinderRecipes.grinding().addGrinding(Item.reed, new ItemStack(Item.sugar));
     }
 
     private static void addOven() {
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedBread,
-                new ItemStack(Item.bread), new ItemStack(ModItems.itemBreadPan));
+        OvenRecipes.cooking().addCookingRecipe(EnumBaseItem.itemUncookedBread,
+                new ItemStack(Item.bread), new ItemStack(EnumBaseItem.itemBreadPan));
 
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedPotato,
+        OvenRecipes.cooking().addCookingRecipe(EnumBaseItem.itemUncookedPotato,
                 new ItemStack(Item.bakedPotato));
 
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedCake, new ItemStack(Item.cake),
-                new ItemStack(ModItems.itemCakePan));
+        OvenRecipes.cooking().addCookingRecipe(BaseItemEnum(EnumBaseItem.itemUncookedCake),
+                new ItemStack(Item.cake), BaseItemEnum(EnumBaseItem.itemCakePan));
 
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedCookies,
-                new ItemStack(Item.cookie, 16), new ItemStack(ModItems.itemCookieSheet));
+        OvenRecipes.cooking().addCookingRecipe(BaseItemEnum(EnumBaseItem.itemUncookedCookies),
+                new ItemStack(Item.cookie, 16), BaseItemEnum(EnumBaseItem.itemCookieSheet));
 
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedPumpkinPie,
-                new ItemStack(Item.pumpkinPie), new ItemStack(ModItems.itemPiePan));
+        OvenRecipes.cooking().addCookingRecipe(BaseItemEnum(EnumBaseItem.itemUncookedPumpkinPie),
+                new ItemStack(Item.pumpkinPie), BaseItemEnum(EnumBaseItem.itemPiePan));
 
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedSugarCookies,
-                new ItemStack(ModItems.foodSugarCookie, 16),
-                new ItemStack(ModItems.itemCookieSheet));
+        OvenRecipes.cooking().addCookingRecipe(BaseItemEnum(EnumBaseItem.itemUncookedSugarCookies),
+                BaseFoodEnum(EnumBaseItem.foodSugarCookie, 16),
+                BaseItemEnum(EnumBaseItem.itemCookieSheet));
 
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemUncookedChocolateChipCookies,
-                new ItemStack(ModItems.foodChocolateChipCookie, 16),
-                new ItemStack(ModItems.itemCookieSheet));
+        OvenRecipes.cooking().addCookingRecipe(BaseItemEnum(EnumBaseItem.itemUncookedChocolateChipCookies),
+                BaseFoodEnum(EnumBaseItem.foodChocolateChipCookie, 16),
+                BaseItemEnum(EnumBaseItem.itemCookieSheet);
 
-        OvenRecipes.cooking().addCookingRecipe(ModItems.itemPumpkinMash,
+        OvenRecipes.cooking().addCookingRecipe(BaseItemEnum(EnumBaseItem.itemPumpkinMash),
                 new ItemStack(Block.pumpkin));
     }
 }
