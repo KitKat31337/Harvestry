@@ -17,7 +17,7 @@ public class BaseItem extends Item {
 
     private static EnumBaseItem[] currentItems = EnumBaseItem.values();
     private int currentMeta;
-    
+
     /**
      * Creates an Item Instance.
      * 
@@ -31,7 +31,7 @@ public class BaseItem extends Item {
         this.setMaxDamage(0);
         this.setUnlocalizedName(currentItems[currentMeta].unlocalized);
     }
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     /**
@@ -44,12 +44,11 @@ public class BaseItem extends Item {
 
     @Override
     @SideOnly(Side.CLIENT)
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     /**
      * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
      */
-    public void getSubItems(int itemID, CreativeTabs creativeTabs,
-            @SuppressWarnings("rawtypes") List list) {
+    public void getSubItems(int itemID, CreativeTabs creativeTabs, List list) {
         for (int currentMeta = 0; currentMeta < EnumBaseItem.values().length; ++currentMeta){
             list.add(new ItemStack(itemID, 1, currentMeta));
         }
